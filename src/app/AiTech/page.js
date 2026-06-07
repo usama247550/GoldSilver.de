@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Banner from "../components/AiTech-components/Banner";
-import LiveTickerZone from "../components/AiTech-Components/LiveTickerZone";
-import TodayUpdates from "../components/AiTech-Components/TodayUpdates";
-import TrustedPartners from "../components/AiTech-Components/TrustedPartners";
-import GoldNewsBanner from "../components/AiTech-Components/GoldNewsBanner";
+import LiveTickerZone from "../components/AiTech-components/LiveTickerZone";
+import TodayUpdates from "../components/AiTech-components/TodayUpdates";
+import TrustedPartners from "../components/AiTech-components/TrustedPartners";
+import GoldNewsBanner from "../components/AiTech-components/GoldNewsBanner";
 
 const AiTech = () => {
   return (
