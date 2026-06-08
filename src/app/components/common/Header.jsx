@@ -5,7 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navLinks = [
-  { href: "/macro", label: "Macro" },
+  { href: "/macro", label: "Macro",  },
   { href: "/AiTech", label: "AI & Tech" },
   { href: "/storage", label: "Storage" },
   { href: "/estate", label: "Estate" },

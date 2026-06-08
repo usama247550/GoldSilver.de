@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      {/* <FeaturedGrid /> */}
+      <FeaturedGrid />
       <GoldNewsBanner />
       <LatestUpdates/>
       <Footer />

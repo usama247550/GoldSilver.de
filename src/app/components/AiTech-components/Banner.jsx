@@ -3,7 +3,7 @@ import React from "react";
 const Banner = () => {
   return (
     <>
-      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[P layfair_Display] ">
+      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[Playfair_Display] ">
         <img
           src="/aiTech/banner.jpg"
           alt="image"
