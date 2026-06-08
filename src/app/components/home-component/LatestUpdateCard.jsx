@@ -1,67 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
 
-// const LatestUpdateCard = () => {
-//   const updatedNews = [
-//     {
-//       image: "/news-update-image/image1.png",
-//       small: "Macro insight",
-//       heading: "Central Banks Continue Gold Buying Trend",
-//       decription:
-//         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
-//     },
-//     {
-//       image: "/news-update-image/image2.png",
-//       small: "Menergy",
-//       heading: "Solar Expansion Drives Silver Demand Higher",
-//       decription:
-//         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
-//     },
-//     {
-//       image: "/news-update-image/image1.png",
-//       small: "Scrap Metal",
-//       heading: "German Bullion Sales Reach New Monthly High",
-//       decription:
-//         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
-//     },
-//   ];
-
-//   return (
-//     <div className="flex flex-wrap gap-6">
-//       {updatedNews.map((val, ind) => {
-//         return (
-//           <div
-//             key={ind}
-//             className="max-w-[250px] bg-white shadow-md rounded-xl overflow-hidden"
-//           >
-//             <img
-//               src={val.image}
-//               alt="Latest update"
-//               className="w-full object-cover rounded-t-xl"
-//             />
-
-//             <div className="p-4 space-y-2">
-//               <p className="text-sm text-[#B8860B] capitalize font-bold">
-//                 {t(val.small)}
-//               </p>
-
-//               <h2 className="text-lg text-gray-800 font-[Playfair] font-semibold">
-//                 {t(val.heading)}
-//               </h2>
-
-//               <p className="text-sm text-gray-800">{t(val.decription)}</p>
-//             </div>
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// };
-
-// export default LatestUpdateCard;
-
-import React from "react";
-
 const LatestUpdateCard = () => {
   const { t } = useTranslation();
   const updatedNews = [
