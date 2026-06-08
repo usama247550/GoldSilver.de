@@ -10,7 +10,7 @@ const FeaturedGrid = () => {
   const bottomCards = smallCardsData.slice(10, 12);
 
   return (
-    <div className="w-full md:w-[80%] mx-auto py-10 px-4 md:px-20 flex flex-col gap-y-4">
+    <div className="w-full md:w-[80%] mx-auto py-3 md:py-8 px-4 md:px-20 flex flex-col gap-y-4">
       {/* Row—top  */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {topCards.map((card, i) => (
