@@ -7,7 +7,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
-  { href: "/macro", label: "Macro", },
+  { href: "/macro", label: "Macro" },
   { href: "/AiTech", label: "AI & Tech" },
   { href: "/storage", label: "Storage" },
   { href: "/estate", label: "Estate" },
@@ -51,8 +51,10 @@ const Header = () => {
             </div>
           ))}
         </div>
-        <LanguageSwitcher />
-        
+        <div className="hidden sm:block">
+          <LanguageSwitcher />
+        </div>
+
         <div className="flex items-center gap-4">
           <CiSearch className="text-white text-2xl cursor-pointer" />
           <Link
@@ -115,6 +117,9 @@ const Header = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <LanguageSwitcher />
+            </li>
           </ul>
         </nav>
       )}

@@ -17,14 +17,14 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 border border-[#B8860B]/30 rounded-lg p-0.5 bg-black/40">
+    <div className="flex items-center gap-1 border md:border-[#B8860B]/30 rounded-lg p-0.5 md:bg-black/40">
       <button
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
           changeLanguage("en");
         }}
-        className={`px-3 py-1.5 rounded-md text-[15px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+        className={`px-2.5 py-0.5 md:px-3 md:py-1.5 rounded-md text-[15px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
           lang === "en"
             ? "bg-[#B8860B] text-white shadow-sm"
             : "text-[#CCCCCC] hover:text-white hover:bg-white/10"
@@ -39,7 +39,7 @@ export default function LanguageSwitcher() {
           e.stopPropagation();
           changeLanguage("de");
         }}
-        className={`px-3 py-1.5 rounded-md text-[15px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+        className={`px-2.5 py-0.5 md:px-3 md:py-1.5 rounded-md text-[15px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
           lang === "de"
             ? "bg-[#B8860B] text-white shadow-sm"
             : "text-[#CCCCCC] hover:text-white hover:bg-white/10"
