@@ -1,6 +1,9 @@
+"use client";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 const PartnerCard = () => {
+  const { t } = useTranslation();
   const partnerCards = [
     {
       logo: "GS",
@@ -40,20 +43,18 @@ const PartnerCard = () => {
           </span>
 
           <div className="text-[#000000] text-xl sm:text-2xl font-bold">
-            {item.title}
+            {t(item.title)}
           </div>
 
           <div className="text-[#000000] text-sm flex-1">
-            {item.description}
+            {t(item.description)}
           </div>
 
           <div className="text-[#B8860B] font-medium text-sm">
-            {item.commission}
+            {t(item.commission)}
           </div>
 
-          <button className="mt-2 text-[#B8860B] border-2 border-[#B8860B] rounded-md text-sm font-bold py-2 hover:bg-[#B8860B] hover:text-black transition cursor-pointer">
-            Read More
-          </button>
+          <button className="mt-2 text-[#B8860B] border-2 border-[#B8860B] rounded-md text-sm font-bold py-2 hover:bg-[#B8860B] hover:text-black transition cursor-pointer">{t("Read More")}</button>
         </div>
       ))}
     </div>

@@ -1,9 +1,12 @@
+"use client";
+import { useTranslation } from "react-i18next";
 
 
 import React from "react";
 import { FaYoutube } from "react-icons/fa";
 
 const LearningCard = () => {
+  const { t } = useTranslation();
   const learningDATA = [
     {
       title: "Pro Gold",
@@ -29,7 +32,7 @@ const LearningCard = () => {
           <div className="relative">
             <img
               src={item.link}
-              alt={item.title}
+              alt={t(item.title)}
               className="h-40 w-full object-cover"
             />
             <div className="absolute inset-0 bg-black/50" />
@@ -39,9 +42,9 @@ const LearningCard = () => {
           </div>
 
           <div className="ps-4 py-3 bg-[#F7BD48CF] font-[Playfair-Display]">
-            <h3 className="text-lg text-black sm:text-xl font-bold">{item.title}</h3>
+            <h3 className="text-lg text-black sm:text-xl font-bold">{t(item.title)}</h3>
             <p className="mt-2 leading-tight text-xs sm:text-sm text-gray-600">
-              {item.description}
+              {t(item.description)}
             </p>
           </div>
         </div>

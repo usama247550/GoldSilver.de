@@ -1,4 +1,5 @@
-// import React from "react";
+"use client";
+import { useTranslation } from "react-i18next";
 
 // const LatestUpdateCard = () => {
 //   const updatedNews = [
@@ -41,14 +42,14 @@
 
 //             <div className="p-4 space-y-2">
 //               <p className="text-sm text-[#B8860B] capitalize font-bold">
-//                 {val.small}
+//                 {t(val.small)}
 //               </p>
 
 //               <h2 className="text-lg text-gray-800 font-[Playfair] font-semibold">
-//                 {val.heading}
+//                 {t(val.heading)}
 //               </h2>
 
-//               <p className="text-sm text-gray-800">{val.decription}</p>
+//               <p className="text-sm text-gray-800">{t(val.decription)}</p>
 //             </div>
 //           </div>
 //         );
@@ -62,6 +63,7 @@
 import React from "react";
 
 const LatestUpdateCard = () => {
+  const { t } = useTranslation();
   const updatedNews = [
     {
       image: "/news-update-image/image1.png",
@@ -100,12 +102,12 @@ const LatestUpdateCard = () => {
           />
           <div className="p-4 space-y-2 flex flex-col flex-1">
             <p className="text-sm text-[#B8860B] capitalize font-bold">
-              {val.small}
+              {t(val.small)}
             </p>
             <h2 className="text-lg text-gray-800 font-[Playfair] font-semibold leading-snug">
-              {val.heading}
+              {t(val.heading)}
             </h2>
-            <p className="text-sm text-gray-600 flex-1">{val.decription}</p>
+            <p className="text-sm text-gray-600 flex-1">{t(val.decription)}</p>
           </div>
         </div>
       ))}

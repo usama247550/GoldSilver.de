@@ -1,3 +1,5 @@
+"use client";
+import { useTranslation } from "react-i18next";
 const smallCardsData = [
   {
     image: "/grid-images/gridimage1.jpg",
@@ -15,9 +17,9 @@ const smallCardsData = [
     href: "/scrapMetal",
   },
   {
-    image: "/grid-images/gridimage4.jpg",
-    title: "Off-Grid Security",
-    href: "/offgrid",
+    image: "/grid-images/gridimage10.jpg",
+    title: "Goldsmith",
+    href: "/Goldsmithing",
   },
   { image: "/grid-images/gridimage5.jpg", title: "AI & Tech", href: "/AiTech" },
   {
@@ -32,14 +34,14 @@ const smallCardsData = [
     href: "/numismatics",
   },
   {
-    image: "/grid-images/gridimage9.jpg",
-    title: "Metal Detecting",
-    href: "/MetalDetecting",
+    image: "/grid-images/gridimage13.jpg",
+    title: "Coins & Bars",
+    href: "/coinsBars",
   },
   {
-    image: "/grid-images/gridimage10.jpg",
-    title: "Goldsmith",
-    href: "/Goldsmithing",
+    image: "/grid-images/gridimage4.jpg",
+    title: "Off-Grid Security",
+    href: "/offgrid",
   },
   {
     image: "/grid-images/gridimage12.jpg",
@@ -47,23 +49,24 @@ const smallCardsData = [
     href: "/JewelryResale",
   },
   {
-    image: "/grid-images/gridimage13.jpg",
-    title: "Coins & Bars",
-    href: "/coinsBars",
+    image: "/grid-images/gridimage9.jpg",
+    title: "Metal Detecting",
+    href: "/MetalDetecting",
   },
 ];
 
 const SmallCard = ({ image, title }) => {
+  const { t } = useTranslation();
   return (
     <div className="relative h-24 w-full rounded-lg overflow-hidden group cursor-pointer">
       <img
         src={image}
-        alt={title}
+        alt={t(title)}
         className="w-full h-full object-cover group-hover:scale-105 transition "
       />
       <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
       <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
-        {title}
+        {t(title)}
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
 "use client";
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navLinks = [
-  { href: "/macro", label: "Macro",  },
+  { href: "/macro", label: "Macro", },
   { href: "/AiTech", label: "AI & Tech" },
   { href: "/storage", label: "Storage" },
   { href: "/estate", label: "Estate" },
@@ -23,6 +25,7 @@ const tickers = [
 ];
 
 const Header = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -38,24 +41,25 @@ const Header = () => {
         <div className="hidden md:flex gap-7 text-sm">
           {tickers.map(({ label, value, up }) => (
             <div
-              key={label}
+              key={t(label)}
               className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium"
             >
-              {label}:{" "}
+              {t(label)}:{" "}
               <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
                 {value}
               </span>
             </div>
           ))}
         </div>
-
+        <LanguageSwitcher />
+        
         <div className="flex items-center gap-4">
           <CiSearch className="text-white text-2xl cursor-pointer" />
           <Link
             href="#"
             className="border-2 border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white rounded-lg font-bold px-4 py-1 text-sm md:text-lg transition-colors"
           >
-            Subscribe
+            {t("Subscribe")}
           </Link>
 
           <button
@@ -71,10 +75,10 @@ const Header = () => {
       <div className="hidden flex flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
         {tickers.map(({ label, value, up }) => (
           <div
-            key={label}
+            key={t(label)}
             className="font-[JetBrains_Mono] text-[#CCCCCC] text-xs font-medium"
           >
-            {label}:{" "}
+            {t(label)}:{" "}
             <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
               {value}
             </span>
@@ -90,7 +94,7 @@ const Header = () => {
                 href={href}
                 className="text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors"
               >
-                {label}
+                {t(label)}
               </Link>
             </li>
           ))}
@@ -107,7 +111,7 @@ const Header = () => {
                   className="block text-[#B8860B] py-3 text-[15px] border-b border-[#2a2a2a] last:border-none hover:text-[#FDE99A] transition-colors"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {label}
+                  {t(label)}
                 </Link>
               </li>
             ))}

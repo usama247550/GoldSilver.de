@@ -1,6 +1,9 @@
+"use client";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 const HorizontalCard = () => {
+  const { t } = useTranslation();
   const marketNews = [
     {
       category: "PHYSICAL MARKET",
@@ -45,23 +48,23 @@ const HorizontalCard = () => {
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-2">
                   <span className="text-[#B8860B] text-xs font-semibold tracking-wide">
-                    {item.category}
+                    {t(item.category)}
                   </span>
                   <span className="text-gray-400 text-xs hidden sm:inline">
                     •
                   </span>
-                  <span className="text-[#000000] text-xs">{item.date}</span>
+                  <span className="text-[#000000] text-xs">{t(item.date)}</span>
                   <span className="bg-[#2E7D32] text-white text-xs px-2 py-0.5 rounded">
-                    {item.tag}
+                    {t(item.tag)}
                   </span>
                 </div>
 
                 <h3 className="text-[#000000] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug">
-                  {item.title}
+                  {t(item.title)}
                 </h3>
 
                 <p className="text-[#000000] text-xs sm:text-sm line-clamp-2">
-                  {item.description}
+                  {t(item.description)}
                 </p>
               </div>
 
