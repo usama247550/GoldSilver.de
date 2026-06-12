@@ -26,7 +26,7 @@ const LearningCard = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mx-auto px-4 sm:px-0">
       {learningDATA.map((item, ind) => (
         <div
-          key={ind}
+          key={ind+1}
           className="rounded-2xl border border-gray-200 bg-white overflow-hidden"
         >
           <div className="relative">

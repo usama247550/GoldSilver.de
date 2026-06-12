@@ -39,7 +39,7 @@ const HorizontalCard = () => {
         <div className="flex flex-col">
           {marketNews.map((item) => (
             <div
-              key={item}
+              key={" "}
               className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
             >
               <div className="flex-1 min-w-0">
