@@ -32,9 +32,24 @@ const Header = () => {
 
   const tickers = prices
     ? [
-        { label: "XAU/USD", value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+0.4%", up: true },
-        { label: "XAG/USD", value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "-1.2%", up: false },
-        { label: "BTC/USD", value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+2.1%", up: true },
+        {
+          label: "XAU/USD",
+          value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+          change: "+0.4%",
+          up: true,
+        },
+        {
+          label: "XAG/USD",
+          value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+          change: "-1.2%",
+          up: false,
+        },
+        {
+          label: "BTC/USD",
+          value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+          change: "+2.1%",
+          up: true,
+        },
       ]
     : [
         { label: "XAU/USD", value: "Loading...", change: "", up: true },
@@ -44,7 +59,7 @@ const Header = () => {
 
   return (
     <header className="w-full bg-[#1A1A1A]">
-      <div className="flex justify-between items-center px-5 md:px-10 h-16">
+      <div className="sticky top-0 z-50 bg-[#1A1A1A] flex justify-between items-center px-5 md:px-10 h-16">
         <Link
           href="/"
           className="font-[Playfair_Display] font-bold text-[#FDE99A] text-xl"
@@ -95,7 +110,11 @@ const Header = () => {
             className="font-[JetBrains_Mono] text-[#CCCCCC] text-xs font-medium"
           >
             {t(label)}:{" "}
-            <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
+            <span
+              className={`${
+                up ? "text-[#2E7D32]" : "text-[#C62828]"
+              } tracking-wider`}
+            >
               {value} {change}
             </span>
           </div>
@@ -108,7 +127,7 @@ const Header = () => {
             <li key={href}>
               <Link
                 href={href}
-                className="text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors"
+                className="relative text-[#B8860B] text-md transition-colors hover:text-[#FDE99A] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {t(label)}
               </Link>

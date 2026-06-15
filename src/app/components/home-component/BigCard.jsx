@@ -13,7 +13,7 @@ const BigCard = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
       <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 text-white space-y-1">
-        <p className="text-xs bg-[#F7BD48] px-2 py-1 w-fit rounded text-[#000000]">{t("Macro Tracing")}</p>
+        <p className="text-xs bg-[#F7BD48] md:text-md font-semibold  px-2 py-1 w-fit rounded text-[#000000]">{t("Macro Tracing")}</p>
 
         <h2 className="text-base md:text-2xl font-semibold font-[Playfair_Display]">{t("Gold Surges as Central Banks Increase Strategic Reserves")}</h2>
 

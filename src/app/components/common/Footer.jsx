@@ -10,12 +10,12 @@ const footerSections = [
   {
     title: "Categories",
     links: [
-      "Macro Tracking",
-      "AI & Technology",
-      "Green Energy",
-      "Estate Planning",
-      "Home Storage",
-      "Coins & Bars",
+      "macro",
+      "AiTech",
+      "GreenEnergy",
+      "estate",
+      "storage",
+      "coinsBars",
     ],
   },
   {
@@ -98,9 +98,9 @@ const Footer = () => {
                 >
                   {links.map((link) => (
                     <a
-                      key={link}
-                      href="#"
-                      className="text-sm text-[#D3C4AF]/90 hover:text-[#FDE99A] transition-colors pl-1 md:pl-0"
+                    key={link}
+                    href={""}
+                    className="text-sm text-[#D3C4AF]/90 hover:text-[#FDE99A] transition-colors pl-1 md:pl-0"
                     >
                       {t(link)}
                     </a>

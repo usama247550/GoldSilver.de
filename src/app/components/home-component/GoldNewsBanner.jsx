@@ -76,7 +76,7 @@ const GoldNewsBanner = () => {
             />
             <button
               onClick={handleSubscribe}
-              className="w-full sm:w-auto border-2 border-[#B8860B] text-[#B8860B]  rounded-lg font-semibold px-6 py-[4px]  transition-colors text-md cursor-pointer"
+              className="w-full sm:w-auto border-2 border-[#B8860B] text-[#B8860B] hover:bg-`[#B8860B] hover:text-white  rounded-lg font-semibold px-6 py-[4px]  transition-colors text-md cursor-pointer"
             >
               {t("Subscribe")}
             </button>

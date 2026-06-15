@@ -39,8 +39,8 @@ const LiveTickerZone = () => {
               className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium text-sm sm:text-base inline-block"
             >
               {item.pair}:{" "}
-              <span className={item.up ? "text-[#2E7D32]" : "text-[#C62828]"}>
-                {item.price} {item.change}
+              <span className={item.up ? "text-[#2E7D32]" : "text-[#C62828] tracking-wider"}>
+                { item.price} {item.change}
               </span>
             </div>
           ))}
