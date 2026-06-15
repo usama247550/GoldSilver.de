@@ -10,23 +10,23 @@ const footerSections = [
   {
     title: "Categories",
     links: [
-      "macro",
-      "AiTech",
-      "GreenEnergy",
-      "estate",
-      "storage",
-      "coinsBars",
+      { name: "macro", href: "/macro" },
+      { name: "AiTech", href: "/AiTech" },
+      { name: "GreenEnergy", href: "/GreenEnergy" },
+      { name: "estate", href: "/estate" },
+      { name: "storage", href: "/storage" },
+      { name: "coinsBars", href: "/coinsBars" },
     ],
   },
   {
     title: "Resources",
     links: [
-      "Market Updates",
-      "Learning Resources",
-      "Investment Guides",
-      "Video Library",
-      "Newsletter",
-      "FAQ",
+      { name: "Market Updates", href: "#" },
+      { name: "Learning Resources", href: "#" },
+      { name: "Investment Guides", href: "#" },
+      { name: "Video Library", href: "#" },
+      { name: "Newsletter", href: "#" },
+      { name: "FAQ", href: "#" },
     ],
   },
 ];
@@ -76,7 +76,7 @@ const Footer = () => {
           {footerSections.map(({ title, links }) => (
             <div key={title} className="flex flex-col gap-5 md:gap-4">
               {/* Desktop Title */}
-              <div className="hidden md:block text-[#FFFFFF] font-semibold text-sm tracking-widest font-[Playfair_Display]">
+              <div className="hidden md:block text-[#FFFFFF] font-semibold text-lg tracking-widest font-[Playfair_Display]">
                 {t(title)}
               </div>
 
@@ -98,11 +98,11 @@ const Footer = () => {
                 >
                   {links.map((link) => (
                     <a
-                    key={link}
-                    href={""}
-                    className="text-sm text-[#D3C4AF]/90 hover:text-[#FDE99A] transition-colors pl-1 md:pl-0"
+                      key={link.name}
+                      href={link.href}
+                      className="text-sm text-[#D3C4AF]/90 hover:text-[#FDE99A] transition-colors pl-1 md:pl-0"
                     >
-                      {t(link)}
+                      {t(link.name)}
                     </a>
                   ))}
                 </div>
@@ -112,7 +112,7 @@ const Footer = () => {
 
           {/* Column 4: Stay Connected & Subscribe (Screenshot Match) */}
           <div className="flex flex-col gap-6 lg:max-w-xs">
-            <div className="text-[#FFFFFF] font-semibold text-sm tracking-widest font-[Playfair_Display]">
+            <div className="text-[#FFFFFF] font-semibold text-lg tracking-widest font-[Playfair_Display]">
               {t("Stay Connected")}
             </div>
             <p className="text-sm leading-relaxed text-[#D2C5B1]">
