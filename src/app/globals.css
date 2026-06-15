@@ -25,3 +25,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+@keyframes ticker-ltr {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-ticker-ltr {
+  animation: ticker-ltr 45s linear infinite;
+}
