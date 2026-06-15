@@ -45,7 +45,7 @@ const Header = () => {
               className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium"
             >
               {t(label)}:{" "}
-              <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
+              <span className={up ? "text-[#2E7D32]" : "text-[#C62828] tracking-normal"}>
                 {value}
               </span>
             </div>

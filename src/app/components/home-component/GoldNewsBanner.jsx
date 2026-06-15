@@ -45,7 +45,7 @@ const GoldNewsBanner = () => {
   return (
     <>
       <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
-        <div className="hidden sm:flex w-16 h-16 md:w-20 md:h-20 absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
+        <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30  absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
           <img
             src="newsbanner/img1.png"
             alt=""
@@ -60,7 +60,7 @@ const GoldNewsBanner = () => {
             {t("Inspired by the Strength of Gold & Silver")}
           </h1>
 
-          <p className="text-[#FAF8F0] text-sm max-w-sm sm:max-w-md">
+          <p className="text-[#FAF8F0] text-md max-w-sm sm:max-w-md">
             {t(
               "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors.",
             )}
@@ -72,11 +72,11 @@ const GoldNewsBanner = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t("name@email.com")}
-              className="w-full sm:w-auto flex-1 px-4 py-2 h-9 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800 placeholder:text-gray-400"
+              className="w-full sm:w-auto flex-1 px-4 py-2 h-9 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm md:text-lg text-gray-800 placeholder:text-gray-400"
             />
             <button
               onClick={handleSubscribe}
-              className="w-full sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] text-white rounded-lg font-semibold px-6 py-1.5 transition-colors text-md cursor-pointer"
+              className="w-full sm:w-auto border-2 border-[#B8860B] text-[#B8860B]  rounded-lg font-semibold px-6 py-[4px]  transition-colors text-md cursor-pointer"
             >
               {t("Subscribe")}
             </button>
@@ -100,7 +100,7 @@ const GoldNewsBanner = () => {
           )}
         </div>
 
-        <div className="hidden sm:flex w-16 h-16 md:w-20 md:h-20 absolute bottom-6 left-6 md:bottom-[30px] md:left-[80px] lg:left-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
+        <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30  absolute bottom-6 left-6 md:bottom-[30px] md:left-[80px] lg:left-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
           <img
             src="newsbanner/img2.png"
             alt=""

@@ -8,18 +8,26 @@ const PriceTable = () => {
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prices`)
-      .then(res => res.json())
-      .then(data => setPrices(data))
-      .catch(err => console.error('Price fetch error:', err));
+      .then((res) => res.json())
+      .then((data) => setPrices(data))
+      .catch((err) => console.error("Price fetch error:", err));
   }, []);
 
-  const priceRows = prices ? [
-    { title: "GOLD / USD (OZ)",   value: `$${prices.gold_usd?.toLocaleString()}` },
-    { title: "SILVER / USD (OZ)", value: `$${prices.silver_usd?.toLocaleString()}` },
-    { title: "BTC / USD",         value: `$${prices.btc_usd?.toLocaleString()}` },
-    { title: "ETH / USD",         value: `$${prices.eth_usd?.toLocaleString()}` },
-    { title: "EUR / USD",         value: `${prices.eur_usd?.toFixed(4)}` },
-  ] : [];
+  const priceRows = prices
+    ? [
+        {
+          title: "GOLD / USD (OZ)",
+          value: `$${prices.gold_usd?.toLocaleString()}`,
+        },
+        {
+          title: "SILVER / USD (OZ)",
+          value: `$${prices.silver_usd?.toLocaleString()}`,
+        },
+        { title: "BTC / USD", value: `$${prices.btc_usd?.toLocaleString()}` },
+        { title: "ETH / USD", value: `$${prices.eth_usd?.toLocaleString()}` },
+        { title: "EUR / USD", value: `${prices.eur_usd?.toFixed(4)}` },
+      ]
+    : [];
 
   return (
     <div className="col-span-2 p-6 bg-[#F0EEE6] rounded-2xl">
@@ -35,7 +43,9 @@ const PriceTable = () => {
             <div key={item.title} className="border-b border-gray-300">
               <div className="flex justify-between items-center">
                 <span className="text-[#000000] text-sm">{t(item.title)}</span>
-                <span className="font-semibold text-lg text-[#B8860B]">{item.value}</span>
+                <span className="font-semibold text-lg text-[#B8860B]">
+                  {item.value}
+                </span>
               </div>
             </div>
           ))

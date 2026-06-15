@@ -254,7 +254,7 @@ i18n.use(initReactI18next).init({
     }
   },
 
-  lng: "de", // default language
+  lng: "en", // default language
   fallbackLng: "en",
 
   interpolation: {

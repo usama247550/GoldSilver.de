@@ -1,38 +1,41 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { FaEarthEurope } from "react-icons/fa6";
-import { FaWifi } from "react-icons/fa";
-import { MdOutgoingMail } from "react-icons/md";
+
+// Icons changed to match screenshot exactly
+import { FiFacebook, FiInstagram, FiYoutube } from "react-icons/fi";
+import { SlSocialTwitter } from "react-icons/sl";
 
 const footerSections = [
   {
-    title: "INTELLIGENCE",
+    title: "Categories",
     links: [
-      "Market Insights",
-      "Precious Metals",
-      "Digital Assets",
-      "Indices Forecast",
+      "Macro Tracking",
+      "AI & Technology",
+      "Green Energy",
+      "Estate Planning",
+      "Home Storage",
+      "Coins & Bars",
     ],
   },
   {
-    title: "EDITORIAL",
+    title: "Resources",
     links: [
-      "Market Insights",
-      "Precious Metals",
-      "Digital Assets",
-      "Indices Forecast",
+      "Market Updates",
+      "Learning Resources",
+      "Investment Guides",
+      "Video Library",
+      "Newsletter",
+      "FAQ",
     ],
   },
-  {
-    title: "SUPPORT",
-    links: [
-      "Market Insights",
-      "Precious Metals",
-      "Digital Assets",
-      "Indices Forecast",
-    ],
-  },
+];
+
+const bottomLinks = [
+  { name: "Privacy Policy", href: "#" },
+  { name: "Terms of Service", href: "#" },
+  { name: "Disclaimer", href: "#" },
+  { name: "Contact", href: "#" },
 ];
 
 const Footer = () => {
@@ -43,73 +46,112 @@ const Footer = () => {
     setOpenSection((prev) => (prev === title ? null : title));
 
   return (
-    <>
-      <div className="w-full bg-[#0E0E0E] px-6 py-10 md:py-16">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-10 md:gap-8">
-          <div className="flex flex-col gap-3 md:w-[22%]">
-            <div className="font-[Playfair_Display] font-bold text-[#F7BD48] text-xl">{t("GoldSilver.de")}</div>
-            <p className="text-[#D3C4AF] text-sm leading-relaxed">
-              {t("© 2024 GoldSilver.de Intelligence. All rights reserved. Precise market data for the modern investor.")}
+    <footer className="w-full bg-[#0E0E0E] text-[#D2C5B1]">
+      {/* Main Footer Content */}
+      <div className="px-6 py-12 md:py-28">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-11 lg:gap-10">
+          {/* Column 1: Info & Socials */}
+          <div className="flex flex-col gap-2 lg:max-w-xs justify-end">
+            <p className="text-sm leading-relaxed text-[#D2C5B1]">
+              {t(
+                "Independent insights covering precious metals, market intelligence, economic trends, and wealth preservation strategies for modern investors.",
+              )}
             </p>
-            <div className="flex gap-3 mt-1">
-              <FaEarthEurope className="text-[#D3C4AF] text-lg" />
-              <FaWifi className="text-[#D3C4AF] text-lg" />
-              <MdOutgoingMail className="text-[#D3C4AF] text-lg" />
+            <div className="flex gap-4 ">
+              {[FiFacebook, SlSocialTwitter, FiInstagram, FiYoutube].map(
+                (Icon, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="flex items-center justify-center border border-[#4A4A4A] rounded-full w-10 h-10 hover:border-[#FDE99A] hover:text-[#FDE99A] transition-colors"
+                  >
+                    <Icon className="text-lg" />
+                  </a>
+                ),
+              )}
             </div>
           </div>
 
-          {/* Desktop */}
-          <div className="hidden md:flex gap-12 lg:gap-28">
-            {footerSections.map(({ title, links }) => (
-              <div key={t(title)} className="flex flex-col gap-3">
-                <div className="text-[#F7BD48] font-bold text-sm tracking-wider">
-                  {t(title)}
-                </div>
-                {links.map((link) => (
-                  <div
-                    key={t(link)}
-                    className="text-[#D3C4AF] text-sm cursor-pointer hover:text-[#FDE99A] transition-colors"
-                  >
-                    {t(link)}
-                  </div>
-                ))}
+          {/* Desktop & Mobile handling for Categories and Resources */}
+          {footerSections.map(({ title, links }) => (
+            <div key={title} className="flex flex-col gap-5 md:gap-4">
+              {/* Desktop Title */}
+              <div className="hidden md:block text-[#FFFFFF] font-semibold text-sm tracking-widest font-[Playfair_Display]">
+                {t(title)}
               </div>
-            ))}
-          </div>
 
-          {/* Mobile */}
-          <div className="flex flex-col md:hidden border-t border-[#2a2a2a]">
-            {footerSections.map(({ title, links }) => (
-              <div key={t(title)} className="border-b border-[#2a2a2a]">
+              {/* Mobile Accordion */}
+              <div className="border-b border-[#2a2a2a] md:border-none">
                 <button
-                  className="w-full flex justify-between items-center py-4 text-[#F7BD48] font-bold text-sm tracking-wider"
+                  className="w-full flex justify-between items-center py-4 md:hidden text-[#FFFFFF] font-semibold text-sm tracking-widest font-[Playfair_Display]"
                   onClick={() => toggle(title)}
                 >
                   {t(title)}
-                  <span className="text-[#D3C4AF] text-lg leading-none">
+                  <span className="text-[#D3C4AF] text-xl leading-none">
                     {openSection === title ? "−" : "+"}
                   </span>
                 </button>
-                {openSection === title && (
-                  <div className="flex flex-col gap-3 pb-4">
-                    {links.map((link) => (
-                      <div key={t(link)} className="text-[#D3C4AF] text-sm pl-1">
-                        {t(link)}
-                      </div>
-                    ))}
-                  </div>
-                )}
+
+                {/* Links (Desktop visible, Mobile conditional) */}
+                <div
+                  className={`md:flex flex-col gap-4 pb-5 md:pb-0 ${openSection === title ? "flex" : "hidden"}`}
+                >
+                  {links.map((link) => (
+                    <a
+                      key={link}
+                      href="#"
+                      className="text-sm text-[#D3C4AF]/90 hover:text-[#FDE99A] transition-colors pl-1 md:pl-0"
+                    >
+                      {t(link)}
+                    </a>
+                  ))}
+                </div>
               </div>
-            ))}
+            </div>
+          ))}
+
+          {/* Column 4: Stay Connected & Subscribe (Screenshot Match) */}
+          <div className="flex flex-col gap-6 lg:max-w-xs">
+            <div className="text-[#FFFFFF] font-semibold text-sm tracking-widest font-[Playfair_Display]">
+              {t("Stay Connected")}
+            </div>
+            <p className="text-sm leading-relaxed text-[#D2C5B1]">
+              {t(
+                "Receive market insights, trend analysis, and precious metals intelligence.",
+              )}
+            </p>
+            {/* The Subscribe Button (Rounded border, specific gold color) */}
+            <a
+              href="#"
+              className="w-fit text-center border-2 border-[#B8860B] rounded-xl px-11 py-2 text-[#B8860B] font-bold text-md hover:bg-[#B8860B] hover:text-white transition-all"
+            >
+              {t("Subscribe")}
+            </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="text-[#D3C4AF] text-xs text-center bg-[#0E0E0E] py-5 border-t border-[#2a2a2a] tracking-widest">
-        {t("AUTHORITATIVE FINANCIAL INTELLIGENCE SINCE 1998")}
+      {/* Bottom Bar (Screenshot Match) */}
+      <div className="max-w-5xl mx-auto border-t border-[#2a2a2a] py-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-around items-center gap-6 md:gap-[430px] text-xs text-[#D2C5B1] tracking-tight">
+          <div className="text-center md:text-left">
+            © {new Date().getFullYear()}{" "}
+            {t("GoldSilver Intelligence. All rights reserved.")}
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            {bottomLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="hover:text-[#FDE99A] transition-colors"
+              >
+                {t(link.name)}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
-    </>
+    </footer>
   );
 };
 

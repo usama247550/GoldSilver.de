@@ -5,14 +5,14 @@ const LatestUpdateCard = () => {
   const { t } = useTranslation();
   const updatedNews = [
     {
-      image: "/news-update-image/image1.png",
+      image: "/news-update-image/image2.png",
       small: "Macro insight",
       heading: "Central Banks Continue Gold Buying Trend",
       decription:
         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
     },
     {
-      image: "/news-update-image/image2.png",
+      image: "/news-update-image/image1.png",
       small: "Menergy",
       heading: "Solar Expansion Drives Silver Demand Higher",
       decription:
@@ -28,7 +28,7 @@ const LatestUpdateCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:max-w-4xl md:mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:max-w-5xl md:mx-auto">
       {updatedNews.map((val, ind) => (
         <div
           key={ind}
@@ -46,7 +46,7 @@ const LatestUpdateCard = () => {
             <h2 className="text-lg text-gray-800 font-[Playfair] font-semibold leading-snug">
               {t(val.heading)}
             </h2>
-            <p className="text-sm text-gray-600 flex-1">{t(val.decription)}</p>
+            <p className="text-sm text-[#000000] flex-1">{t(val.decription)}</p>
           </div>
         </div>
       ))}

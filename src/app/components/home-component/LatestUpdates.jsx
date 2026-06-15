@@ -5,11 +5,11 @@ import LatestUpdateCard from "./LatestUpdateCard";
 const LatestUpdates = () => {
   const { t } = useTranslation();
   return (
-    <div className="w-full bg-white font-[PLAYFAIR] gap-y-4 py-12 md:my-10 flex flex-col justify-center items-center px-5 md:px-45">
+    <div className="w-full max-w-8xl bg-white font-[PLAYFAIR] gap-y-4 py-12 md:mt-10 flex flex-col justify-center items-center px-5 md:px-12">
       <h2 className="text-[#1A1A1A] font-bold text-2xl sm:text-3xl md:text-5xl text-center">
         {t("Latest")} <span className="text-[#B8860B]">{t("Insights")}</span> {t("& Updates")}
       </h2>
-      <p className="text-[#000000] text-sm sm:text-base text-center max-w-xl">{t("Expert analysis, market movements, and emerging opportunities across gold, silver, and the broader economic landscape.")}</p>
+      <p className="text-[#000000] text-sm sm:text-base md:text-base text-center max-w-4xl">{t("Expert analysis, market movements, and emerging opportunities across gold, silver, and the broader economic landscape.")}</p>
       <div className="w-full my-6">
         <LatestUpdateCard />
       </div>
