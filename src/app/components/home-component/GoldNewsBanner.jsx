@@ -72,7 +72,7 @@ const GoldNewsBanner = () => {
             {t("Inspired by the Strength of Gold & Silver")}
           </h1>
 
-          <p className="text-[#FAF8F0] text-md max-w-sm sm:max-w-md">
+          <p className="text-[#FAF8F0] max-w-sm sm:max-w-2xl md:max-w-2xl md:text-xl">
             {t(
               "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors.",
             )}
