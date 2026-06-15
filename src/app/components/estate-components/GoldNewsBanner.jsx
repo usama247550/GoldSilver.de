@@ -43,8 +43,7 @@ const GoldNewsBanner = () => {
   };
 
   return (
-    <>
-      <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
+    <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
         <div className="hidden sm:flex w-16 h-16 md:w-20 md:h-20 absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
           <img
             src="newsbanner/img1.png"
@@ -108,7 +107,6 @@ const GoldNewsBanner = () => {
           />
         </div>
       </div>
-    </>
   );
 };
 

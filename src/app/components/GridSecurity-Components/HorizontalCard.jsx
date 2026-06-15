@@ -34,7 +34,7 @@ const HorizontalCard = () => {
     },
   ];
   return (
-    <>
+    
       <div className="p-3 sm:p-6">
         <div className="flex flex-col">
           {marketNews.map((item) => (
@@ -76,7 +76,6 @@ const HorizontalCard = () => {
           ))}
         </div>
       </div>
-    </>
   );
 };
 

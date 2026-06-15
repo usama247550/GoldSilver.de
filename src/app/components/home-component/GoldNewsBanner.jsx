@@ -45,6 +45,8 @@ const GoldNewsBanner = () => {
   return (
     <>
       <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
+        {/* Gold gradient glow from top */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(184, 134, 11, 0.15) 0%, rgba(184, 134, 11, 0.05) 30%, transparent 60%)' }}></div>
         <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30  absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
           <img
             src="newsbanner/img1.png"
@@ -52,6 +54,16 @@ const GoldNewsBanner = () => {
             className="w-full h-full object-cover"
           />
         </div>
+
+
+        {/* Bottom Right Gold Glow */}
+<div
+  className="absolute bottom-0 right-0 w-[300px] h-[300px] pointer-events-none"
+  style={{
+    background:
+      "radial-gradient(circle at bottom right, rgba(247,189,72,0.25) 0%, rgba(247,189,72,0.12) 35%, transparent 70%)",
+  }}
+></div>
 
         <div className="flex flex-col items-center gap-y-5 py-20 sm:py-28 md:py-40 px-6 text-center">
           <h1 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">

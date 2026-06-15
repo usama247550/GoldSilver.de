@@ -5,7 +5,7 @@ import React from "react";
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <>
+    
       <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[P layfair_Display] ">
         <img
           src="/numismatics/banner.png"
@@ -21,7 +21,6 @@ const Banner = () => {
           <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed">{t("Discover antique coins, historical treasures, and collectible rarities valued for their history, rarity, and cultural significance.")}</p>
         </div>
       </div>
-    </>
   );
 };
 

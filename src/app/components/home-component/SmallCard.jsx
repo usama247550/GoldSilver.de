@@ -55,27 +55,12 @@ const smallCardsData = [
   },
 ];
 
-// const SmallCard = ({ image, title }) => {
-//   const { t } = useTranslation();
-//   return (
-//     <div className="relative h-24 w-full rounded-lg overflow-hidden group cursor-pointera">
-//       <img
-//         src={image}
-//         alt={t(title)}
-//         className="w-full h-full object-cover group-hover:scale-105 transition  "
-//       />
-//       <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
-//       <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
-//         {t(title)}
-//       </div>
-//     </div>
-//   );
-// };
+
 const SmallCard = ({ image, title }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative h-24 w-full rounded-lg overflow-hidden group cursor-pointer border-2 border-transparent hover:border-[#F7BD48] transition-all duration-300">
+    <div className="relative h-24 rounded-lg overflow-hidden group cursor-pointer  border-transparent hover:border-[#F7BD48] transition-all duration-300">
       <img
         src={image}
         alt={t(title)}

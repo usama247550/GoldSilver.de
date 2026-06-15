@@ -17,7 +17,7 @@ const BigCard = () => {
 
         <h2 className="text-base md:text-2xl font-semibold font-[Playfair_Display]">{t("Gold Surges as Central Banks Increase Strategic Reserves")}</h2>
 
-        <p className="text-xs text-[#FAF8F0] max-w-[90%] line-clamp-2 md:line-clamp-3">{t("As central banks accelerate their shift back to physical reserves, we explore why gold remains the ultimate hedge against systemic volatility.")}</p>
+        <p className="text-sm text-[#FAF8F0] max-w-[90%] line-clamp-2 md:line-clamp-3">{t("As central banks accelerate their shift back to physical reserves, we explore why gold remains the ultimate hedge against systemic volatility.")}</p>
 
         <button className="mt-1 text-xs border border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white  px-3 py-1 rounded">{t("Read More")}</button>
       </div>

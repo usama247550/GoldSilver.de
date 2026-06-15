@@ -5,7 +5,7 @@ import React from "react";
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <>
+    
       <div className="my-8 w-[80%] mx-auto relative font-[Playfair_Display]">
         <img
           src="/greenEnergy/banner.jpg"
@@ -21,7 +21,6 @@ const Banner = () => {
           <div className="text-[#FFFFFF]  text-md">{t("Explore how solar infrastructure, electric vehicles, and climate-tech investments are driving")} <br/> {t("industrial silver demand across global markets.")}</div>
         </div>
       </div>
-    </>
   );
 };
 
