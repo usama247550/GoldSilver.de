@@ -23,27 +23,29 @@ const LearningCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl mx-auto px-4 sm:px-0">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl mx-auto px-4 sm:px-0">
       {learningDATA.map((item, ind) => (
         <div
           key={ind+1}
-          className="rounded-2xl border border-gray-200 bg-white overflow-hidden"
+          className="rounded-2xl   bg-white overflow-hidden"
         >
           <div className="relative">
             <img
               src={item.link}
               alt={t(item.title)}
-              className="h-40 w-full object-cover"
+              className="h-48 w-full object-cover scale-x-110"
             />
             <div className="absolute inset-0 bg-black/50" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <FaYoutube className="text-red-600 text-5xl sm:text-6xl" />
+              <img src="/macro/utube.webp " 
+               className="w-16 h-16 md:w-36 md:h-36"
+              />
             </div>
           </div>
 
-          <div className="ps-4 py-3 bg-[#F7BD48CF] font-[Playfair-Display]">
+          <div className="ps-4 py-5 bg-[#F7BD48CF] font-[Playfair-Display]">
             <h3 className="text-lg text-black sm:text-xl font-bold">{t(item.title)}</h3>
-            <p className="mt-2 leading-tight text-xs sm:text-sm text-gray-600">
+            <p className="m-2 leading-tight text-xs sm:text-sm text-[#000000]">
               {t(item.description)}
             </p>
           </div>
