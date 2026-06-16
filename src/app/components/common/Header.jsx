@@ -32,30 +32,15 @@ const Header = () => {
 
   const tickers = prices
     ? [
-        {
-          label: "XAU/USD",
-          value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
-          change: "+0.4%",
-          up: true,
-        },
-        {
-          label: "XAG/USD",
-          value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
-          change: "-1.2%",
-          up: false,
-        },
-        {
-          label: "BTC/USD",
-          value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
-          change: "+2.1%",
-          up: true,
-        },
-      ]
+      { label: "XAU/USD", value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+0.4%", up: true },
+      { label: "XAG/USD", value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "-1.2%", up: false },
+      { label: "BTC/USD", value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+2.1%", up: true },
+    ]
     : [
-        { label: "XAU/USD", value: "Loading...", change: "", up: true },
-        { label: "XAG/USD", value: "Loading...", change: "", up: false },
-        { label: "BTC/USD", value: "Loading...", change: "", up: true },
-      ];
+      { label: "XAU/USD", value: "Loading...", change: "", up: true },
+      { label: "XAG/USD", value: "Loading...", change: "", up: false },
+      { label: "BTC/USD", value: "Loading...", change: "", up: true },
+    ];
 
   return (
     <header className="w-full bg-[#1A1A1A]">
@@ -103,6 +88,8 @@ const Header = () => {
         </div>
       </div>
 
+
+
       <div className="hidden flex flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
         {tickers.map(({ label, value, change, up }) => (
           <div
@@ -111,9 +98,8 @@ const Header = () => {
           >
             {t(label)}:{" "}
             <span
-              className={`${
-                up ? "text-[#2E7D32]" : "text-[#C62828]"
-              } tracking-wider`}
+              className={`${up ? "text-[#2E7D32]" : "text-[#C62828]"
+                } tracking-wider`}
             >
               {value} {change}
             </span>
@@ -127,7 +113,7 @@ const Header = () => {
             <li key={href}>
               <Link
                 href={href}
-                className="relative text-[#B8860B] text-md transition-colors hover:text-[#FDE99A] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
+                className="text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors"
               >
                 {t(label)}
               </Link>

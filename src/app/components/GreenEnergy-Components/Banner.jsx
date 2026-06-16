@@ -1,12 +1,12 @@
 "use client";
-import { useTranslation } from "react-i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Banner = () => {
   const { t } = useTranslation();
   return (
     
-      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[P layfair_Display] ">
+      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[Playfair_Display] ">
         <img
           src="/greenEnergy/banner.jpg"
           alt="image"
