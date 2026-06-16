@@ -55,7 +55,7 @@ const PriceTable = () => {
     : [];
 
   return (
-    <div className="col-span-2 p-6 bg-[#F0EEE6] rounded-2xl">
+    <div className="col-span-2 p-6 bg-[#F0EEE6] rounded-2xl border border-gray-400">
       <div className="flex items-center gap-2.5 font-[Playfair_Display] text-[#000000] font-bold text-2xl ps-3 pt-2">
         <span className="flex items-center justify-center w-6 h-6 rounded-[6px]  shadow-sm">
           <img src="/macro/icon.png" alt="" />

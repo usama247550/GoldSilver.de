@@ -31,7 +31,7 @@ const HorizontalCard = () => {
           >
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
-                <span className="text-[#B8860B] text-lg  tracking-wide">
+                <span className="text-[#B8860B] text-md  tracking-wide">
                   PHYSICAL MARKET
                 </span>
                 <span className="text-gray-400 text-xs hidden sm:inline">
@@ -57,7 +57,7 @@ const HorizontalCard = () => {
                 </span>
               </div>
 
-              <h3 className="text-[#000000] font-bold text-base sm:text-lg md:text-2xl mb-1 leading-snug">
+              <h3 className="text-[#000000] font-bold font-[Playfair-Display] text-base sm:text-lg md:text-xl mb-1 leading-snug">
                 {item.headline || item.summary?.slice(0, 80)}
               </h3>
 

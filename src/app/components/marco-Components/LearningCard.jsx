@@ -38,7 +38,7 @@ const LearningCard = () => {
             <div className="absolute inset-0 bg-black/50" />
             <div className="absolute inset-0 flex items-center justify-center">
               <img src="/macro/utube.webp " 
-               className="w-16 h-16 md:w-36 md:h-36"
+               className="w-28 h-28 md:w-36 md:h-36"
               />
             </div>
           </div>
