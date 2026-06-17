@@ -43,7 +43,7 @@
 //               className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
 //             >
 //               <div className="flex-1 min-w-0">
-//                 <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-2">
+//                 <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
 //                   <span className="text-[#B8860B] text-xs font-semibold tracking-wide">
 //                     {t(item.category)}
 //                   </span>
@@ -56,11 +56,11 @@
 //                   </span>
 //                 </div>
 
-//                 <h3 className="text-[#000000] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug">
+//                 <h3 className="text-[#000000] w-[96%] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug">
 //                   {t(item.title)}
 //                 </h3>
 
-//                 <p className="text-[#000000] text-xs sm:text-sm line-clamp-2">
+//                 <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
 //                   {t(item.description)}
 //                 </p>
 //               </div>
@@ -93,8 +93,8 @@ const HorizontalCard = () => {
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/news/sp3`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setMarketNews(data);
         setLoading(false);
       })
@@ -102,7 +102,8 @@ const HorizontalCard = () => {
   }, []);
 
   if (loading) return <p className="p-6 text-gray-400">Loading...</p>;
-  if (marketNews.length === 0) return <p className="p-6 text-gray-400">No news today</p>;
+  if (marketNews.length === 0)
+    return <p className="p-6 text-gray-400">No news today</p>;
 
   return (
     <div className="p-3 sm:p-6">
@@ -113,36 +114,45 @@ const HorizontalCard = () => {
             className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
           >
             <div className="flex-1 min-w-0">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-2">
-                <span className="text-[#B8860B] text-xs font-semibold tracking-wide">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
+                <span className="text-[#B8860B] text-md tracking-wide">
                   PHYSICAL MARKET
                 </span>
-                <span className="text-gray-400 text-xs hidden sm:inline">•</span>
+                <span className="text-gray-400 text-xs hidden sm:inline">
+                  •
+                </span>
                 <span className="text-[#000000] text-xs">
-                  {new Date(item.date).toLocaleDateString('en-US', { 
-                    month: 'long', day: '2-digit', year: 'numeric' 
+                  {new Date(item.date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "2-digit",
+                    year: "numeric",
                   })}
                 </span>
-                <span className={`text-white text-xs px-2 py-0.5 rounded ${
-                  item.conclusion === 'bullish' ? 'bg-[#2E7D32]' : 
-                  item.conclusion === 'bearish' ? 'bg-red-600' : 'bg-gray-500'
-                }`}>
+                <span
+                  className={`text-white text-xs px-2 py-0.5 rounded ${
+                    item.conclusion === "bullish"
+                      ? "bg-[#2E7D32]"
+                      : item.conclusion === "bearish"
+                        ? "bg-red-600"
+                        : "bg-gray-500"
+                  }`}
+                >
                   {item.conclusion?.toUpperCase()}
                 </span>
               </div>
 
-              <h3 className="text-[#000000] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug">
+              <h3 className="text-[#000000] w-[96%] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug">
                 {item.headline || item.summary?.slice(0, 80)}
               </h3>
 
-              <p className="text-[#000000] text-xs sm:text-sm line-clamp-2">
+              <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
                 {item.summary}
               </p>
             </div>
 
-            <div className="w-16 h-16 sm:w-24 sm:h-20 flex-shrink-0 mt-6 sm:mt-8">
+            <div className="md:w-32 md:h-24 w-24 sm:w-32 sm:h-32 flex-shrink-0 mt-6 sm:mt-8">
               <img
-                src="/newsbanner/img3.jpg"
+                src="/storage/news.jpg"
                 alt="gold"
                 className="w-full h-full object-cover rounded-xl"
               />

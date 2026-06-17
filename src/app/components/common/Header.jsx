@@ -113,7 +113,7 @@ const Header = () => {
             <li key={href}>
               <Link
                 href={href}
-                className="text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors"
+               className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {t(label)}
               </Link>

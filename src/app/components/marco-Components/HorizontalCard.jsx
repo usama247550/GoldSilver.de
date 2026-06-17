@@ -61,7 +61,7 @@ const HorizontalCard = () => {
                 {item.headline || item.summary?.slice(0, 80)}
               </h3>
 
-              <p className="text-[#000000] text-xs sm:text-sm line-clamp-2">
+              <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
                 {item.summary}
               </p>
             </div>

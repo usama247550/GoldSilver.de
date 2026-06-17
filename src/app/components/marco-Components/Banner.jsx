@@ -1,15 +1,15 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import React from "react";
+import { BiSolidFastForwardCircle } from "react-icons/bi";
 
 const Banner = () => {
   const { t } = useTranslation();
 
   return (
-    // FULL WIDTH BACKGROUND
     <div className="w-full bg-white py-4 ">
       {/* CENTER CONTENT */}
-      <div className="relative w-[90%] md:w-[80%] md:max-w-6xl mx-auto">
+      <div className="relative w-[92%] md:w-[80%] md:max-w-6xl mx-auto">
         <img
           src="/macro/banner.jpg"
           alt="image"
