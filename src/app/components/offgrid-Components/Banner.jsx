@@ -5,8 +5,8 @@ import React from "react";
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <>
-      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[P layfair_Display] ">
+    <div className="w-full bg-white py-4 ">
+      <div className="w-[92%] md:w-[80%] mx-auto relative">
         <img
           src="/offgrid/banner.jpg"
           alt="image"
@@ -16,12 +16,20 @@ const Banner = () => {
         <div className=" absolute inset-0 bg-gradient-to-r from-[#000000] to-[#66666600] rounded-2xl  md:rounded-3xl" />
 
         <div className="absolute inset-0 flex flex-col justify-center gap-y-2 md:gap-y-3 ps-5 sm:ps-8 md:ps-10 pr-5 sm:pr-[45%]">
-          <div className="bg-[#F7BD48] text-[#000000] rounded-sm text-xs sm:text-sm text-center py-1 w-fit px-3">{t("Off-Grid Security")}</div>
-          <h1 className="text-white font-bold text-xl sm:text-3xl md:text-4xl leading-snug">{t("Off-Grid Security &")} <br /> {t("Tactical Homesteading")}</h1>
-          <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed">{t("Discover practical preparedness strategies, fractional precious metals, and self-reliance solutions for uncertain economic environments.")}</p>
+          <div className="bg-[#F7BD48] text-[#000000] rounded-sm text-xs sm:text-sm text-center py-1 w-fit px-3">
+            {t("Off-Grid Security")}
+          </div>
+          <h1 className="text-white font-bold text-xl sm:text-3xl  font-[Playfair_Display]  md:text-4xl leading-snug">
+            {t("Off-Grid Security &")} <br /> {t("Tactical Homesteading")}
+          </h1>
+          <p className="text-white w-[115%] text-xs sm:text-sm md:text-base leading-relaxed">
+            {t(
+              "Discover practical preparedness strategies, fractional precious metals, and self-reliance solutions for uncertain economic environments.",
+            )}
+          </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

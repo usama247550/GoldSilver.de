@@ -5,8 +5,8 @@ import React from "react";
 const Banner = () => {
   const { t } = useTranslation();
   return (
-    <>
-      <div className="my-3 w-[90%] md:w-[80%] mx-auto relative font-[P layfair_Display] ">
+    <div className="w-full bg-white py-4 ">
+      <div className="w-[92%] md:w-[80%] mx-auto relative ">
         <img
           src="/bar&coins/banner.png"
           alt="image"
@@ -17,11 +17,11 @@ const Banner = () => {
 
         <div className="absolute inset-0 flex flex-col justify-center gap-y-2 md:gap-y-3 ps-5 sm:ps-8 md:ps-10 pr-5 sm:pr-[45%]">
           <div className="bg-[#F7BD48] text-[#000000] rounded-sm text-xs sm:text-sm text-center py-1 w-fit px-3">{t("Coins & Bars")}</div>
-          <h1 className="text-white font-bold text-xl sm:text-3xl md:text-4xl leading-snug">{t("Physical Bullion Remains A Trusted Store of Value")}</h1>
-          <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed">{t("Follow market trends, pricing insights, and investment opportunities in precious metals.")}</p>
+          <h1 className="text-white font-bold text-xl sm:text-3xl font-[Playfair_Display]  md:text-4xl leading-snug">{t("Physical Bullion Remains A Trusted Store of Value")}</h1>
+          <p className="text-white w-[120%]   text-xs sm:text-sm md:text-base leading-relaxed">{t("Follow market trends, pricing insights, and investment opportunities in precious metals.")}</p>
         </div>
       </div>
-    </>
+      </div>
   );
 };
 

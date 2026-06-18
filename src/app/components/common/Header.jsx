@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -18,19 +18,33 @@ const navLinks = [
   { href: "/coinsBars", label: "Coins & Bars" },
 ];
 
-const tickers = [
-  { label: "XAU/USD", value: "2,341.20 +0.4%", up: true },
-  { label: "XAG/USD", value: "28.45 +0.2%", down: true },
-  { label: "BTC/USD", value: "2,341.20 +0.4%", up: true },
-];
-
 const Header = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [prices, setPrices] = useState(null);
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prices`)
+      .then((res) => res.json())
+      .then((data) => setPrices(data))
+      .catch((err) => console.error("Price fetch error:", err));
+  }, []);
+
+  const tickers = prices
+    ? [
+      { label: "XAU/USD", value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+0.4%", up: true },
+      { label: "XAG/USD", value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "-1.2%", up: false },
+      { label: "BTC/USD", value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+2.1%", up: true },
+    ]
+    : [
+      { label: "XAU/USD", value: "Loading...", change: "", up: true },
+      { label: "XAG/USD", value: "Loading...", change: "", up: false },
+      { label: "BTC/USD", value: "Loading...", change: "", up: true },
+    ];
 
   return (
     <header className="w-full bg-[#1A1A1A]">
-      <div className="flex justify-between items-center px-5 md:px-10 h-16">
+      <div className="sticky top-0 z-50 bg-[#1A1A1A] flex justify-between items-center px-5 md:px-10 h-16">
         <Link
           href="/"
           className="font-[Playfair_Display] font-bold text-[#FDE99A] text-xl"
@@ -39,14 +53,14 @@ const Header = () => {
         </Link>
 
         <div className="hidden md:flex gap-7 text-sm">
-          {tickers.map(({ label, value, up }) => (
+          {tickers.map(({ label, value, change, up }) => (
             <div
               key={t(label)}
               className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium"
             >
               {t(label)}:{" "}
               <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
-                {value}
+                {value} {change}
               </span>
             </div>
           ))}
@@ -74,15 +88,20 @@ const Header = () => {
         </div>
       </div>
 
+
+
       <div className="hidden flex flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
-        {tickers.map(({ label, value, up }) => (
+        {tickers.map(({ label, value, change, up }) => (
           <div
             key={t(label)}
             className="font-[JetBrains_Mono] text-[#CCCCCC] text-xs font-medium"
           >
             {t(label)}:{" "}
-            <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
-              {value}
+            <span
+              className={`${up ? "text-[#2E7D32]" : "text-[#C62828]"
+                } tracking-wider`}
+            >
+              {value} {change}
             </span>
           </div>
         ))}
@@ -94,7 +113,7 @@ const Header = () => {
             <li key={href}>
               <Link
                 href={href}
-                className="text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors"
+               className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {t(label)}
               </Link>
