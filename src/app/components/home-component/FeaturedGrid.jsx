@@ -14,7 +14,7 @@ const FeaturedGrid = () => {
 <div className="w-full bg-white py-3 md:py-8">
   
   {/* inner container keeps layout stable */}
-  <div className="max-w-6xl mx-auto px-4 md:px-20 flex flex-col gap-y-4">
+  <div className="max-w-6xl mx-auto px-4 md:px-20 flex flex-col gap-y-3">
 
     {/* Top Row */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 ">

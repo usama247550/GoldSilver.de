@@ -1,14 +1,19 @@
+
+
+
 "use client";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 const LatestUpdateCard = () => {
   const { t } = useTranslation();
+
   const updatedNews = [
     {
       image: "/news-update-image/image2.png",
       small: "Macro insight",
       heading: "Central Banks Continue Gold Buying Trend",
-      decription:
+      description:
         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
       badge: { text: "BEARISH", type: "bearish" },
     },
@@ -16,17 +21,17 @@ const LatestUpdateCard = () => {
       image: "/news-update-image/image1.png",
       small: "Energy",
       heading: "Solar Expansion Drives Silver Demand Higher",
-      decription:
+      description:
         "Growing renewable energy projects continue to increase industrial silver consumption worldwide.",
-      badge: { text: "Bullish", type: "bullish" },
+      badge: { text: "BULLISH", type: "bullish" },
     },
     {
       image: "/news-update-image/image1.png",
       small: "Scrap Metal",
       heading: "German Bullion Sales Reach New Monthly High",
-      decription:
+      description:
         "Investor interest in physical gold and silver remains elevated across retail markets.",
-      badge: { text: "Bullish", type: "bullish" },
+      badge: { text: "BULLISH", type: "bullish" },
     },
   ];
 
@@ -37,30 +42,40 @@ const LatestUpdateCard = () => {
           key={ind}
           className="bg-white shadow-md rounded-xl overflow-hidden flex flex-col"
         >
-          <div className="relative">
-            <img
+          {/* IMAGE FIX */}
+          <div className="relative w-full h-48 sm:h-52">
+            <Image
               src={val.image}
               alt="Latest update"
-              className="w-full h-48 sm:h-52 object-cover rounded-t-xl"
+              fill
+              className="object-cover"
             />
+
             {val.badge && (
               <div
-                className={`absolute top-4 left-4 px-2.5 py-1 text-xs text-[#FFFFFF] uppercase tracking-wider ${
-                  val.badge.type === "bearish" ? "bg-[#C62828]" : "bg-[#2E7D32]"
+                className={`absolute top-4 left-4 px-2.5 py-1 text-xs text-white uppercase tracking-wider ${
+                  val.badge.type === "bearish"
+                    ? "bg-[#C62828]"
+                    : "bg-[#2E7D32]"
                 }`}
               >
                 {val.badge.text} {val.badge.type === "bearish" ? "▼" : "▲"}
               </div>
             )}
           </div>
+
           <div className="p-4 space-y-2 flex flex-col flex-1">
             <p className="text-sm text-[#B8860B] capitalize font-bold">
               {t(val.small)}
             </p>
+
             <h2 className="text-lg text-gray-800 font-[Playfair] font-semibold leading-snug">
               {t(val.heading)}
             </h2>
-            <p className="text-sm text-[#000000] flex-1">{t(val.decription)}</p>
+
+            <p className="text-sm text-black flex-1">
+              {t(val.description)}
+            </p>
           </div>
         </div>
       ))}

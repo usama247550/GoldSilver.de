@@ -193,14 +193,7 @@ const Header = () => {
       <div className="hidden md:flex justify-center items-center h-14 border-t border-[#2a2a2a]">
         <ul className="flex gap-8 lg:gap-12">
           {navLinks.map(({ href, label }) => (
-            // <li key={href}>
-            //   <Link
-            //     href={href}
-            //     className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
-            //   >
-            //     {t(label)}
-            //   </Link>
-            // </li>
+        
 
             <li key={href}>
               <Link
