@@ -22,7 +22,7 @@ const Banner = () => {
           <h1 className="text-white font-bold text-xl sm:text-3xl  font-[Playfair_Display]  md:text-4xl leading-snug">
             {t("Off-Grid Security &")} <br /> {t("Tactical Homesteading")}
           </h1>
-          <p className="text-white w-[115%] text-xs sm:text-sm md:text-base leading-relaxed">
+          <p className="text-white md:w-[115%] text-xs sm:text-sm md:text-base leading-relaxed">
             {t(
               "Discover practical preparedness strategies, fractional precious metals, and self-reliance solutions for uncertain economic environments.",
             )}

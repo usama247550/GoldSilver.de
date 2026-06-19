@@ -18,7 +18,7 @@ const Banner = () => {
         <div className="absolute inset-0 flex flex-col justify-center gap-y-2 md:gap-y-3 ps-5 sm:ps-8 md:ps-10 pr-5 sm:pr-[45%]">
           <div className="bg-[#F7BD48] text-[#000000] rounded-sm text-xs sm:text-sm text-center py-1 w-fit px-3">{t("Green Enerfy")}</div>
           <h1 className="text-white font-bold text-xl sm:text-3xl md:text-4xl leading-snug font-[Playfair_Display] ">{t("Green Energy & The")} <br /> {t("Solar Infrastructure Boom")}</h1>
-          <p className="text-white  w-[125%] text-xs sm:text-sm md:text-base leading-relaxed">{t("Explore how solar infrastructure, electric vehicles, and climate-tech investments are driving industrial silver demand across global markets.")}</p>
+          <p className="text-white  md:w-[125%] text-xs sm:text-sm md:text-base leading-relaxed">{t("Explore how solar infrastructure, electric vehicles, and climate-tech investments are driving industrial silver demand across global markets.")}</p>
         </div>
       </div>
       </div>

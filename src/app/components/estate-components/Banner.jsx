@@ -18,7 +18,7 @@ const Banner = () => {
         <div className="absolute inset-0 flex flex-col justify-center gap-y-2 md:gap-y-3 ps-5 sm:ps-8 md:ps-10 pr-5 sm:pr-[45%]">
           <div className="bg-[#F7BD48] text-[#000000] rounded-sm text-xs sm:text-sm text-center py-1 w-fit px-3">{t("Estate Planning")}</div>
           <h1 className="text-white font-bold text-xl sm:text-3xl md:text-4xl font-[Playfair_Display] leading-snug">{t("Estate Planning &")} <br /> {t("Generational Wealth Transfer")}</h1>
-          <p className="text-white w-[115%]   text-xs sm:text-sm md:text-base leading-relaxed">{t("Explore strategies for transferring physical wealth, protecting family assets, and")} <br className="hidden" /> {t("preserving generational wealth for the future.")}</p>
+          <p className="text-white md:w-[115%]   text-xs sm:text-sm md:text-base leading-relaxed">{t("Explore strategies for transferring physical wealth, protecting family assets, and")} <br className="hidden" /> {t("preserving generational wealth for the future.")}</p>
         </div>
       </div>
       </div>

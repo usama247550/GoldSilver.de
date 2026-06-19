@@ -23,7 +23,7 @@ const Banner = () => {
             {t("Secure Precious Metals")} <br />{" "}
             {t("With Private Storage Solutions")}
           </h1>
-          <p className="text-white text-xs w-[125%]  sm:text-sm md:text-base leading-relaxed">
+          <p className="text-white text-xs md:w-[125%]  sm:text-sm md:text-base leading-relaxed">
             {t(
               "Learn how investors secure precious metals through hidden storage systems, biometric safes, and advanced residential security architecture.",
             )}
