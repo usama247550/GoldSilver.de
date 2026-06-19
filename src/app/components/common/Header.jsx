@@ -24,23 +24,87 @@ const Header = () => {
   const [prices, setPrices] = useState(null);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prices`)
-      .then((res) => res.json())
-      .then((data) => setPrices(data))
-      .catch((err) => console.error("Price fetch error:", err));
+    const fetchPrices = async () => {
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/prices`,
+          { cache: "no-store" },
+        );
+        const data = await res.json();
+        setPrices(data);
+      } catch (err) {
+        console.error("Price fetch error:", err);
+      }
+    };
+
+    fetchPrices();
+    // ✅ 15 min — backend se match
+    const interval = setInterval(fetchPrices, 15 * 60 * 1000);
+    return () => clearInterval(interval);
   }, []);
+
+  // ✅ Helper — same jo PriceTable mein use kiya
+  const formatChange = (change) => {
+    if (!change || change === 0) return null; // header mein STABLE nahi dikhayenge
+    return `${change > 0 ? "+" : ""}${change}%`;
+  };
 
   const tickers = prices
     ? [
-      { label: "XAU/USD", value: `${prices.gold_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+0.4%", up: true },
-      { label: "XAG/USD", value: `${prices.silver_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "-1.2%", up: false },
-      { label: "BTC/USD", value: `${prices.btc_usd?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, change: "+2.1%", up: true },
-    ]
+        {
+          label: "XAU/USD",
+          value: prices.gold_usd?.value
+            ? `$${Number(prices.gold_usd.value).toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}`
+            : "—",
+          change: formatChange(prices.gold_usd?.change),
+          up:
+            prices.gold_usd?.change > 0
+              ? true
+              : prices.gold_usd?.change < 0
+                ? false
+                : null,
+        },
+        {
+          label: "XAG/USD",
+          value: prices.silver_usd?.value
+            ? `$${Number(prices.silver_usd.value).toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}`
+            : "—",
+          change: formatChange(prices.silver_usd?.change),
+          up:
+            prices.silver_usd?.change > 0
+              ? true
+              : prices.silver_usd?.change < 0
+                ? false
+                : null,
+        },
+        {
+          label: "BTC/USD",
+          value: prices.btc_usd?.value
+            ? `$${Number(prices.btc_usd.value).toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}`
+            : "—",
+          change: formatChange(prices.btc_usd?.change),
+          up:
+            prices.btc_usd?.change > 0
+              ? true
+              : prices.btc_usd?.change < 0
+                ? false
+                : null,
+        },
+      ]
     : [
-      { label: "XAU/USD", value: "Loading...", change: "", up: true },
-      { label: "XAG/USD", value: "Loading...", change: "", up: false },
-      { label: "BTC/USD", value: "Loading...", change: "", up: true },
-    ];
+        { label: "XAU/USD", value: "Loading...", change: null, up: null },
+        { label: "XAG/USD", value: "Loading...", change: null, up: null },
+        { label: "BTC/USD", value: "Loading...", change: null, up: null },
+      ];
 
   return (
     <header className="w-full bg-[#1A1A1A]">
@@ -55,16 +119,25 @@ const Header = () => {
         <div className="hidden md:flex gap-7 text-sm">
           {tickers.map(({ label, value, change, up }) => (
             <div
-              key={t(label)}
+              key={label}
               className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium"
             >
               {t(label)}:{" "}
-              <span className={up ? "text-[#2E7D32]" : "text-[#C62828]"}>
-                {value} {change}
+              <span
+                className={
+                  up === true
+                    ? "text-[#2E7D32] ml-1.5"
+                    : up === false
+                      ? "text-[#C62828] ml-1.5"
+                      : "text-[#CCCCCC] ml-1.5"
+                }
+              >
+                {value}{" "}{change}
               </span>
             </div>
           ))}
         </div>
+
         <div className="hidden sm:block">
           <LanguageSwitcher />
         </div>
@@ -88,20 +161,29 @@ const Header = () => {
         </div>
       </div>
 
-
-
-      <div className="hidden flex flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
+      {/* Mobile tickers */}
+      <div className="flex md:hidden flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
         {tickers.map(({ label, value, change, up }) => (
           <div
-            key={t(label)}
+            key={label}
             className="font-[JetBrains_Mono] text-[#CCCCCC] text-xs font-medium"
           >
             {t(label)}:{" "}
             <span
-              className={`${up ? "text-[#2E7D32]" : "text-[#C62828]"
-                } tracking-wider`}
+              className={`tracking-wider ${
+                up === true
+                  ? "text-[#2E7D32]"
+                  : up === false
+                    ? "text-[#C62828]"
+                    : "text-[#CCCCCC]"
+              }`}
             >
-              {value} {change}
+              {value}{" "}
+              {change && (
+                <>
+                  {up === true ? "▲" : up === false ? "▼" : ""} {change}
+                </>
+              )}
             </span>
           </div>
         ))}
@@ -113,7 +195,7 @@ const Header = () => {
             <li key={href}>
               <Link
                 href={href}
-               className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {t(label)}
               </Link>

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import React from "react";
 import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 const LearningCard = () => {
   const { t } = useTranslation();
@@ -25,6 +26,7 @@ const LearningCard = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl mx-auto px-4 sm:px-0">
       {learningDATA.map((item, ind) => (
+        <Link href={"https://www.youtube.com/shorts/ZDDMOpBBQZ4"}>
         <div
           key={ind+1}
           className="rounded-2xl   bg-white overflow-hidden"
@@ -50,6 +52,7 @@ const LearningCard = () => {
             </p>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   );
