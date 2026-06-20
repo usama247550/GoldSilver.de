@@ -2,6 +2,7 @@
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CiSearch } from "react-icons/ci";
 import { HiMenu, HiX } from "react-icons/hi";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -22,7 +23,7 @@ const Header = () => {
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [prices, setPrices] = useState(null);
-
+  const pathname = usePathname();
   useEffect(() => {
     const fetchPrices = async () => {
       try {
@@ -132,7 +133,7 @@ const Header = () => {
                       : "text-[#CCCCCC] ml-1.5"
                 }
               >
-                {value}{" "}{change}
+                {value} {change}
               </span>
             </div>
           ))}
@@ -162,7 +163,7 @@ const Header = () => {
       </div>
 
       {/* Mobile tickers */}
-      <div className="flex md:hidden flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
+      <div className="hidden  flex md:hidden flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
         {tickers.map(({ label, value, change, up }) => (
           <div
             key={label}
@@ -192,10 +193,20 @@ const Header = () => {
       <div className="hidden md:flex justify-center items-center h-14 border-t border-[#2a2a2a]">
         <ul className="flex gap-8 lg:gap-12">
           {navLinks.map(({ href, label }) => (
+        
+
             <li key={href}>
               <Link
                 href={href}
-                className="relative text-[#B8860B] text-md hover:text-[#FDE99A] transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FDE99A] after:transition-all after:duration-300 hover:after:w-full"
+                className={`relative text-[#B8860B] text-md transition-colors
+      after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:transition-all after:duration-300
+
+      ${
+        pathname === href
+          ? "text-[#FDE99A] after:w-full after:bg-[#FDE99A]"
+          : "hover:text-[#FDE99A] after:w-0 hover:after:w-full hover:after:bg-[#FDE99A]"
+      }
+    `}
               >
                 {t(label)}
               </Link>

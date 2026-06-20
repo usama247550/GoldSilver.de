@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const HorizontalCard = () => {
   const { t } = useTranslation();
@@ -29,14 +30,17 @@ const HorizontalCard = () => {
             key={index}
             className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
           >
+            {/* TEXT */}
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
                 <span className="text-[#B8860B] text-md tracking-wide">
                   PHYSICAL MARKET
                 </span>
+
                 <span className="text-gray-400 text-xs hidden sm:inline">
                   •
                 </span>
+
                 <span className="text-[#000000] text-xs">
                   {new Date(item.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -44,6 +48,7 @@ const HorizontalCard = () => {
                     year: "numeric",
                   })}
                 </span>
+
                 <span
                   className={`text-white text-xs px-2 py-0.5 rounded ${
                     item.conclusion === "bullish"
@@ -66,11 +71,13 @@ const HorizontalCard = () => {
               </p>
             </div>
 
-            <div className="md:w-32 md:h-24 w-24 sm:w-32 sm:h-32 flex-shrink-0 mt-6 sm:mt-8">
-              <img
+            {/* IMAGE (STANDARD SYSTEM FINAL) */}
+            <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
+              <Image
                 src="/offgrid/news.jpg"
                 alt="gold"
-                className="w-full h-full object-cover rounded-xl"
+                fill
+                className="object-cover"
               />
             </div>
           </div>
