@@ -122,7 +122,7 @@ const Footer = () => {
             </p>
             {/* The Subscribe Button (Rounded border, specific gold color) */}
             <a
-              href="#"
+              href="#subscribe"
               className="w-fit text-center border-2 border-[#B8860B] rounded-xl px-11 py-2 text-[#B8860B] font-bold text-md hover:bg-[#B8860B] hover:text-white transition-all"
             >
               {t("Subscribe")}
