@@ -88,7 +88,7 @@ const LearningCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl mx-auto px-4 sm:px-0">
+    <section id="Video-Library" className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl mx-auto px-4 sm:px-0">
       {learningDATA.map((item, ind) => (
         <Link key={ind} href={item.video} target="_blank">
           <div className="rounded-2xl bg-white overflow-hidden cursor-pointer hover:scale-[1.02] transition">
@@ -129,7 +129,7 @@ const LearningCard = () => {
           </div>
         </Link>
       ))}
-    </div>
+    </section>
   );
 };
 
