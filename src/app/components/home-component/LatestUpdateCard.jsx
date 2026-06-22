@@ -1,48 +1,24 @@
-
-
-
 "use client";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-const LatestUpdateCard = () => {
+const LatestUpdateCard = ({ showAll = false, newsItems = [] }) => {
   const { t } = useTranslation();
+  const router = useRouter();
+  const visibleNews = showAll ? newsItems : newsItems.slice(0, 10);
 
-  const updatedNews = [
-    {
-      image: "/news-update-image/image2.png",
-      small: "Macro insight",
-      heading: "Central Banks Continue Gold Buying Trend",
-      description:
-        "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.",
-      badge: { text: "BEARISH", type: "bearish" },
-    },
-    {
-      image: "/news-update-image/image1.png",
-      small: "Energy",
-      heading: "Solar Expansion Drives Silver Demand Higher",
-      description:
-        "Growing renewable energy projects continue to increase industrial silver consumption worldwide.",
-      badge: { text: "BULLISH", type: "bullish" },
-    },
-    {
-      image: "/news-update-image/image1.png",
-      small: "Scrap Metal",
-      heading: "German Bullion Sales Reach New Monthly High",
-      description:
-        "Investor interest in physical gold and silver remains elevated across retail markets.",
-      badge: { text: "BULLISH", type: "bullish" },
-    },
-  ];
+
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:max-w-5xl md:mx-auto">
-      {updatedNews.map((val, ind) => (
+      {visibleNews.map((val, ind) => (
         <div
           key={ind}
+          onContextMenu={(e) => { e.preventDefault(); if (val.pageUrl) router.push(val.pageUrl); }}
           className="bg-white shadow-md rounded-xl overflow-hidden flex flex-col"
         >
-          {/* IMAGE FIX */}
+          {/* IMAGE */}
           <div className="relative w-full h-48 sm:h-52">
             <Image
               src={val.image}
@@ -54,9 +30,7 @@ const LatestUpdateCard = () => {
             {val.badge && (
               <div
                 className={`absolute top-4 left-4 px-2.5 py-1 text-xs text-white uppercase tracking-wider ${
-                  val.badge.type === "bearish"
-                    ? "bg-[#C62828]"
-                    : "bg-[#2E7D32]"
+                  val.badge.type === "bearish" ? "bg-[#C62828]" : "bg-[#2E7D32]"
                 }`}
               >
                 {val.badge.text} {val.badge.type === "bearish" ? "▼" : "▲"}
@@ -64,6 +38,7 @@ const LatestUpdateCard = () => {
             )}
           </div>
 
+          {/* CONTENT */}
           <div className="p-4 space-y-2 flex flex-col flex-1">
             <p className="text-sm text-[#B8860B] capitalize font-bold">
               {t(val.small)}
@@ -73,9 +48,7 @@ const LatestUpdateCard = () => {
               {t(val.heading)}
             </h2>
 
-            <p className="text-sm text-black flex-1">
-              {t(val.description)}
-            </p>
+            <p className="text-sm text-black flex-1">{t(val.description)}</p>
           </div>
         </div>
       ))}
