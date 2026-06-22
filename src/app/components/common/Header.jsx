@@ -21,9 +21,19 @@ const navLinks = [
 
 const Header = () => {
   const { t } = useTranslation();
+
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const [prices, setPrices] = useState(null);
+
   const pathname = usePathname();
+
+  // ================= PRICE FETCH =================
   useEffect(() => {
     const fetchPrices = async () => {
       try {
@@ -34,19 +44,46 @@ const Header = () => {
         const data = await res.json();
         setPrices(data);
       } catch (err) {
-        console.error("Price fetch error:", err);
+        console.error(err);
       }
     };
 
     fetchPrices();
-    // ✅ 15 min — backend se match
     const interval = setInterval(fetchPrices, 15 * 60 * 1000);
+
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Helper — same jo PriceTable mein use kiya
+  // ================= SEARCH API (DEBOUNCE) =================
+  useEffect(() => {
+    const delay = setTimeout(async () => {
+      if (!query.trim()) {
+        setResults([]);
+        return;
+      }
+
+      try {
+        setLoading(true);
+
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/search?q=${query}`,
+        );
+
+        const data = await res.json();
+        setResults(data);
+      } catch (err) {
+        console.error("Search error:", err);
+      } finally {
+        setLoading(false);
+      }
+    }, 300);
+
+    return () => clearTimeout(delay);
+  }, [query]);
+
+  // ================= PRICE FORMAT =================
   const formatChange = (change) => {
-    if (!change || change === 0) return null; // header mein STABLE nahi dikhayenge
+    if (!change || change === 0) return null;
     return `${change > 0 ? "+" : ""}${change}%`;
   };
 
@@ -55,10 +92,7 @@ const Header = () => {
         {
           label: "XAU/USD",
           value: prices.gold_usd?.value
-            ? `$${Number(prices.gold_usd.value).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}`
+            ? `$${Number(prices.gold_usd.value).toLocaleString()}`
             : "—",
           change: formatChange(prices.gold_usd?.change),
           up:
@@ -71,10 +105,7 @@ const Header = () => {
         {
           label: "XAG/USD",
           value: prices.silver_usd?.value
-            ? `$${Number(prices.silver_usd.value).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}`
+            ? `$${Number(prices.silver_usd.value).toLocaleString()}`
             : "—",
           change: formatChange(prices.silver_usd?.change),
           up:
@@ -87,10 +118,7 @@ const Header = () => {
         {
           label: "BTC/USD",
           value: prices.btc_usd?.value
-            ? `$${Number(prices.btc_usd.value).toLocaleString(undefined, {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}`
+            ? `$${Number(prices.btc_usd.value).toLocaleString()}`
             : "—",
           change: formatChange(prices.btc_usd?.change),
           up:
@@ -101,36 +129,34 @@ const Header = () => {
                 : null,
         },
       ]
-    : [
-        { label: "XAU/USD", value: "Loading...", change: null, up: null },
-        { label: "XAG/USD", value: "Loading...", change: null, up: null },
-        { label: "BTC/USD", value: "Loading...", change: null, up: null },
-      ];
+    : [];
 
   return (
-    <header className="w-full bg-[#1A1A1A]">
-      <div className="sticky top-0 z-50 bg-[#1A1A1A] flex justify-between items-center px-5 md:px-10 h-16">
+    <header className="w-full bg-[#1A1A1A] relative">
+      {/* ================= TOP BAR ================= */}
+      <div className="sticky top-0 z-50 flex justify-between items-center px-5 md:px-10 h-16">
+        {/* LOGO */}
         <Link
           href="/"
-          className="font-[Playfair_Display] font-bold text-[#FDE99A] text-xl"
+          className={`font-bold text-[#FDE99A] text-xl ${
+            searchOpen ? "hidden sm:block" : ""
+          }`}
         >
           GoldSilver.de
         </Link>
 
+        {/* DESKTOP TICKERS */}
         <div className="hidden md:flex gap-7 text-sm">
           {tickers.map(({ label, value, change, up }) => (
-            <div
-              key={label}
-              className="font-[JetBrains_Mono] text-[#CCCCCC] font-medium"
-            >
-              {t(label)}:{" "}
+            <div key={label} className="text-[#ccc]">
+              {t(label)}:
               <span
                 className={
                   up === true
-                    ? "text-[#2E7D32] ml-1.5"
+                    ? "text-green-500 ml-2"
                     : up === false
-                      ? "text-[#C62828] ml-1.5"
-                      : "text-[#CCCCCC] ml-1.5"
+                      ? "text-red-500 ml-2"
+                      : "ml-2"
                 }
               >
                 {value} {change}
@@ -139,74 +165,88 @@ const Header = () => {
           ))}
         </div>
 
-        <div className="hidden sm:block">
-          <LanguageSwitcher />
-        </div>
+        {/* RIGHT SIDE */}
+        <div className="flex items-center gap-4 relative">
+          {/* SEARCH */}
+          <div className="hidden md:flex items-center relative">
+            {!searchOpen ? (
+              <CiSearch
+                className="text-white text-2xl cursor-pointer"
+                onClick={() => setSearchOpen(true)}
+              />
+            ) : (
+              <input
+                autoFocus
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onBlur={() => setSearchOpen(false)}
+                placeholder="Search Gold, BTC..."
+                className="bg-black text-white border border-gray-700 px-3 py-1 rounded-md w-56 outline-none"
+              />
+            )}
 
-        <div className="flex items-center gap-4">
-          <CiSearch className="text-white text-2xl cursor-pointer" />
+            {/* DROPDOWN */}
+            {searchOpen && query && (
+              <div className="absolute top-10 right-0 w-64 bg-[#111] border border-gray-700 rounded-md z-50">
+                {loading && (
+                  <div className="p-2 text-gray-400 text-sm">Loading...</div>
+                )}
+
+                {!loading && results.length === 0 && (
+                  <div className="p-2 text-gray-400 text-sm">No results</div>
+                )}
+
+                {results.map((item) => (
+                  <div
+                    key={item.key}
+                    className="p-2 flex justify-between hover:bg-gray-800 cursor-pointer text-white"
+                  >
+                    <span>{item.name}</span>
+                    <span className="text-[#B8860B]">${item.value}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* LANGUAGE */}
+          <div className="hidden sm:block">
+            <LanguageSwitcher />
+          </div>
+
+          {/* SUBSCRIBE */}
           <Link
-            href="#"
-            className="border-2 border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white rounded-lg font-bold px-4 py-1 text-sm md:text-lg transition-colors"
+            href="#subscribe"
+            className="border-2 border-[#B8860B] text-[#B8860B] px-4 py-1 rounded-lg text-sm md:text-base"
           >
             {t("Subscribe")}
           </Link>
 
+          {/* MENU */}
           <button
             className="md:hidden text-[#B8860B] text-2xl"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
           >
             {menuOpen ? <HiX /> : <HiMenu />}
           </button>
         </div>
       </div>
 
-      {/* Mobile tickers */}
-      <div className="hidden  flex md:hidden flex-col gap-1 px-5 pb-3 border-t border-[#2a2a2a] pt-3">
-        {tickers.map(({ label, value, change, up }) => (
-          <div
-            key={label}
-            className="font-[JetBrains_Mono] text-[#CCCCCC] text-xs font-medium"
-          >
-            {t(label)}:{" "}
-            <span
-              className={`tracking-wider ${
-                up === true
-                  ? "text-[#2E7D32]"
-                  : up === false
-                    ? "text-[#C62828]"
-                    : "text-[#CCCCCC]"
-              }`}
-            >
-              {value}{" "}
-              {change && (
-                <>
-                  {up === true ? "▲" : up === false ? "▼" : ""} {change}
-                </>
-              )}
-            </span>
-          </div>
-        ))}
-      </div>
-
+      {/* ================= DESKTOP NAV ================= */}
       <div className="hidden md:flex justify-center items-center h-14 border-t border-[#2a2a2a]">
         <ul className="flex gap-8 lg:gap-12">
           {navLinks.map(({ href, label }) => (
-        
-
             <li key={href}>
               <Link
                 href={href}
                 className={`relative text-[#B8860B] text-md transition-colors
-      after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:transition-all after:duration-300
-
-      ${
-        pathname === href
-          ? "text-[#FDE99A] after:w-full after:bg-[#FDE99A]"
-          : "hover:text-[#FDE99A] after:w-0 hover:after:w-full hover:after:bg-[#FDE99A]"
-      }
-    `}
+                after:content-[''] after:absolute after:left-0 after:-bottom-1
+                after:h-[2px] after:transition-all after:duration-300
+                ${
+                  pathname === href
+                    ? "text-[#FDE99A] after:w-full after:bg-[#FDE99A]"
+                    : "hover:text-[#FDE99A] after:w-0 hover:after:w-full hover:after:bg-[#FDE99A]"
+                }`}
               >
                 {t(label)}
               </Link>
@@ -215,25 +255,35 @@ const Header = () => {
         </ul>
       </div>
 
+      {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-[#2a2a2a] px-5 pb-4">
-          <ul className="flex flex-col">
-            {navLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="block text-[#B8860B] py-3 text-[15px] border-b border-[#2a2a2a] last:border-none hover:text-[#FDE99A] transition-colors"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {t(label)}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <LanguageSwitcher />
-            </li>
-          </ul>
-        </nav>
+        <div className="md:hidden border-t border-gray-700 px-5 py-4 space-y-4">
+          {/* SEARCH */}
+          <div className="flex items-center border border-gray-600 rounded-md px-3">
+            <CiSearch className="text-white text-xl" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search..."
+              className="w-full bg-transparent text-white px-2 py-2 outline-none"
+            />
+          </div>
+
+          {/* LINKS */}
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="block text-[#B8860B] py-2 border-b border-gray-800"
+            >
+              {t(label)}
+            </Link>
+          ))}
+
+          {/* LANGUAGE */}
+          <LanguageSwitcher />
+        </div>
       )}
     </header>
   );

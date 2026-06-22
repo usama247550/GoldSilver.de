@@ -1,4 +1,3 @@
-
 "use client";
 import { useTranslation } from "react-i18next";
 import React, { useState } from "react";
@@ -10,8 +9,7 @@ const GoldNewsBanner = () => {
   const [status, setStatus] = useState(null);
 
   // better validation (real-world safe)
-  const isValidEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubscribe = async () => {
     if (!email) return;
@@ -32,7 +30,7 @@ const GoldNewsBanner = () => {
             source: "home-page",
             gdprConsent: true,
           }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -49,8 +47,10 @@ const GoldNewsBanner = () => {
   };
 
   return (
-    <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
-      
+    <section
+      id="subscribe"
+      className="w-full bg-[#1A1A1A] relative overflow-hidden "
+    >
       {/* top glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -81,18 +81,15 @@ const GoldNewsBanner = () => {
 
       {/* content */}
       <div className="flex flex-col items-center gap-y-5 py-20 sm:py-28 md:py-40 px-6 text-center">
-        
         <h1 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">
           {t("Discover the")}{" "}
-          <span className="text-[#F7BD48]">
-            {t("Finest Investments")}
-          </span>{" "}
+          <span className="text-[#F7BD48]">{t("Finest Investments")}</span>{" "}
           {t("Inspired by the Strength of Gold & Silver")}
         </h1>
 
         <p className="text-[#FAF8F0] max-w-sm sm:max-w-2xl md:text-xl">
           {t(
-            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors."
+            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors.",
           )}
         </p>
 
@@ -141,7 +138,7 @@ const GoldNewsBanner = () => {
           className="object-cover"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

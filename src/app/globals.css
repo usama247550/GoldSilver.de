@@ -34,3 +34,7 @@ body {
 .animate-ticker-ltr {
   animation: ticker-ltr 45s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

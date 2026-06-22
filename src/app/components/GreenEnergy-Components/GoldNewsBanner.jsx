@@ -55,7 +55,7 @@ const GoldNewsBanner = () => {
   };
 
   return (
-    <div className="w-full bg-[#1A1A1A] relative overflow-hidden">
+    <section id="subscribe" className="w-full bg-[#1A1A1A] relative overflow-hidden">
 
       {/* GOLD GLOW */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
@@ -131,7 +131,7 @@ const GoldNewsBanner = () => {
           className="object-cover"
         />
       </div>
-    </div>
+    </section>
   );
 };
 
