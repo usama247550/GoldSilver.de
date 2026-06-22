@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="flex flex-col gap-2 lg:max-w-xs justify-end">
             <p className="text-sm leading-relaxed text-[#D2C5B1]">
               {t(
-                "Independent insights covering precious metals, market intelligence, economic trends, and wealth preservation strategies for modern investors.",
+                "footerInfo1",
               )}
             </p>
             <div className="flex gap-4 ">
@@ -117,7 +117,7 @@ const Footer = () => {
             </div>
             <p className="text-sm leading-relaxed text-[#D2C5B1]">
               {t(
-                "Receive market insights, trend analysis, and precious metals intelligence.",
+                "footerInfo2",
               )}
             </p>
             {/* The Subscribe Button (Rounded border, specific gold color) */}
@@ -135,8 +135,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto border-t border-[#2a2a2a] py-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-around items-center gap-6 md:gap-[430px] text-xs text-[#D2C5B1] tracking-tight">
           <div className="text-center md:text-left">
-            © {new Date().getFullYear()}{" "}
-            {t("GoldSilver Intelligence. All rights reserved.")}
+                      © {new Date().getFullYear()}{" "}{t("footerCopy")}
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {bottomLinks.map((link) => (

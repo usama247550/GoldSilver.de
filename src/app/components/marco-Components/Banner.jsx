@@ -37,8 +37,7 @@ const Banner = () => {
             </h1>
 
             <div className="text-white text-xs sm:text-sm md:text-base leading-relaxed">
-              {t("Analyze central bank buying trends, geopolitical shifts, and currency developments impacting the")}{" "}
-              {t("global precious metals market")}
+              {t("Analyze central bank buying trends, geopolitical shifts, and currency developments impacting the global precious metals market")}
             </div>
 
           </div>
