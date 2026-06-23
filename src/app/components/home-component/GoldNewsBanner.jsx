@@ -49,7 +49,7 @@ const GoldNewsBanner = () => {
   return (
     <section
       id="subscribe"
-      className="w-full bg-[#1A1A1A] relative overflow-hidden "
+      className="w-full bg-[#1A1A1A] relative overflow-hidden"
     >
       {/* top glow */}
       <div
