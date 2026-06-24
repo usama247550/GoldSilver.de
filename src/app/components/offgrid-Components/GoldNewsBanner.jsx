@@ -11,8 +11,7 @@ const GoldNewsBanner = () => {
   const [loading, setLoading] = useState(false);
 
   // ✅ FIXED email validation
-  const isValidEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubscribe = async () => {
     if (!email) return;
@@ -36,7 +35,7 @@ const GoldNewsBanner = () => {
             source: "offgrid",
             gdprConsent: true,
           }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -55,24 +54,21 @@ const GoldNewsBanner = () => {
   };
 
   return (
-    <section id="subscribe"  className="w-full bg-[#1A1A1A] relative overflow-hidden">
-
+    <section
+      id="subscribe"
+      className="w-full bg-[#1A1A1A] relative overflow-hidden"
+    >
       {/* GOLD GLOW */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
 
       {/* TOP IMAGE */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
-        <Image
-          src="/newsbanner/img1.png"
-          alt="decor"
-          fill
-          className="object-cover"
-        />
+      <div className="hidden lg:flex w-30 h-30 absolute top-[30px] right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden"></div>
+      <div className="hidden lg:block absolute top-[30px] right-[100px]">
+        <Image src="/newsbanner/img1.png" alt="icon" width={130} height={130} />
       </div>
 
       {/* CONTENT */}
       <div className="flex flex-col items-center gap-y-5 py-20 sm:py-28 md:py-40 px-6 text-center">
-
         <h1 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">
           {t("Discover the")}{" "}
           <span className="text-[#F7BD48]">{t("Finest Investments")}</span>{" "}
@@ -81,7 +77,7 @@ const GoldNewsBanner = () => {
 
         <p className="text-[#FAF8F0] max-w-sm sm:max-w-2xl md:max-w-2xl md:text-xl">
           {t(
-            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors."
+            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors.",
           )}
         </p>
 
@@ -123,13 +119,10 @@ const GoldNewsBanner = () => {
       </div>
 
       {/* BOTTOM IMAGE */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute bottom-6 left-6 md:bottom-[30px] md:left-[80px] lg:left-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
-        <Image
-          src="/newsbanner/img2.png"
-          alt="decor"
-          fill
-          className="object-cover"
-        />
+      <div className="hidden lg:flex w-30 h-30 absolute bottom-[30px] left-[120px] bg-[#B8860B] rounded-full overflow-hidden"></div>
+
+      <div className="hidden lg:block absolute bottom-[30px] left-[130px]">
+        <Image src="/newsbanner/img2.png" alt="icon" width={115} height={115} />
       </div>
     </section>
   );

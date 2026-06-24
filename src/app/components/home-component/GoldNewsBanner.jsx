@@ -60,16 +60,10 @@ const GoldNewsBanner = () => {
         }}
       />
 
-      {/* top-right icon */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
-        <Image
-          src="/newsbanner/img1.png"
-          alt="icon"
-          fill
-          className="object-cover"
-        />
+      <div className="hidden lg:flex w-30 h-30 absolute top-[30px] right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden"></div>
+      <div className="hidden lg:block absolute top-[30px] right-[100px]">
+        <Image src="/newsbanner/img1.png" alt="icon" width={130} height={130} />
       </div>
-
       {/* bottom glow */}
       <div
         className="absolute bottom-0 right-0 w-[300px] h-[300px] pointer-events-none"
@@ -130,13 +124,11 @@ const GoldNewsBanner = () => {
       </div>
 
       {/* bottom icon */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute bottom-6 left-6 md:bottom-[30px] md:left-[80px] lg:left-[120px] bg-[#B8860B] rounded-full overflow-hidden">
-        <Image
-          src="/newsbanner/img2.png"
-          alt="icon"
-          fill
-          className="object-cover"
-        />
+
+      <div className="hidden lg:flex w-30 h-30 absolute bottom-[30px] left-[120px] bg-[#B8860B] rounded-full overflow-hidden"></div>
+
+      <div className="hidden lg:block absolute bottom-[30px] left-[130px]">
+        <Image src="/newsbanner/img2.png" alt="icon" width={115} height={115} />
       </div>
     </section>
   );
