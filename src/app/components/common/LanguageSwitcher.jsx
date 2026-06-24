@@ -17,7 +17,7 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <div className="flex items-center gap-1 border md:border-[#B8860B]/30 rounded-lg p-0.5 md:bg-black/40">
+    <div className="flex items-center gap-1 md:border md:border-[#B8860B]/30 rounded-lg p-0.5 md:bg-black/40">
       <button
         onClick={(e) => {
           e.preventDefault();

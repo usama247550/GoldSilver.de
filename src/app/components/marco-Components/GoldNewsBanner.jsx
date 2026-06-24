@@ -82,19 +82,19 @@ const GoldNewsBanner = () => {
         </p>
 
         {/* INPUT */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-5  w-full max-w-sm">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("name@email.com")}
-            className="w-full flex-1 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
+            className="w-full flex-1 mt-5 md:mt-5 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
           />
 
           <button
             onClick={handleSubscribe}
             disabled={loading}
-            className="w-full sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
+            className="w-full md:mt-5 sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
           >
             {loading ? "Loading..." : t("Subscribe")}
           </button>

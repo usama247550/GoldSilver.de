@@ -94,12 +94,12 @@ const GoldNewsBanner = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("name@email.com")}
-            className="w-full flex-1 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800 placeholder:text-gray-400"
+            className="w-full flex-1 mt-5 md:mt-5 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800 placeholder:text-gray-400"
           />
 
           <button
             onClick={handleSubscribe}
-            className="w-full sm:w-auto border-2 border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white rounded-lg font-semibold px-6 py-[4px] transition-colors cursor-pointer"
+            className="w-full md:mt-5 sm:w-auto border-2 border-[#B8860B] text-[#B8860B] hover:bg-[#B8860B] hover:text-white rounded-lg font-semibold px-6 py-[4px] transition-colors cursor-pointer"
           >
             {t("Subscribe")}
           </button>

@@ -56,15 +56,21 @@ const GoldNewsBanner = () => {
   return (
     <section
       id="subscribe"
-      className="w-full bg-[#1A1A1A] relative overflow-hidden"
+      className="w-full relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(to bottom, #2F2517 0%, #231E16 25%, #1E1C19 50%, #1A1A1A 75%, #1A1A1A 100%)",
+      }}
     >
-      {/* GOLD GLOW */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
-
       {/* TOP IMAGE */}
-      <div className="hidden lg:flex w-30 h-30 absolute top-[30px] right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden"></div>
-      <div className="hidden lg:block absolute top-[30px] right-[100px]">
-        <Image src="/newsbanner/img1.png" alt="icon" width={130} height={130} />
+      <div className="hidden lg:flex w-[130px] h-[130px] absolute top-[30px] right-[100px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden shadow-lg">
+        <Image
+          src="/newsbanner/img1.png"
+          alt="icon"
+          width={130}
+          height={130}
+          className="object-cover"
+        />
       </div>
 
       {/* CONTENT */}
@@ -88,13 +94,13 @@ const GoldNewsBanner = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("name@email.com")}
-            className="w-full flex-1 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
+            className="w-full flex-1 mt-5 md:mt-5 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
           />
 
           <button
             onClick={handleSubscribe}
             disabled={loading}
-            className="w-full sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
+            className="w-full md:mt-5 sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
           >
             {loading ? "Loading..." : t("Subscribe")}
           </button>
@@ -119,10 +125,14 @@ const GoldNewsBanner = () => {
       </div>
 
       {/* BOTTOM IMAGE */}
-      <div className="hidden lg:flex w-30 h-30 absolute bottom-[30px] left-[120px] bg-[#B8860B] rounded-full overflow-hidden"></div>
-
-      <div className="hidden lg:block absolute bottom-[30px] left-[130px]">
-        <Image src="/newsbanner/img2.png" alt="icon" width={115} height={115} />
+      <div className="hidden lg:flex w-[115px] h-[115px] absolute bottom-[30px] left-[130px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden shadow-lg">
+        <Image
+          src="/newsbanner/img2.png"
+          alt="icon"
+          width={115}
+          height={115}
+          className="object-cover"
+        />
       </div>
     </section>
   );
