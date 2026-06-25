@@ -11,8 +11,7 @@ const GoldNewsBanner = () => {
   const [loading, setLoading] = useState(false);
 
   // ✅ FIXED email validation
-  const isValidEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubscribe = async () => {
     if (!email) return;
@@ -36,7 +35,7 @@ const GoldNewsBanner = () => {
             source: "ai-tech",
             gdprConsent: true,
           }),
-        }
+        },
       );
 
       const data = await res.json();
@@ -55,24 +54,27 @@ const GoldNewsBanner = () => {
   };
 
   return (
-    <section id="subscribe" className="w-full bg-[#1A1A1A] relative overflow-hidden">
-
-      {/* GOLD GLOW */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
-
+    <section
+      id="subscribe"
+      className="w-full relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(to bottom, #2F2517 0%, #231E16 25%, #1E1C19 50%, #1A1A1A 75%, #1A1A1A 100%)",
+      }}
+    >
       {/* TOP IMAGE */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute top-6 right-6 md:top-[30px] md:right-[80px] lg:right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
+      <div className="hidden lg:flex w-[130px] h-[130px] absolute top-[30px] right-[100px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden shadow-lg">
         <Image
           src="/newsbanner/img1.png"
-          alt="decor"
-          fill
+          alt="icon"
+          width={130}
+          height={130}
           className="object-cover"
         />
       </div>
 
       {/* CONTENT */}
       <div className="flex flex-col items-center gap-y-5 py-20 sm:py-28 md:py-40 px-6 text-center">
-
         <h1 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">
           {t("Discover the")}{" "}
           <span className="text-[#F7BD48]">{t("Finest Investments")}</span>{" "}
@@ -81,7 +83,7 @@ const GoldNewsBanner = () => {
 
         <p className="text-[#FAF8F0] max-w-sm sm:max-w-2xl md:max-w-2xl md:text-xl">
           {t(
-            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors."
+            "Daily market intelligence delivered with editorial precision. Join 45,000+ elite investors.",
           )}
         </p>
 
@@ -92,13 +94,13 @@ const GoldNewsBanner = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={t("name@email.com")}
-            className="w-full flex-1 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
+            className="w-full flex-1 mt-5 md:mt-5 px-4 py-2 h-9 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#B8860B] text-sm text-gray-800"
           />
 
           <button
             onClick={handleSubscribe}
             disabled={loading}
-            className="w-full sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
+            className="w-full md:mt-5 sm:w-auto border-2 border-[#B8860B] bg-[#B8860B] hover:bg-[#a37709] text-white rounded-lg font-semibold px-6 py-1 transition disabled:opacity-60"
           >
             {loading ? "Loading..." : t("Subscribe")}
           </button>
@@ -123,11 +125,12 @@ const GoldNewsBanner = () => {
       </div>
 
       {/* BOTTOM IMAGE */}
-      <div className="hidden sm:flex w-16 h-16 md:w-30 md:h-30 absolute bottom-6 left-6 md:bottom-[30px] md:left-[80px] lg:left-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden">
+      <div className="hidden lg:flex w-[115px] h-[115px] absolute bottom-[30px] left-[130px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden shadow-lg">
         <Image
           src="/newsbanner/img2.png"
-          alt="decor"
-          fill
+          alt="icon"
+          width={115}
+          height={115}
           className="object-cover"
         />
       </div>

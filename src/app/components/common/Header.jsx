@@ -86,7 +86,17 @@ const Header = () => {
     if (!change || change === 0) return null;
     return `${change > 0 ? "+" : ""}${change}%`;
   };
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
   const tickers = prices
     ? [
         {
@@ -257,7 +267,9 @@ const Header = () => {
 
       {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-700 px-5 py-4 space-y-4">
+        
+        <div className="md:hidden   fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-[#1A1A1A] border-t border-gray-700 px-5 py-4 overflow-y-auto z-50">
+          <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
           {/* SEARCH */}
           <div className="flex items-center border border-gray-600 rounded-md px-3">
             <CiSearch className="text-white text-xl" />
@@ -265,7 +277,7 @@ const Header = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search..."
-              className="w-full bg-transparent text-white px-2 py-2 outline-none"
+              className="w-full bg-transparent text-white px-2 py-3 outline-none"
             />
           </div>
 
@@ -275,7 +287,7 @@ const Header = () => {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className="block text-[#B8860B] py-2 border-b border-gray-800"
+              className="block text-[#B8860B] py-5 border-b border-gray-800"
             >
               {t(label)}
             </Link>
