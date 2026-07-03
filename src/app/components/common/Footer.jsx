@@ -35,7 +35,7 @@ const bottomLinks = [
   { name: "Privacy Policy", href: "/privacy" },
   { name: "Terms of Service", href: "/terms" },
   { name: "Disclaimer", href: "/disclaimer" },
-  { name: "Contact", href: "#" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Footer = () => {
