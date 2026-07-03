@@ -32,9 +32,9 @@ const footerSections = [
 ];
 
 const bottomLinks = [
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Disclaimer", href: "#" },
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms of Service", href: "/terms" },
+  { name: "Disclaimer", href: "/disclaimer" },
   { name: "Contact", href: "#" },
 ];
 
@@ -53,9 +53,7 @@ const Footer = () => {
           {/* Column 1: Info & Socials */}
           <div className="flex flex-col gap-2 lg:max-w-xs justify-end">
             <p className="text-sm leading-relaxed text-[#D2C5B1]">
-              {t(
-                "footerInfo1",
-              )}
+              {t("footerInfo1")}
             </p>
             <div className="flex gap-4 ">
               {[FiFacebook, SlSocialTwitter, FiInstagram, FiYoutube].map(
@@ -116,9 +114,7 @@ const Footer = () => {
               {t("Stay Connected")}
             </div>
             <p className="text-sm leading-relaxed text-[#D2C5B1]">
-              {t(
-                "footerInfo2",
-              )}
+              {t("footerInfo2")}
             </p>
             {/* The Subscribe Button (Rounded border, specific gold color) */}
             <a
@@ -135,7 +131,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto border-t border-[#2a2a2a] py-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-around items-center gap-6 md:gap-[430px] text-xs text-[#D2C5B1] tracking-tight">
           <div className="text-center md:text-left">
-                      © {new Date().getFullYear()}{" "}{t("footerCopy")}
+            © {new Date().getFullYear()} {t("footerCopy")}
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {bottomLinks.map((link) => (
