@@ -63,7 +63,7 @@ const GoldNewsBanner = () => {
       {/* TOP IMAGE */}
       <div className="hidden lg:flex w-30 h-30 absolute top-[30px] right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden"></div>
       <div className="hidden lg:block absolute top-[30px] right-[100px]">
-        <Image src="/newsbanner/img1.png" alt="" width={130} height={130} />
+        <Image src="/newsbanner/img1.webp" alt="" width={130} height={130} />
       </div>
 
       {/* CONTENT */}
@@ -121,7 +121,7 @@ const GoldNewsBanner = () => {
       <div className="hidden lg:flex w-30 h-30 absolute bottom-[30px] left-[120px] bg-[#B8860B] rounded-full overflow-hidden"></div>
 
       <div className="hidden lg:block absolute bottom-[30px] left-[130px]">
-        <Image src="/newsbanner/img2.png" alt="" width={115} height={115} />
+        <Image src="/newsbanner/img2.webp" alt="" width={115} height={115} />
       </div>
     </section>
   );

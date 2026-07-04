@@ -16,7 +16,7 @@ const Banner = () => {
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
 
           <Image
-            src="/macro/banner.jpg"
+            src="/macro/banner.webp"
             alt="Macro market analysis banner"
             fill
             sizes="100vw"

@@ -74,7 +74,7 @@ const HorizontalCard = () => {
             {/* IMAGE (STANDARD SYSTEM) */}
             <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
               <Image
-                src="/numismatics/news.jpg"
+                src="/numismatics/news.webp"
                 alt="gold"
                 fill
                 className="object-cover"

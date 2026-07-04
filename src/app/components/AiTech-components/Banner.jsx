@@ -16,7 +16,7 @@ const Banner = () => {
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
           
           <Image
-            src="/aiTech/banner.jpg"
+            src="/aiTech/banner.webp"
             alt="AI and tech market analysis banner"
             fill
             sizes="100vw"

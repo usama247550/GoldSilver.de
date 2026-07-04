@@ -14,7 +14,7 @@ const Banner = () => {
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
 
           <Image
-            src="/Goldsmithing/banner.jpg"
+            src="/Goldsmithing/banner.webp"
             alt="Goldsmithing banner"
             fill
             sizes="100vw"

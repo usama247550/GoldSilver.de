@@ -5,54 +5,54 @@ import Image from "next/image";
 
 const smallCardsData = [
   {
-    image: "/grid-images/gridimage1.jpg",
+    image: "/grid-images/gridimage1.webp",
     title: "Macro Tracking",
     href: "/macro",
   },
   {
-    image: "/grid-images/gridimage2.jpg",
+    image: "/grid-images/gridimage2.webp",
     title: "Green Energy",
     href: "/GreenEnergy",
   },
   {
-    image: "/grid-images/gridimage3.jpg",
+    image: "/grid-images/gridimage3.webp",
     title: "Scrap Metal",
     href: "/scrapMetal",
   },
   {
-    image: "/grid-images/gridimage10.jpg",
+    image: "/grid-images/gridimage10.webp",
     title: "Goldsmith",
     href: "/Goldsmithing",
   },
-  { image: "/grid-images/gridimage5.jpg", title: "AI & Tech", href: "/AiTech" },
+  { image: "/grid-images/gridimage5.webp", title: "AI & Tech", href: "/AiTech" },
   {
-    image: "/grid-images/gridimage6.jpg",
+    image: "/grid-images/gridimage6.webp",
     title: "Home Storage",
     href: "/storage",
   },
-  { image: "/grid-images/gridimage7.jpg", title: "Estate", href: "/estate" },
+  { image: "/grid-images/gridimage7.webp", title: "Estate", href: "/estate" },
   {
-    image: "/grid-images/gridimage8.jpg",
+    image: "/grid-images/gridimage8.webp",
     title: "Numismatics",
     href: "/numismatics",
   },
   {
-    image: "/grid-images/gridimage13.jpg",
+    image: "/grid-images/gridimage13.webp",
     title: "Coins & Bars",
     href: "/coinsBars",
   },
   {
-    image: "/grid-images/gridimage4.jpg",
+    image: "/grid-images/gridimage4.webp",
     title: "Off-Grid Security",
     href: "/offgrid",
   },
   {
-    image: "/grid-images/gridimage12.jpg",
+    image: "/grid-images/gridimage12.webp",
     title: "Jewelry Resale",
     href: "/JewelryResale",
   },
   {
-    image: "/grid-images/gridimage9.jpg",
+    image: "/grid-images/gridimage9.webp",
     title: "Metal Detecting",
     href: "/MetalDetecting",
   },

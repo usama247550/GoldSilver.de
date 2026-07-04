@@ -2,7 +2,7 @@ export const siteUrl = "https://gold-silver-de-theta.vercel.app";
 export const siteName = "GoldSilver.de";
 export const defaultDescription =
   "Daily precious metals intelligence, market analysis, and investor-focused updates across gold, silver, macro trends, and wealth preservation.";
-export const defaultSocialImage = "/grid-images/gridimage1.jpg";
+export const defaultSocialImage = "/grid-images/gridimage1.webp";
 
 export function buildMetadata({ title, description, path }) {
   return {
@@ -64,4 +64,3 @@ export function buildFaqSchema(items) {
     })),
   };
 }
-
