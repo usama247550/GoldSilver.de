@@ -9,7 +9,7 @@ const HorizontalCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/news/sp5`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp5`)
       .then((res) => res.json())
       .then((data) => {
         setMarketNews(data);
@@ -77,6 +77,7 @@ const HorizontalCard = () => {
                 src="/greenEnergy/news.jpg"
                 alt="gold"
                 fill
+                sizes="(max-width: 768px) 96px, 128px"
                 className="object-cover"
               />
             </div>

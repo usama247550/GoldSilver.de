@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/storage/banner.jpg"
-            alt="image"
+            alt="Storage market analysis banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

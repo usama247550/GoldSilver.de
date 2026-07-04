@@ -62,7 +62,7 @@ const Terms = () => {
             Disclaimer of Warranties
           </h2>
           <p className="text-base leading-8 text-[#D3C4AF]">
-            GoldSilver.de is provided "as is" without warranties of any kind. We
+            GoldSilver.de is provided &quot;as is&quot; without warranties of any kind. We
             do not warrant that the site will be uninterrupted, secure, or free
             from errors.
           </p>
@@ -108,7 +108,7 @@ const Terms = () => {
           <h2 className="text-2xl font-semibold text-white">Contact</h2>
           <p className="text-base leading-8 text-[#D3C4AF]">
             If you have questions about these terms, please contact us through
-            the website's contact page.
+            the website&apos;s contact page.
           </p>
         </section>
       </div>

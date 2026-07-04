@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/bar&coins/banner.png"
-            alt="image"
+            alt="Coins and bars investment banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

@@ -12,7 +12,7 @@ const Contact = () => {
             Contact GoldSilver.de
           </h1>
           <p className="text-base leading-8 text-[#D3C4AF]">
-            We're here to help with questions about our content, market
+            We&apos;re here to help with questions about our content, market
             insights, or partnerships.
           </p>
         </section>

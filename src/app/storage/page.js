@@ -6,8 +6,16 @@ import LiveTickerZone from "../components/storage-components/LiveTickerZone";
 import TodayUpdates from "../components/storage-components/TodayUpdates";
 import TrustedPartners from "../components/storage-components/TrustedPartners";
 import GoldNewsBanner from "../components/storage-components/GoldNewsBanner";
+import { buildMetadata } from "../seo";
 
-const AiTech = () => {
+export const metadata = buildMetadata({
+  title: "Storage Market Insights for Investors | GoldSilver.de",
+  description:
+    "Follow storage, logistics, and capital preservation themes that affect precious metals demand, supply chains, and long-term investment decisions.",
+  path: "/storage",
+});
+
+const Storage = () => {
   return (
     <>
       <Header />
@@ -21,4 +29,4 @@ const AiTech = () => {
   );
 };
 
-export default AiTech;
+export default Storage;

@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/numismatics/banner.png"
-            alt="image"
+            alt="Numismatics and coin collecting banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

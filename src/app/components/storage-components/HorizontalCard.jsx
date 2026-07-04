@@ -9,7 +9,7 @@ const HorizontalCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/news/sp3`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp3`)
       .then((res) => res.json())
       .then((data) => {
         setMarketNews(data);

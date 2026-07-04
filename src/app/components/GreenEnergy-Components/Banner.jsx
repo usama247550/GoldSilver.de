@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/greenEnergy/banner.jpg"
-            alt="image"
+            alt="Green energy and silver demand banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

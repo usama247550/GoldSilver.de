@@ -17,8 +17,9 @@ const Banner = () => {
 
           <Image
             src="/macro/banner.jpg"
-            alt="image"
+            alt="Macro market analysis banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

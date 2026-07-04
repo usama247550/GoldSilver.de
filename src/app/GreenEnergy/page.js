@@ -6,6 +6,14 @@ import LiveTickerZone from "../components/GreenEnergy-Components/LiveTickerZone"
 import TodayUpdates from "../components/GreenEnergy-Components/TodayUpdates";
 import GoldNewsBanner from "../components/GreenEnergy-Components/GoldNewsBanner";
 import TrustedPartners from "../components/GreenEnergy-Components/TrustedPartners";
+import { buildMetadata } from "../seo";
+
+export const metadata = buildMetadata({
+  title: "Green Energy & Silver Demand Insights | GoldSilver.de",
+  description:
+    "Understand how solar, electrification, and climate technology trends are increasing industrial silver demand across global markets.",
+  path: "/GreenEnergy",
+});
 
 const GreenEnergy = () => {
   return (

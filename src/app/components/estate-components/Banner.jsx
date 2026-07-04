@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/estate/banner.jpg"
-            alt="image"
+            alt="Estate planning banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

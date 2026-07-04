@@ -1,5 +1,13 @@
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
+import { buildMetadata } from "../seo";
+
+export const metadata = buildMetadata({
+  title: "Privacy Policy and Data Practices for GoldSilver.de",
+  description:
+    "Review how GoldSilver.de collects, uses, and protects technical data when you browse our market analysis, news, and educational content.",
+  path: "/privacy",
+});
 
 export default function PrivacyPolicy() {
   return (

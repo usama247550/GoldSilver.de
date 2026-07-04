@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/scrap/banner.jpg"
-            alt="image"
+            alt="Scrap metal market banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

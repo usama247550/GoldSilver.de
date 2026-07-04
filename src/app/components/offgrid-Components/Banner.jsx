@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/offgrid/banner.jpg"
-            alt="image"
+            alt="Off-grid security banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

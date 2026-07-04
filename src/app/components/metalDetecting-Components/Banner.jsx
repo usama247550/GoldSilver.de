@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/metalDetecting/banner.png"
-            alt="image"
+            alt="Metal detecting banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

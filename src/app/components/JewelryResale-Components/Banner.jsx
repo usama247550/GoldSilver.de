@@ -15,8 +15,9 @@ const Banner = () => {
 
           <Image
             src="/JewelryResale/banner.png"
-            alt="image"
+            alt="Jewelry resale banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 
