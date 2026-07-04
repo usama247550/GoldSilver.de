@@ -1,20 +1,23 @@
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Terms from "../components/common/Terms";
-import { buildMetadata } from "../seo";
+import { cookies } from "next/headers";
+import { buildLocalizedStaticPageMetadata } from "../seo";
+import { getStaticPageContent } from "../staticPageContent";
 
-export const metadata = buildMetadata({
-  title: "Terms of Service and Usage Rules for GoldSilver.de",
-  description:
-    "Understand the terms that govern access to GoldSilver.de content, including permitted use, accuracy limits, and liability notices.",
-  path: "/terms",
-});
+export async function generateMetadata() {
+  const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
+  return buildLocalizedStaticPageMetadata("terms", locale);
+}
 
 export default function TermsPage() {
+  const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
+  const content = getStaticPageContent("terms", locale);
+
   return (
     <>
       <Header />
-      <Terms />
+      <Terms content={content} />
       <Footer />
     </>
   );

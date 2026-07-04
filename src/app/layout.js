@@ -1,5 +1,6 @@
 import "./globals.css";
 import "./i18n";
+import { cookies } from "next/headers";
 import { organizationSchema, siteName, siteUrl, websiteSchema } from "./seo";
 
 export const metadata = {
@@ -13,9 +14,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

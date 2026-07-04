@@ -1,10 +1,12 @@
 "use client";
 
 import i18n from "../../i18n";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useState, useEffect, startTransition } from "react";
 
 export default function LanguageSwitcher() {
   const [lang, setLang] = useState(i18n.language || "de");
+  const router = useRouter();
 
   useEffect(() => {
     const handleChange = (lng) => setLang(lng);
@@ -12,8 +14,21 @@ export default function LanguageSwitcher() {
     return () => i18n.off("languageChanged", handleChange);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  const persistLanguage = (lng) => {
+    document.cookie = `gs-lang=${lng}; path=/; max-age=31536000; samesite=lax`;
+    window.localStorage.setItem("gs-lang", lng);
+  };
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    persistLanguage(lng);
+    startTransition(() => {
+      router.refresh();
+    });
   };
 
   return (

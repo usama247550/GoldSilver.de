@@ -1,20 +1,23 @@
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Disclaimer from "../components/common/Disclaimer";
-import { buildMetadata } from "../seo";
+import { cookies } from "next/headers";
+import { buildLocalizedStaticPageMetadata } from "../seo";
+import { getStaticPageContent } from "../staticPageContent";
 
-export const metadata = buildMetadata({
-  title: "Disclaimer and Risk Notice for GoldSilver.de Readers",
-  description:
-    "Read the GoldSilver.de disclaimer covering informational use only, market risk, external links, and the limits of our editorial content.",
-  path: "/disclaimer",
-});
+export async function generateMetadata() {
+  const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
+  return buildLocalizedStaticPageMetadata("disclaimer", locale);
+}
 
 export default function DisclaimerPage() {
+  const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
+  const content = getStaticPageContent("disclaimer", locale);
+
   return (
     <>
       <Header />
-      <Disclaimer />
+      <Disclaimer content={content} />
       <Footer />
     </>
   );
