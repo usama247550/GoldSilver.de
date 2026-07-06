@@ -11,7 +11,7 @@ const HorizontalCard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/news/sp2`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp2`)
       .then((res) => res.json())
       .then((data) => {
         setMarketNews(data);
@@ -74,9 +74,10 @@ const HorizontalCard = () => {
 
             <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
               <Image
-                src="/aiTech/news.jpg"
+                src="/aiTech/news.webp"
                 alt="gold"
                 fill
+                sizes="(max-width: 768px) 96px, 128px"
                 className="object-cover"
               />
             </div>

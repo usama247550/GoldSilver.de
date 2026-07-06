@@ -10,7 +10,6 @@ const GoldNewsBanner = () => {
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // ✅ FIXED email validation
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubscribe = async () => {
@@ -64,16 +63,16 @@ const GoldNewsBanner = () => {
       {/* TOP IMAGE */}
       <div className="hidden lg:flex w-30 h-30 absolute top-[30px] right-[120px] bg-[#B8860B] rounded-full items-center justify-center overflow-hidden"></div>
       <div className="hidden lg:block absolute top-[30px] right-[100px]">
-        <Image src="/newsbanner/img1.png" alt="icon" width={130} height={130} />
+        <Image src="/newsbanner/img1.webp" alt="" width={130} height={130} />
       </div>
 
       {/* CONTENT */}
       <div className="flex flex-col items-center gap-y-5 py-20 sm:py-28 md:py-40 px-6 text-center">
-        <h1 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">
+        <h2 className="text-[#FAF8F0] font-bold text-2xl sm:text-3xl md:text-5xl font-[Playfair] leading-snug max-w-4xl">
           {t("Discover the")}{" "}
           <span className="text-[#F7BD48]">{t("Finest Investments")}</span>{" "}
           {t("Inspired by the Strength of Gold & Silver")}
-        </h1>
+        </h2>
 
         <p className="text-[#FAF8F0] max-w-sm sm:max-w-2xl md:max-w-2xl md:text-xl">
           {t(
@@ -122,7 +121,7 @@ const GoldNewsBanner = () => {
       <div className="hidden lg:flex w-30 h-30 absolute bottom-[30px] left-[120px] bg-[#B8860B] rounded-full overflow-hidden"></div>
 
       <div className="hidden lg:block absolute bottom-[30px] left-[130px]">
-        <Image src="/newsbanner/img2.png" alt="icon" width={115} height={115} />
+        <Image src="/newsbanner/img2.webp" alt="" width={115} height={115} />
       </div>
     </section>
   );

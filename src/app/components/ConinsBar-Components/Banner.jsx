@@ -14,9 +14,10 @@ const Banner = () => {
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
 
           <Image
-            src="/bar&coins/banner.png"
-            alt="image"
+            src="/bar&coins/banner.webp"
+            alt="Coins and bars investment banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

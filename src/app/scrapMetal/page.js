@@ -6,6 +6,14 @@ import LiveTickerZone from "../components/scrap-Components/LiveTickerZone";
 import TodayUpdates from "../components/scrap-Components/TodayUpdates";
 import GoldNewsBanner from "../components/scrap-Components/GoldNewsBanner";
 import TrustedPartners from "../components/scrap-Components/TrustedPartners";
+import { buildMetadata } from "../seo";
+
+export const metadata = buildMetadata({
+  title: "Scrap Metal Market Insights | GoldSilver.de Recycling",
+  description:
+    "See how recycling, recovery, and industrial scrap flows create new value opportunities for gold, silver, and other precious metals.",
+  path: "/scrapMetal",
+});
 
 const scrapMetal = () => {
   return (

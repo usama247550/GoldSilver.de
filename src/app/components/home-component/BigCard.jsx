@@ -10,9 +10,10 @@ const BigCard = () => {
       
       {/* Image Fix */}
       <Image
-        src="/grid-images/gridimage1.jpg"
-        alt="news"
+        src="/grid-images/gridimage1.webp"
+        alt="Gold surges as central banks increase reserves"
         fill
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         priority
       />

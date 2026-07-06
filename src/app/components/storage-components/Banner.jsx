@@ -14,9 +14,10 @@ const Banner = () => {
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
 
           <Image
-            src="/storage/banner.jpg"
-            alt="image"
+            src="/storage/banner.webp"
+            alt="Storage market analysis banner"
             fill
+            sizes="100vw"
             className="object-cover"
           />
 

@@ -15,14 +15,14 @@ const LearningCard = () => {
       title: "Pro Gold",
       description:
         "Best YouTube videos covering gold investing, bullion markets, and wealth preservation",
-      link: "/macro/gold.png",
+      link: "/macro/gold.webp",
       video: "https://www.youtube.com/shorts/ZDDMOpBBQZ4",
     },
     {
       title: "Pro Silver",
       description:
         "Best YouTube videos covering silver investing, industrial demand, and market opportunities.",
-      link: "/macro/silver.png",
+      link: "/macro/silver.webp",
       video: "https://www.youtube.com/shorts/ZDDMOpBBQZ4",
     },
   ];

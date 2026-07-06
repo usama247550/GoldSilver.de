@@ -123,8 +123,8 @@ const PriceTable = () => {
 
         <span className="flex items-center justify-center w-6 h-6 rounded-[6px] shadow-sm overflow-hidden">
           <Image
-            src="/macro/icon.png"
-            alt="icon"
+            src="/macro/Icon.webp"
+            alt="Live market prices icon"
             width={24}
             height={24}
             className="object-cover"
