@@ -1,4 +1,5 @@
-export const siteUrl = "https://gold-silver-de-theta.vercel.app";
+export const siteUrl = "https://www.goldsilver.de";
+
 export const siteName = "GoldSilver.de";
 export const defaultDescription =
   "Daily precious metals intelligence, market analysis, and investor-focused updates across gold, silver, macro trends, and wealth preservation.";
