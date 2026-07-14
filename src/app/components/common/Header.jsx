@@ -17,7 +17,12 @@ const navLinks = [
   { href: "/offgrid", label: "Off Grid" },
   { href: "/numismatics", label: "Numismatics" },
   { href: "/coinsBars", label: "Coins & Bars" },
+  { href: "/Goldsmithing", label: "Goldsmith" },
+  { href: "/JewelryResale", label: "Jewelry Resale" },
+  { href: "/MetalDetecting", label: "Metal Detecting" },
 ];
+
+const desktopNavLinks = navLinks.slice(0, 9);
 
 const Header = () => {
   const { t } = useTranslation();
@@ -245,7 +250,7 @@ const Header = () => {
       {/* ================= DESKTOP NAV ================= */}
       <div className="hidden md:flex justify-center items-center h-14 border-t border-[#2a2a2a]">
         <ul className="flex gap-8 lg:gap-12">
-          {navLinks.map(({ href, label }) => (
+          {desktopNavLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
@@ -267,34 +272,64 @@ const Header = () => {
 
       {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
-        
-        <div className="md:hidden   fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-[#1A1A1A] border-t border-gray-700 px-5 py-4 overflow-y-auto z-50">
+        <div className="md:hidden fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-[#1A1A1A] border-t border-gray-700 overflow-y-auto z-50">
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
-          {/* SEARCH */}
-          <div className="flex items-center border border-gray-600 rounded-md px-3">
-            <CiSearch className="text-white text-xl" />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search..."
-              className="w-full bg-transparent text-white px-2 py-3 outline-none"
-            />
+          <div className="relative z-10 px-5 py-4 space-y-0">
+            {/* SEARCH */}
+            <div className="mb-4">
+              <div className="flex items-center border border-gray-600 rounded-md px-3">
+                <CiSearch className="text-white text-xl" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search..."
+                  className="w-full bg-transparent text-white px-2 py-3 outline-none"
+                />
+              </div>
+
+              {query.trim() && (
+                <div className="mt-2 rounded-md border border-gray-700 bg-[#111]">
+                  {loading && (
+                    <div className="p-2 text-gray-400 text-sm">Loading...</div>
+                  )}
+
+                  {!loading && results.length === 0 && (
+                    <div className="p-2 text-gray-400 text-sm">No results</div>
+                  )}
+
+                  {!loading &&
+                    results.map((item) => (
+                      <div
+                        key={item.key || item.name}
+                        className="p-2 flex justify-between hover:bg-gray-800 cursor-pointer text-white"
+                      >
+                        <span>{item.name}</span>
+                        {item.value !== undefined && (
+                          <span className="text-[#B8860B]">${item.value}</span>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+
+            {/* LINKS */}
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className="block text-[#B8860B] py-5 border-b border-gray-800"
+              >
+                {t(label)}
+              </Link>
+            ))}
+
+            {/* LANGUAGE */}
+            <div className="pt-4">
+              <LanguageSwitcher />
+            </div>
           </div>
-
-          {/* LINKS */}
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setMenuOpen(false)}
-              className="block text-[#B8860B] py-5 border-b border-gray-800"
-            >
-              {t(label)}
-            </Link>
-          ))}
-
-          {/* LANGUAGE */}
-          <LanguageSwitcher />
         </div>
       )}
     </header>

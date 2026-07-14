@@ -372,6 +372,7 @@ i18n.use(initReactI18next).init({
         "Home Storage": "Heimlagerung",
         "Goldsmith": "Goldschmied",
         "Jewelry Resale": "Schmuck-Wiederverkauf",
+        "Metal Detecting": "Metallsuche",
         "Macro insight": "Makro-Einblick",
         "Central Banks Continue Gold Buying Trend": "Zentralbanken setzen Goldkauf-Trend fort",
         "Reserve accumulation remains strong as global institutions seek stability amid economic uncertainty.": "Der Aufbau von Reserven bleibt stark, da globale Institutionen Stabilität in wirtschaftlich unsicheren Zeiten suchen.",
