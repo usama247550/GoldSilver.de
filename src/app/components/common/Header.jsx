@@ -276,14 +276,41 @@ const Header = () => {
           <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[rgba(184,134,11,0.15)] via-[rgba(184,134,11,0.05)] to-transparent" />
           <div className="relative z-10 px-5 py-4 space-y-0">
             {/* SEARCH */}
-            <div className="flex items-center border border-gray-600 rounded-md px-3 mb-4">
-              <CiSearch className="text-white text-xl" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search..."
-                className="w-full bg-transparent text-white px-2 py-3 outline-none"
-              />
+            <div className="mb-4">
+              <div className="flex items-center border border-gray-600 rounded-md px-3">
+                <CiSearch className="text-white text-xl" />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search..."
+                  className="w-full bg-transparent text-white px-2 py-3 outline-none"
+                />
+              </div>
+
+              {query.trim() && (
+                <div className="mt-2 rounded-md border border-gray-700 bg-[#111]">
+                  {loading && (
+                    <div className="p-2 text-gray-400 text-sm">Loading...</div>
+                  )}
+
+                  {!loading && results.length === 0 && (
+                    <div className="p-2 text-gray-400 text-sm">No results</div>
+                  )}
+
+                  {!loading &&
+                    results.map((item) => (
+                      <div
+                        key={item.key || item.name}
+                        className="p-2 flex justify-between hover:bg-gray-800 cursor-pointer text-white"
+                      >
+                        <span>{item.name}</span>
+                        {item.value !== undefined && (
+                          <span className="text-[#B8860B]">${item.value}</span>
+                        )}
+                      </div>
+                    ))}
+                </div>
+              )}
             </div>
 
             {/* LINKS */}

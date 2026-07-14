@@ -73,9 +73,9 @@ const LatestUpdateCard = ({ showAll = false, newsItems = [] }) => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:max-w-5xl md:mx-auto">
+    <section id="latest-update" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full md:max-w-5xl md:mx-auto">
       {visibleNews.map((val, ind) => renderCard(val, ind))}
-    </div>
+    </section>
   );
 };
 

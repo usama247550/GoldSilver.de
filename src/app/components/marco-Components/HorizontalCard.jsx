@@ -23,7 +23,7 @@ const HorizontalCard = () => {
     return <p className="p-6 text-gray-400">No news today</p>;
 
   return (
-    <div className="p-3 sm:p-6">
+    <div  className="p-3 sm:p-6">
       <div className="flex flex-col">
 
         {marketNews.map((item, index) => (
