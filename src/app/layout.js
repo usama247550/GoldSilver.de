@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
-
+``
   return (
-    <html
-      lang={locale}
-      className={`h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+    <html lang={locale} className={`h-full antialiased`}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-7732435226942119" />
+      </head>
+      <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -32,13 +32,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7732435226942119"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-      {children}
+        {children}
       </body>
     </html>
   );

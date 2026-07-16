@@ -21,11 +21,11 @@ const footerSections = [
   {
     title: "Resources",
     links: [
-      { name: "Market Updates", href: "/#updates" },
-      { name: "Learning Resources", href: "/macro#Video-Library" },
-      { name: "Investment Guides", href: "/faq" },
+      { name: "Market Updates", href: "/#latest-update" },
+      { name: "Learning Resources", href: "/macro#today-news" },
+      { name: "Investment Guides", href: "/macro#latest-insights" },
       { name: "Video Library", href: "/macro#Video-Library" },
-      { name: "Newsletter", href: "/#subscribe" },
+      { name: "Newsletter", href: "/macro#subscribe" },
       { name: "FAQ", href: "/faq" },
     ],
   },

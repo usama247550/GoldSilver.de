@@ -7,7 +7,7 @@ import PartnerCard from "./PartnerCard";
 const TrustedPartners = () => {
   const { t } = useTranslation();
   return (
-    <div className="w-full bg-[#FAF8F0] ">
+    <section id="latest-insights" className="w-full bg-[#FAF8F0] ">
       <div className="flex flex-col items-center gap-y-4 py-12 md:py-17 px-4 md:px-10">
         <h2 className="text-[#0D1B2A]  font-bold text-2xl sm:text-3xl md:text-5xl text-center font-[Playfair_Display] ">
           {t("Trusted")} <span className="text-[#B8860B] ">{t("Precious Metals")} </span>{t("Partners")}
@@ -17,7 +17,7 @@ const TrustedPartners = () => {
           <PartnerCard />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
