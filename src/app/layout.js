@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./i18n";
 import { cookies } from "next/headers";
+import Script from "next/script";
 import { organizationSchema, siteName, siteUrl, websiteSchema } from "./seo";
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({ children }) {
       lang={locale}
       className={`h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -30,6 +31,12 @@ export default function RootLayout({ children }) {
               "@graph": [organizationSchema, websiteSchema],
             }),
           }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7732435226942119"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       {children}
       </body>
