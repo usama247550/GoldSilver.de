@@ -7,7 +7,7 @@ const CACHE_KEY = "latestNewsCache";
 const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours in ms
 
 const fetchRandomNews = async () => {
-  const res = await fetch("http://localhost:5000/api/new/random?limit=10");
+  const res = await fetch("http://localhost:5000/api/news/random?limit=10");
   if (!res.ok) throw new Error("Failed to fetch random news");
   return res.json();
 };
