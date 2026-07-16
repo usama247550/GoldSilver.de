@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./i18n";
 import { cookies } from "next/headers";
+import Script from "next/script";
 import { organizationSchema, siteName, siteUrl, websiteSchema } from "./seo";
 
 export const metadata = {
