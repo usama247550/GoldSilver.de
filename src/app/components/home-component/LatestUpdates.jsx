@@ -7,11 +7,10 @@ import LatestUpdateCard from "./LatestUpdateCard";
 const fetchLatestNews = async () => {
   console.log("Fetching latest news...");
 
-
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/new/latest?limit=10`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/news/random?limit=10`,
+    { cache: "no-store" }
+  );
 
   if (!res.ok) {
     throw new Error("Failed to fetch news");
