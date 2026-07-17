@@ -12,15 +12,22 @@ export const metadata = {
   },
   description:
     "Daily precious metals intelligence, market analysis, and investor-focused updates across gold, silver, macro trends, and wealth preservation.",
+
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
-``
+
   return (
-    <html lang={locale} className={`h-full antialiased`}>
+    <html lang={locale} className="h-full antialiased">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-7732435226942119" />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-7732435226942119"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <script
