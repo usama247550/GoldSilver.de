@@ -1,15 +1,25 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LatestUpdateCard from "./LatestUpdateCard";
 
-const CACHE_KEY = "latestNewsCache";
-const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours in ms
+const fetchLatestNews = async () => {
+  console.log("Fetching latest news...");
 
-const fetchRandomNews = async () => {
-  const res = await fetch("http://localhost:5000/api/news/random?limit=10");
-  if (!res.ok) throw new Error("Failed to fetch random news");
-  return res.json();
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/news/random?limit=10`,
+    { cache: "no-store" }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch news");
+  }
+
+  const data = await res.json();
+  console.log("Fetched news data:", data);
+
+  return data;
 };
 
 const LatestUpdates = () => {
@@ -20,36 +30,15 @@ const LatestUpdates = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // safety: only run in browser
-
     const loadNews = async () => {
       try {
-        const cached = localStorage.getItem(CACHE_KEY);
+        console.log("Loading latest news...");
 
-        if (cached) {
-          try {
-            const { data, timestamp } = JSON.parse(cached);
-            const isFresh = Date.now() - timestamp < CACHE_DURATION;
+        const data = await fetchLatestNews();
 
-            if (isFresh && Array.isArray(data)) {
-              setAllNews(data);
-              setLoading(false);
-              return;
-            }
-          } catch {
-            // corrupted cache, ignore and refetch
-            localStorage.removeItem(CACHE_KEY);
-          }
-        }
-
-        const data = await fetchRandomNews();
         setAllNews(data);
-        localStorage.setItem(
-          CACHE_KEY,
-          JSON.stringify({ data, timestamp: Date.now() })
-        );
       } catch (err) {
-        console.error("Failed to fetch news", err);
+        console.error("Failed to fetch news:", err);
       } finally {
         setLoading(false);
       }
