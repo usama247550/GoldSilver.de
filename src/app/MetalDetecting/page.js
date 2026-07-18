@@ -8,13 +8,13 @@ import GoldNewsBanner from "../components/metalDetecting-Components/GoldNewsBann
 import TrustedPartners from "../components/metalDetecting-Components/TrustedPartners";
 import { buildMetadata } from "../seo";
 
+
 export const metadata = buildMetadata({
-  title: "Metal Detecting Insights | GoldSilver.de Treasure Finds",
+  title: "Metal Detecting & Treasure Detector Guide | GoldSilver.de",
   description:
-    "Explore metal detecting, treasure recovery, and hidden-value discoveries connected to collectible coins, jewelry, and precious metals.",
+    "Find the right treasure detector for coin, jewelry, and precious metal recovery. Expert metal detecting guides connecting hobbyists to real collectible value.",
   path: "/MetalDetecting",
 });
-
 const MetalDetecting = () => {
   return (
     <>
