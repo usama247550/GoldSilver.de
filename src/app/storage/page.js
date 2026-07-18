@@ -9,12 +9,11 @@ import GoldNewsBanner from "../components/storage-components/GoldNewsBanner";
 import { buildMetadata } from "../seo";
 
 export const metadata = buildMetadata({
-  title: "Storage Market Insights for Investors | GoldSilver.de",
+  title: "Bullion Vault & Precious Metals Storage for Investors | GoldSilver.de",
   description:
-    "Follow storage, logistics, and capital preservation themes that affect precious metals demand, supply chains, and long-term investment decisions.",
+    "Secure your precious metals in a trusted bullion vault. Explore storage, logistics, and capital preservation themes shaping the precious metals market for long-term investors.",
   path: "/storage",
 });
-
 const Storage = () => {
   return (
     <>

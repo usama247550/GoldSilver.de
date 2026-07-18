@@ -8,13 +8,13 @@ import GoldNewsBanner from "../components/ConinsBar-Components/GoldNewsBanner";
 import TrustedPartners from "../components/ConinsBar-Components/TrustedPartners";
 import { buildMetadata } from "../seo";
 
+
 export const metadata = buildMetadata({
-  title: "Coins & Bars Investment Insights for Buyers | GoldSilver.de",
+  title: "Buy Gold and Silver Coins and Bars | Goldmünzen & Goldbarren | GoldSilver.de",
   description:
-    "Compare bullion, coins, and bars with practical insights for buyers seeking liquidity, purity, and long-term value preservation.",
+    "Buy gold and silver coins and bars including Krügerrand, Goldbarren, and Silbermünzen. Compare bullion for liquidity, purity, and long-term value preservation.",
   path: "/coinsBars",
 });
-
 const ConinsBar = () => {
   return (
     <>

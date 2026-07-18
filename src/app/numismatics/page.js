@@ -8,13 +8,13 @@ import GoldNewsBanner from "../components/numismatics-Components/GoldNewsBanner"
 import TrustedPartners from "../components/numismatics-Components/TrustedPartners";
 import { buildMetadata } from "../seo";
 
+
 export const metadata = buildMetadata({
-  title: "Numismatics Insights | GoldSilver.de Coin Collecting",
+  title: "Coin Collecting Market Insights | Numismatics & Krügerrand | GoldSilver.de",
   description:
-    "Browse coin collecting, rarity, grading, and historical value insights for numismatists interested in tangible stores of wealth.",
+    "Explore the coin collecting market including Krügerrand, rarity, grading, and historical value insights for numismatists seeking tangible stores of wealth.",
   path: "/numismatics",
 });
-
 const Numismatics = () => {
   return (
     <>

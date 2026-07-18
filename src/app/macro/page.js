@@ -8,10 +8,11 @@ import GoldNewsBanner from "../components/marco-Components/GoldNewsBanner";
 import TrustedPartners from "../components/marco-Components/TrustedPartners";
 import { buildMetadata } from "../seo";
 
+
 export const metadata = buildMetadata({
-  title: "Macro Market Insights | GoldSilver.de Economic Trends",
+  title: "Wealth Management & Alternative Investments | Gold Macro Insights | GoldSilver.de",
   description:
-    "Track central banks, inflation, currencies, and geopolitical shifts shaping gold and silver prices with concise, investor-focused macro analysis.",
+    "Explore alternative investments and wealth management strategies through central bank gold buying, inflation protection, currencies, and geopolitical macro trends shaping precious metals prices.",
   path: "/macro",
 });
 import LearningResources from "../components/marco-Components/LearningResources";

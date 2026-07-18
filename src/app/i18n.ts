@@ -48,6 +48,8 @@ i18n.use(initReactI18next).init({
         "faq.item4.answer": "The site connects precious metals with adjacent themes such as AI, green energy, storage, and estate planning because those topics can influence demand, supply chains, and long-term wealth strategy.",
         "faq.item5.question": "How can I contact the team?",
         "faq.item5.answer": "Use the Contact page to reach the team for content questions, partnership inquiries, or technical support.",
+        "faq.item6.question": "Is it safe to buy physical gold online?",
+        "faq.item6.answer": "Yes, buying physical gold online through a trusted platform like GoldSilver.de involves verified sourcing, secure storage options, and transparent pricing to help protect your investment.",
         "Categories": "Categories",
         "Resources": "Resources",
         "Stay Connected": "Stay Connected",
@@ -253,7 +255,7 @@ i18n.use(initReactI18next).init({
         "AI & Tech": "KI & Technologie",
         "AI and Tech": "KI und Tech",
         "Storage": "Lagerung",
-        "Estate": "Nachlass",
+        "Estate": "Vermögen",
         "Categories": "Kategorien",
         "Resources": "Ressourcen",
         "macro": "Makro",
@@ -264,7 +266,7 @@ i18n.use(initReactI18next).init({
         "GreenEnergy": "Grüne Energie",
         "Green Energy & The": "Grüne Energie & Das",
         "Solar Infrastructure Boom": "Solar‑Infrastruktur‑Boom",
-        "estate": "Nachlass",
+        "estate": "Vermögen",
         "footerCopy": "GoldSilver Intelligence. Alle Rechte vorbehalten.",
         "storage": "Lagerung",
         "coinsBars": "Münzen & Barren",
@@ -290,6 +292,8 @@ i18n.use(initReactI18next).init({
         "faq.item4.answer": "Die Website verknüpft Edelmetalle mit angrenzenden Themen wie KI, grüner Energie, Lagerung und Nachlassplanung, weil diese Themen Nachfrage, Lieferketten und langfristige Vermögensstrategien beeinflussen können.",
         "faq.item5.question": "Wie kann ich das Team kontaktieren?",
         "faq.item5.answer": "Nutzen Sie die Kontaktseite, um das Team bei Inhaltsfragen, Partneranfragen oder technischen Support-Anliegen zu erreichen.",
+        "faq.item6.question": "Ist es sicher, physisches Gold online zu kaufen?",
+        "faq.item6.answer": "Ja, der Kauf von physischem Gold online über eine vertrauenswürdige Plattform wie GoldSilver.de umfasst geprüfte Herkunft, sichere Lagerungsoptionen und transparente Preise zum Schutz Ihrer Investition.",
         "footerInfo1": "Unabhängige Einblicke zu Edelmetallen, Marktinformationen, wirtschaftlichen Trends und Strategien zur Vermögenssicherung für moderne Anleger.",
         "footerInfo2": "Erhalten Sie Markteinblicke, Trendanalysen und Informationen zu Edelmetallen.",
         "Stay Connected": "Verbunden bleiben",
@@ -504,24 +508,3 @@ i18n.use(initReactI18next).init({
 });
 
 export default i18n;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
