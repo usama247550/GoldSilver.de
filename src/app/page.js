@@ -5,14 +5,12 @@ import GoldNewsBanner from "./components/home-component/GoldNewsBanner";
 import LatestUpdates from "./components/home-component/LatestUpdates";
 import { buildMetadata } from "./seo";
 
-
 export const metadata = buildMetadata({
-  title: "Goldsilbermarkt – Gold & Silber Preise, Markets & Insights | GoldSilver.de",
+  title: "GoldSilver.de – Ihr Goldsilbermarkt für Gold & Silber Preise",
   description:
-    "Ihr Goldsilbermarkt für tägliche Marktanalysen zu Gold und Silber. Daily precious metals intelligence, market analysis, and investor-focused updates across gold, silver, macro trends, and wealth preservation.",
+    "GoldSilver.de ist Ihr vertrauenswürdiger Goldsilbermarkt für tägliche Marktanalysen zu Gold und Silber. Daily precious metals intelligence, market analysis, and investor-focused updates.",
   path: "/",
 });
-
 export default function Home() {
   return (
     <>
