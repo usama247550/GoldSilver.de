@@ -1,26 +1,111 @@
-"use client";
-import { useTranslation } from "react-i18next";
-import React, { useEffect, useState } from "react";
+// "use client";
+// import { useTranslation } from "react-i18next";
+// import React, { useEffect, useState } from "react";
+// import Image from "next/image";
+
+// const HorizontalCard = () => {
+//   const { t } = useTranslation();
+//   const [marketNews, setMarketNews] = useState([]);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp3`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setMarketNews(data);
+//         setLoading(false);
+//       })
+//       .catch(() => setLoading(false));
+//   }, []);
+
+//   if (loading) return <p className="p-6 text-gray-400">Loading...</p>;
+//   if (marketNews.length === 0)
+//     return <p className="p-6 text-gray-400">No news today</p>;
+
+//   return (
+//     <div className="p-3 sm:p-6">
+//       <div className="flex flex-col">
+//         {marketNews.map((item, index) => (
+//           <div
+//             key={index}
+//             className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
+//           >
+//             {/* TEXT */}
+//             <div className="flex-1 min-w-0">
+//               <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
+//                 <span className="text-[#B8860B] text-md tracking-wide">
+//                   PHYSICAL MARKET
+//                 </span>
+
+//                 <span className="text-gray-400 text-xs hidden sm:inline">
+//                   •
+//                 </span>
+
+//                 <span className="text-[#000000] text-xs">
+//                   {new Date(item.date).toLocaleDateString("en-US", {
+//                     month: "long",
+//                     day: "2-digit",
+//                     year: "numeric",
+//                   })}
+//                 </span>
+
+//                 <span
+//                   className={`text-white text-xs px-2 py-0.5 rounded ${
+//                     item.conclusion === "bullish"
+//                       ? "bg-[#2E7D32]"
+//                       : item.conclusion === "bearish"
+//                         ? "bg-red-600"
+//                         : "bg-gray-500"
+//                   }`}
+//                 >
+//                   {item.conclusion?.toUpperCase()}
+//                 </span>
+//               </div>
+
+//               <h3 className="text-[#000000] w-[96%] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug line-clamp-2">
+//                 {item.headline || item.summary?.slice(0, 80)}
+//               </h3>
+
+//               <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
+//                 {item.summary}
+//               </p>
+//             </div>
+
+//             {/* IMAGE (STANDARDIZED FINAL SYSTEM) */}
+//             <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
+//               <Image
+//                 src="/storage/news.webp"
+//                 alt="gold"
+//                 fill
+//                 className="object-cover"
+//               />
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default HorizontalCard;
+import React from "react";
 import Image from "next/image";
 
-const HorizontalCard = () => {
-  const { t } = useTranslation();
-  const [marketNews, setMarketNews] = useState([]);
-  const [loading, setLoading] = useState(true);
+const HorizontalCard = async () => {
+  let marketNews = [];
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp3`)
-      .then((res) => res.json())
-      .then((data) => {
-        setMarketNews(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp3`, {
+      next: { revalidate: 3600 },
+    });
+    marketNews = await res.json();
+  } catch (err) {
+    console.error("News fetch error:", err);
+  }
 
-  if (loading) return <p className="p-6 text-gray-400">Loading...</p>;
-  if (marketNews.length === 0)
+  if (!marketNews || marketNews.length === 0) {
     return <p className="p-6 text-gray-400">No news today</p>;
+  }
 
   return (
     <div className="p-3 sm:p-6">
@@ -30,17 +115,12 @@ const HorizontalCard = () => {
             key={index}
             className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
           >
-            {/* TEXT */}
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
                 <span className="text-[#B8860B] text-md tracking-wide">
                   PHYSICAL MARKET
                 </span>
-
-                <span className="text-gray-400 text-xs hidden sm:inline">
-                  •
-                </span>
-
+                <span className="text-gray-400 text-xs hidden sm:inline">•</span>
                 <span className="text-[#000000] text-xs">
                   {new Date(item.date).toLocaleDateString("en-US", {
                     month: "long",
@@ -48,7 +128,6 @@ const HorizontalCard = () => {
                     year: "numeric",
                   })}
                 </span>
-
                 <span
                   className={`text-white text-xs px-2 py-0.5 rounded ${
                     item.conclusion === "bullish"
@@ -71,7 +150,6 @@ const HorizontalCard = () => {
               </p>
             </div>
 
-            {/* IMAGE (STANDARDIZED FINAL SYSTEM) */}
             <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
               <Image
                 src="/storage/news.webp"
