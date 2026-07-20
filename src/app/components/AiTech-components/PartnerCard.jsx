@@ -3,30 +3,58 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 const PartnerCard = () => {
   const { t } = useTranslation();
-  const partnerCards = [
+  // const partnerCards = [
+  //   {
+  //     logo: "AI",
+  //     title: "Tech Newsletters",
+  //     description:
+  //       "Advanced AI computing and accelerated infrastructure solutions.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
+  //   },
+  //   {
+  //     logo: "AD",
+  //     title: "Micro-Investing Apps",
+  //     description:
+  //       "High-performance processors powering next-generation computing.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
+  //   },
+  //   {
+  //     logo: "TC",
+  //     title: "Trading Platforms",
+  //     description:
+  //       "Global leader in semiconductor manufacturing and innovation.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
+  //   },
+  // ];
+
+
+     const partnerCards = [
     {
-      logo: "AI",
-      title: "Tech Newsletters",
+      logo: "GS",
+      title: "GoldSilberShop",
       description:
-        "Advanced AI computing and accelerated infrastructure solutions.",
+        "One of Germany's most popular direct physical metal vendors for gold and silver bars and coins.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_GOLDSILBERSHOP,
     },
     {
-      logo: "AD",
-      title: "Micro-Investing Apps",
+      logo: "KE",
+      title: "Kettner Edelmetalle",
       description:
-        "High-performance processors powering next-generation computing.",
+        "Established German precious metals dealer offering physical gold and silver with nationwide trust.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_KETTNER,
     },
     {
-      logo: "TC",
-      title: "Trading Platforms",
+      logo: "GR",
+      title: "GoldRepublic",
       description:
-        "Global leader in semiconductor manufacturing and innovation.",
+        "Secure European vault storage in Zurich and Frankfurt for physical gold and silver investments.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_GOLDREPUBLIC,
     },
   ];
   return (

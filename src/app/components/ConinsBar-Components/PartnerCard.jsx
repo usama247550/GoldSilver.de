@@ -3,30 +3,56 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 const PartnerCard = () => {
   const { t } = useTranslation();
+  // const partnerCards = [
+  //   {
+  //     logo: "LS",
+  //     title: "Liberty Safe",
+  //     description:
+  //       "Buy investment-grade gold and silver products from one of Germany’s established bullion retailers.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
+  //   },
+  //   {
+  //     logo: "SP",
+  //     title: "Vault Pro",
+  //     description:
+  //       "Precious metals investment solutions designed to help investors diversify and protect wealth.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
+  //   },
+  //   {
+  //     logo: "SS",
+  //     title: "Safe Store",
+  //     description:
+  //       "Purchase, store, and manage physical gold and silver through a globally trusted platform.",
+  //     button: "Discover More",
+  //     link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
+  //   },
+  // ];
   const partnerCards = [
     {
-      logo: "LS",
-      title: "Liberty Safe",
+      logo: "GS",
+      title: "GoldSilberShop",
       description:
-        "Buy investment-grade gold and silver products from one of Germany’s established bullion retailers.",
+        "One of Germany's most popular direct physical metal vendors for gold and silver bars and coins.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_GOLDSILBERSHOP,
     },
     {
-      logo: "SP",
-      title: "Vault Pro",
+      logo: "KE",
+      title: "Kettner Edelmetalle",
       description:
-        "Precious metals investment solutions designed to help investors diversify and protect wealth.",
+        "Established German precious metals dealer offering physical gold and silver with nationwide trust.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_KETTNER,
     },
     {
-      logo: "SS",
-      title: "Safe Store",
+      logo: "GR",
+      title: "GoldRepublic",
       description:
-        "Purchase, store, and manage physical gold and silver through a globally trusted platform.",
+        "Secure European vault storage in Zurich and Frankfurt for physical gold and silver investments.",
       button: "Discover More",
-      link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
+      link: process.env.NEXT_PUBLIC_AFFILIATE_GOLDREPUBLIC,
     },
   ];
   return (
