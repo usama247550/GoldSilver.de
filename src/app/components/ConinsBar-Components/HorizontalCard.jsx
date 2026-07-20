@@ -1,26 +1,21 @@
-"use client";
-import { useTranslation } from "react-i18next";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-const HorizontalCard = () => {
-  const { t } = useTranslation();
-  const [marketNews, setMarketNews] = useState([]);
-  const [loading, setLoading] = useState(true);
+const HorizontalCard = async () => {
+  let marketNews = [];
 
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp1`)
-      .then((res) => res.json())
-      .then((data) => {
-        setMarketNews(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp1`, {
+      next: { revalidate: 3600 }, // 1 hour cache — daily-changing news ke liye balanced
+    });
+    marketNews = await res.json();
+  } catch (err) {
+    console.error("News fetch error:", err);
+  }
 
-  if (loading) return <p className="p-6 text-gray-400">Loading...</p>;
-  if (marketNews.length === 0)
+  if (!marketNews || marketNews.length === 0) {
     return <p className="p-6 text-gray-400">No news today</p>;
+  }
 
   return (
     <div className="p-3 sm:p-6">

@@ -4,8 +4,10 @@ import Footer from "../components/common/Footer";
 import Banner from "../components/offgrid-Components/Banner";
 import LiveTickerZone from "../components/offgrid-Components/LiveTickerZone";
 import TodayUpdates from "../components/offgrid-Components/TodayUpdates";
+import HorizontalCard from "../components/offgrid-Components/HorizontalCard";
 import GoldNewsBanner from "../components/offgrid-Components/GoldNewsBanner";
 import TrustedPartners from "../components/offgrid-Components/TrustedPartners";
+import ArticleSection from "../components/offgrid-Components/ArticleSection";
 import { buildMetadata } from "../seo";
 
 export const metadata = buildMetadata({
@@ -15,18 +17,19 @@ export const metadata = buildMetadata({
   path: "/offgrid",
 });
 
-const Macro = () => {
+const Offgrid = () => {
   return (
     <>
       <Header />
       <Banner />
       <LiveTickerZone />
-      <TodayUpdates />
+      <TodayUpdates horizontalCard={<HorizontalCard />} />
       <TrustedPartners />
+      <ArticleSection/>
       <GoldNewsBanner />
       <Footer />
     </>
   );
 };
 
-export default Macro;
+export default Offgrid;

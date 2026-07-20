@@ -1,11 +1,15 @@
+
+
 import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Banner from "../components/Goldsmithing-Components/Banner";
 import LiveTickerZone from "../components/Goldsmithing-Components/LiveTickerZone";
 import TodayUpdates from "../components/Goldsmithing-Components/TodayUpdates";
+import HorizontalCard from "../components/Goldsmithing-Components/HorizontalCard";
 import GoldNewsBanner from "../components/Goldsmithing-Components/GoldNewsBanner";
 import TrustedPartners from "../components/Goldsmithing-Components/TrustedPartners";
+import ArticleSection from "../components/Goldsmithing-Components/ArticleSection";
 import { buildMetadata } from "../seo";
 
 export const metadata = buildMetadata({
@@ -21,8 +25,9 @@ const Goldsmithing = () => {
       <Header />
       <Banner />
       <LiveTickerZone />
-      <TodayUpdates />
+      <TodayUpdates horizontalCard={<HorizontalCard />} />
       <TrustedPartners />
+      <ArticleSection/>
       <GoldNewsBanner />
       <Footer />
     </>

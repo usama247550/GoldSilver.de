@@ -4,7 +4,9 @@ import Footer from "../components/common/Footer";
 import Banner from "../components/AiTech-components/Banner";
 import LiveTickerZone from "../components/AiTech-components/LiveTickerZone";
 import TodayUpdates from "../components/AiTech-components/TodayUpdates";
+import HorizontalCard from "../components/AiTech-components/HorizontalCard";
 import TrustedPartners from "../components/AiTech-components/TrustedPartners";
+import ArticleSection from "../components/AiTech-components/ArticleSection";
 import GoldNewsBanner from "../components/AiTech-components/GoldNewsBanner";
 import { buildMetadata } from "../seo";
 
@@ -21,8 +23,9 @@ const AiTech = () => {
       <Header />
       <Banner />
       <LiveTickerZone />
-      <TodayUpdates />
+      <TodayUpdates horizontalCard={<HorizontalCard />} />
       <TrustedPartners />
+      <ArticleSection/>
       <GoldNewsBanner />
       <Footer />
     </>

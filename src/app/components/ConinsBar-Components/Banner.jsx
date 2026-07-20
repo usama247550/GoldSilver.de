@@ -32,11 +32,11 @@ const Banner = () => {
             </div>
 
             <h1 className="text-white font-bold text-xl sm:text-3xl md:text-4xl font-[Playfair_Display] leading-snug">
-              {t("Physical Bullion Remains A Trusted Store of Value")}
+              {t("coinsBarsH1")}
             </h1>
 
             <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed">
-              {t("Follow market trends, pricing insights, and investment opportunities in precious metals.")}
+              {t("coinsBarsSubtext")}
             </p>
 
           </div>

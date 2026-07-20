@@ -146,7 +146,7 @@ const pages = {
       eyebrow: "Terms of Service",
       heading: "GoldSilver.de Terms of Service",
       intro:
-        "Welcome to GoldSilver.de. These Terms of Service govern your access to and use of our website, content, and services.",
+       "GoldSilver.de delivers daily precious metals market insights and investment guidance. These Terms of Service govern your access to and use of our website, content, and services.",
       acceptanceTitle: "Acceptance of Terms",
       acceptanceBody:
         "By visiting or using GoldSilver.de, you agree to these terms. If you do not agree, please do not use the website.",
