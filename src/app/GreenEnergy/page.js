@@ -1,11 +1,15 @@
+
+
 import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Banner from "../components/GreenEnergy-Components/Banner";
 import LiveTickerZone from "../components/GreenEnergy-Components/LiveTickerZone";
 import TodayUpdates from "../components/GreenEnergy-Components/TodayUpdates";
-import GoldNewsBanner from "../components/GreenEnergy-Components/GoldNewsBanner";
+import HorizontalCard from "../components/GreenEnergy-Components/HorizontalCard";
 import TrustedPartners from "../components/GreenEnergy-Components/TrustedPartners";
+import ArticleSection from "../components/GreenEnergy-Components/ArticleSection";
+import GoldNewsBanner from "../components/GreenEnergy-Components/GoldNewsBanner";
 import { buildMetadata } from "../seo";
 
 export const metadata = buildMetadata({
@@ -21,8 +25,9 @@ const GreenEnergy = () => {
       <Header />
       <Banner />
       <LiveTickerZone />
-      <TodayUpdates />
+      <TodayUpdates horizontalCard={<HorizontalCard />} />
       <TrustedPartners />
+      <ArticleSection/>
       <GoldNewsBanner />
       <Footer />
     </>

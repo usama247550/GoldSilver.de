@@ -9,10 +9,8 @@ const Banner = () => {
   return (
     <div className="w-full bg-white py-4">
       <div className="w-[92%] md:w-[80%] mx-auto">
-
         {/* IMAGE WRAPPER */}
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
-
           <Image
             src="/JewelryResale/banner.webp"
             alt="Jewelry resale banner"
@@ -26,7 +24,6 @@ const Banner = () => {
 
           {/* CONTENT */}
           <div className="absolute inset-0 flex flex-col justify-center gap-y-2 md:gap-y-3 ps-5 sm:ps-8 md:ps-10 pr-5 sm:pr-[45%]">
-
             <div className="bg-[#F7BD48] text-black rounded-sm text-xs sm:text-sm py-1 w-fit px-3">
               {t("Jewelry Resale")}
             </div>
@@ -37,11 +34,11 @@ const Banner = () => {
             </h1>
 
             <p className="text-white text-xs sm:text-sm md:text-base leading-relaxed">
-              {t("Track scrap metal trends, recovery markets, and industrial recycling developments.")}
+              {t(
+                "Track luxury jewelry resale trends, melt value pricing, and market opportunities for buyers and sellers.",
+              )}
             </p>
-
           </div>
-
         </div>
       </div>
     </div>

@@ -3,33 +3,6 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 const PartnerCard = () => {
   const { t } = useTranslation();
-  // const partnerCards = [
-  //   {
-  //     logo: "AI",
-  //     title: "Tech Newsletters",
-  //     description:
-  //       "Advanced AI computing and accelerated infrastructure solutions.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
-  //   },
-  //   {
-  //     logo: "AD",
-  //     title: "Micro-Investing Apps",
-  //     description:
-  //       "High-performance processors powering next-generation computing.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
-  //   },
-  //   {
-  //     logo: "TC",
-  //     title: "Trading Platforms",
-  //     description:
-  //       "Global leader in semiconductor manufacturing and innovation.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
-  //   },
-  // ];
-
 
      const partnerCards = [
     {

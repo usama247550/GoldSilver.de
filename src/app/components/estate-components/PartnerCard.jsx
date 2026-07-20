@@ -3,32 +3,6 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 const PartnerCard = () => {
   const { t } = useTranslation();
-  // const partnerCards = [
-  //   {
-  //     logo: "LS",
-  //     title: "Legal Document Services",
-  //     description:
-  //       "Buy investment-grade gold and silver products from one of Germany’s established bullion retailers.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_SEEKINGALPHA,
-  //   },
-  //   {
-  //     logo: "VP",
-  //     title: "Estate Planning Guides",
-  //     description:
-  //       "Precious metals investment solutions designed to help investors diversify and protect wealth.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_MOTLEYFOOL,
-  //   },
-  //   {
-  //     logo: "SS",
-  //     title: "Wealth Transfer Resources",
-  //     description:
-  //       "Purchase, store, and manage physical gold and silver through a globally trusted platform.",
-  //     button: "Discover More",
-  //     link: process.env.NEXT_PUBLIC_AFFILIATE_RESEARCH,
-  //   },
-  // ];
 
      const partnerCards = [
     {
