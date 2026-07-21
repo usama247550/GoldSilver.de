@@ -1,6 +1,7 @@
 "use client";
 import { useTranslation } from "react-i18next";
 import React from "react";
+import GooglePreferenceButton from "../common/GooglePreferenceButton";
 
 const ArticleSection = () => {
   const { t } = useTranslation();
@@ -8,9 +9,13 @@ const ArticleSection = () => {
   return (
     <div className="w-full bg-white py-10 md:py-16">
       <div className="max-w-4xl mx-auto px-5 md:px-10">
-        <h2 className="text-[#1A1A1A] font-bold text-2xl md:text-3xl font-[Playfair_Display] mb-6">
+        <h2 className="text-[#1A1A1A] font-bold text-2xl md:text-3xl font-[Playfair_Display] mb-4">
           {t("numismaticsArticleTitle")}
         </h2>
+
+        <div className="mb-6">
+          <GooglePreferenceButton />
+        </div>
 
         <div className="text-[#333333] text-base leading-relaxed space-y-4">
           <p>{t("numismaticsPara1")}</p>
