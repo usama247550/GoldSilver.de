@@ -11,7 +11,7 @@ import LearningResources from "../components/marco-Components/LearningResources"
 import GoldNewsBanner from "../components/marco-Components/GoldNewsBanner";
 import TrustedPartners from "../components/marco-Components/TrustedPartners";
 import { buildMetadata } from "../seo";
-import ArticleSection from "../components/marco-components/ArticleSection";
+import ArticleSection from "../components/marco-Components/ArticleSection";
 
 export const metadata = buildMetadata({
   title: "Wealth Management & Alternative Investments | Gold Macro Insights | GoldSilver.de",
