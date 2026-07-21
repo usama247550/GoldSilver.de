@@ -18,6 +18,10 @@ i18n.use(initReactI18next).init({
   resources: {
     en: {
       translation: {
+        imprintTitle: "Legal Notice (Imprint)",
+phoneLabel: "Phone",
+emailLabel: "Email",
+pendingNote: "Commercial Register No. and VAT ID to be added.",
         "googlePreferenceButton": "Prefer GoldSilver.de on Google",
         "goldsmithingArticleTitle": "The Craft of Goldsmithing: From Raw Metal to Custom Jewelry",
 "goldsmithingPara1": "Artisanal goldsmithing sits at the intersection of precious metals and craftsmanship, where raw gold or sterling silver is transformed into custom rings, pendants, and heirloom pieces. For hobbyists and professional bench jewelers alike, understanding metal properties, casting techniques, and material sourcing is as important as artistic design.",
@@ -347,6 +351,10 @@ i18n.use(initReactI18next).init({
     },
     de: {
       translation: {
+        imprintTitle: "Impressum",
+phoneLabel: "Telefon",
+emailLabel: "E-Mail",
+pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
         "googlePreferenceButton": "GoldSilver.de auf Google bevorzugen",
         "goldsmithingArticleTitle": "Die Kunst der Goldschmiedekunst: Vom Rohmetall zum individuellen Schmuckstück",
 "goldsmithingPara1": "Handwerkliche Goldschmiedekunst steht an der Schnittstelle von Edelmetallen und Handwerkskunst, wo rohes Gold oder Sterlingsilber in individuelle Ringe, Anhänger und Erbstücke verwandelt wird. Sowohl für Hobbyisten als auch professionelle Werkstattschmiede ist das Verständnis von Metalleigenschaften, Gusstechniken und Materialbeschaffung ebenso wichtig wie das künstlerische Design.",
