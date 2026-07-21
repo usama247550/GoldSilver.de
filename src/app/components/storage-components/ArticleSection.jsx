@@ -2,12 +2,20 @@
 import { useTranslation } from "react-i18next";
 import React from "react";
 import GooglePreferenceButton from "../common/GooglePreferenceButton";
-
+import { buildArticleSchema } from "../../seo";
 const ArticleSection = () => {
   const { t } = useTranslation();
-
+const articleSchema = buildArticleSchema({
+  headline: "Bullion Vault vs. Home Storage: Securing Your Precious Metals",
+  description: "Secure your precious metals in a trusted bullion vault. Explore storage, logistics, and capital preservation themes shaping the precious metals market for long-term investors.",
+  path: "/storage",
+});
   return (
     <div className="w-full bg-white py-10 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="max-w-4xl mx-auto px-5 md:px-10">
         <h2 className="text-[#1A1A1A] font-bold text-2xl md:text-3xl font-[Playfair_Display] mb-4">
           {t("storageArticleTitle")}

@@ -2,12 +2,23 @@
 import { useTranslation } from "react-i18next";
 import React from "react";
 import GooglePreferenceButton from "../common/GooglePreferenceButton";
+import { buildArticleSchema } from "../../seo";
 
 const ArticleSection = () => {
   const { t } = useTranslation();
 
+  const articleSchema = buildArticleSchema({
+    headline: "Buying Gold and Silver Coins and Bars: A Practical Guide",
+    description: "Buy gold and silver coins and bars including Krügerrand, Goldbarren, and Silbermünzen. Compare bullion for liquidity, purity, and long-term value preservation.",
+    path: "/coinsBars",
+  });
+
   return (
     <div className="w-full bg-white py-10 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="max-w-4xl mx-auto px-5 md:px-10">
         <h2 className="text-[#1A1A1A] font-bold text-2xl md:text-3xl font-[Playfair_Display] mb-4">
           {t("coinsBarsArticleTitle")}
