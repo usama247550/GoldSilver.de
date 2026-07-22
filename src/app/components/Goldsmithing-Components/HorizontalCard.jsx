@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import NewsCardTrackable from "./NewsCardTrackable";
 
 const HorizontalCard = async () => {
   let marketNews = [];
@@ -21,54 +22,53 @@ const HorizontalCard = async () => {
     <div className="p-3 sm:p-6">
       <div className="flex flex-col">
         {marketNews.map((item, index) => (
-          <div
-            key={index}
-            className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none"
-          >
-            <div className="flex-1 min-w-0">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
-                <span className="text-[#B8860B] text-md tracking-wide">
-                  PHYSICAL MARKET
-                </span>
-                <span className="text-gray-400 text-xs hidden sm:inline">•</span>
-                <span className="text-[#000000] text-xs">
-                  {new Date(item.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "2-digit",
-                    year: "numeric",
-                  })}
-                </span>
-                <span
-                  className={`text-white text-xs px-2 py-0.5 rounded ${
-                    item.conclusion === "bullish"
-                      ? "bg-[#2E7D32]"
-                      : item.conclusion === "bearish"
-                        ? "bg-red-600"
-                        : "bg-gray-500"
-                  }`}
-                >
-                  {item.conclusion?.toUpperCase()}
-                </span>
+          <NewsCardTrackable item={item} key={index}>
+            <div className="flex gap-3 sm:gap-4 py-4 border-b border-gray-100 last:border-none">
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-5">
+                  <span className="text-[#B8860B] text-md tracking-wide">
+                    PHYSICAL MARKET
+                  </span>
+                  <span className="text-gray-400 text-xs hidden sm:inline">•</span>
+                  <span className="text-[#000000] text-xs">
+                    {new Date(item.date).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "2-digit",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <span
+                    className={`text-white text-xs px-2 py-0.5 rounded ${
+                      item.conclusion === "bullish"
+                        ? "bg-[#2E7D32]"
+                        : item.conclusion === "bearish"
+                          ? "bg-red-600"
+                          : "bg-gray-500"
+                    }`}
+                  >
+                    {item.conclusion?.toUpperCase()}
+                  </span>
+                </div>
+
+                <h3 className="text-[#000000] w-[96%] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug line-clamp-2">
+                  {item.headline || item.summary?.slice(0, 80)}
+                </h3>
+
+                <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
+                  {item.summary}
+                </p>
               </div>
 
-              <h3 className="text-[#000000] w-[96%] font-bold text-base sm:text-lg md:text-xl mb-1 leading-snug line-clamp-2">
-                {item.headline || item.summary?.slice(0, 80)}
-              </h3>
-
-              <p className="text-[#000000] w-[96%] text-xs sm:text-sm line-clamp-2">
-                {item.summary}
-              </p>
+              <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
+                <Image
+                  src="/Goldsmithing/news.webp"
+                  alt="gold"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
-
-            <div className="relative md:w-32 md:h-24 w-24 h-32 sm:w-32 sm:h-32 flex-shrink-0 mt-8 sm:mt-8 overflow-hidden rounded-xl">
-              <Image
-                src="/Goldsmithing/news.webp"
-                alt="gold"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+          </NewsCardTrackable>
         ))}
       </div>
     </div>
