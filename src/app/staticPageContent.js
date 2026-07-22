@@ -86,6 +86,10 @@ const pages = {
       email: "Email",
       phone: "Phone",
       address: "Address",
+      imprintTitle: "Legal Notice (Imprint)",
+phoneLabel: "Phone",
+emailLabel: "Email",
+pendingNote: "Commercial Register No. and VAT ID to be added.",
     },
     de: {
       eyebrow: "Kontakt aufnehmen",
@@ -95,6 +99,10 @@ const pages = {
       email: "E-Mail",
       phone: "Telefon",
       address: "Adresse",
+      imprintTitle: "Impressum",
+phoneLabel: "Telefon",
+emailLabel: "E-Mail",
+pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
     },
   },
   disclaimer: {

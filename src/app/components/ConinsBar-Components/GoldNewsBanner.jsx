@@ -31,7 +31,7 @@ const GoldNewsBanner = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email,
-            source: "coinsbar",
+            source: "coinsBars",
             gdprConsent: true,
           }),
         },

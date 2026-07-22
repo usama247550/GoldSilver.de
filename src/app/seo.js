@@ -133,3 +133,21 @@ export function buildFaqSchema(items) {
     })),
   };
 }
+
+export function buildArticleSchema({ headline, description, path, datePublished, dateModified }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url: `${siteUrl}${path}`,
+    datePublished: datePublished || new Date().toISOString(),
+    dateModified: dateModified || new Date().toISOString(),
+    publisher: {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+    },
+    image: `${siteUrl}${defaultSocialImage}`,
+  };
+}
