@@ -8,7 +8,7 @@ const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours in ms
 
 const fetchRandomNews = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/new/random?limit=10`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/new/latest?limit=10`,
   );
   if (!res.ok) throw new Error("Failed to fetch random news");
   return res.json();
