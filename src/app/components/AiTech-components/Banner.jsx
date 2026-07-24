@@ -12,7 +12,6 @@ const Banner = () => {
     <div className="w-full bg-white py-4">
       <div className="w-[92%] md:w-[80%] mx-auto">
         
-        {/* IMAGE WRAPPER */}
         <div className="relative w-full h-56 sm:h-72 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden">
           
           <Image

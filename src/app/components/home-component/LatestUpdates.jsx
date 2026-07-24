@@ -7,7 +7,9 @@ const CACHE_KEY = "latestNewsCache";
 const CACHE_DURATION = 2 * 60 * 60 * 1000; // 2 hours in ms
 
 const fetchRandomNews = async () => {
-  const res = await fetch("http://localhost:5000/api/new/random?limit=10");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/new/random?limit=10`,
+  );
   if (!res.ok) throw new Error("Failed to fetch random news");
   return res.json();
 };
@@ -46,7 +48,7 @@ const LatestUpdates = () => {
         setAllNews(data);
         localStorage.setItem(
           CACHE_KEY,
-          JSON.stringify({ data, timestamp: Date.now() })
+          JSON.stringify({ data, timestamp: Date.now() }),
         );
       } catch (err) {
         console.error("Failed to fetch news", err);
@@ -67,7 +69,7 @@ const LatestUpdates = () => {
 
       <p className="text-[#000000] text-sm sm:text-base md:text-base text-center max-w-4xl">
         {t(
-          "Expert analysis, market movements, and emerging opportunities across gold, silver, and the broader economic landscape."
+          "Expert analysis, market movements, and emerging opportunities across gold, silver, and the broader economic landscape.",
         )}
       </p>
 
