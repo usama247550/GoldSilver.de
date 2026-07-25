@@ -34,19 +34,20 @@ const CATEGORY_LABELS = {
   sp12: "Bullion",
 };
 
+
 const CATEGORY_IMAGES = {
-  sp1: "/newsbanner/img3.jpg",
-  sp2: "/aiTech/news.jpg",
-  sp3: "/storage/news.jpg",
-  sp4: "/estate/banner.jpg",
-  sp5: "/greenEnergy/news.jpg",
-  sp6: "/grid-images/gridimage3.jpg",
-  sp7: "/offgrid/news.jpg",
-  sp8: "/numismatics/news.jpg",
-  sp9: "/metalDetecting/news.jpg",
-  sp10: "/Goldsmithing/news.jpg",
-  sp11: "/JewelryResale/news.jpg",
-  sp12: "/coinsBars/news.jpg",
+  sp1: "/newsbanner/img3.webp",
+  sp2: "/aiTech/news.webp",
+  sp3: "/storage/news.webp",
+  sp4: "/estate/banner.webp",
+  sp5: "/greenEnergy/news.webp",
+  sp6: "/grid-images/gridimage3.webp",
+  sp7: "/offgrid/news.webp",
+  sp8: "/numismatics/news.webp",
+  sp9: "/metalDetecting/news.webp",
+  sp10: "/Goldsmithing/news.webp",
+  sp11: "/JewelryResale/news.webp",
+  sp12: "/bar&coins/news.webp",
 };
 
 const LatestUpdateCard = ({ showAll = false, newsItems = [] }) => {
@@ -80,16 +81,16 @@ const LatestUpdateCard = ({ showAll = false, newsItems = [] }) => {
                 news.conclusion === "bearish"
                   ? "bg-[#C62828]"
                   : news.conclusion === "bullish"
-                  ? "bg-[#2E7D32]"
-                  : "bg-gray-500"
+                    ? "bg-[#2E7D32]"
+                    : "bg-gray-500"
               }`}
             >
               {news.conclusion}{" "}
               {news.conclusion === "bearish"
                 ? "▼"
                 : news.conclusion === "bullish"
-                ? "▲"
-                : ""}
+                  ? "▲"
+                  : ""}
             </div>
           </div>
 

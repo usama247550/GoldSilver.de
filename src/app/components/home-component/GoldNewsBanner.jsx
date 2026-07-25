@@ -20,6 +20,11 @@ const GoldNewsBanner = () => {
     }
 
     try {
+      const userTimezone =
+        typeof Intl !== "undefined" && Intl.DateTimeFormat
+          ? Intl.DateTimeFormat().resolvedOptions().timeZone
+          : "Europe/Berlin";
+
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/subscribe`,
         {
@@ -27,7 +32,8 @@ const GoldNewsBanner = () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email,
-            source: "home-page",
+            source: "homepage",
+            timezone: userTimezone,
             gdprConsent: true,
           }),
         },

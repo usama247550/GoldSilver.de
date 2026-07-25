@@ -86,6 +86,10 @@ const pages = {
       email: "Email",
       phone: "Phone",
       address: "Address",
+      imprintTitle: "Legal Notice (Imprint)",
+phoneLabel: "Phone",
+emailLabel: "Email",
+pendingNote: "Commercial Register No. and VAT ID to be added.",
     },
     de: {
       eyebrow: "Kontakt aufnehmen",
@@ -95,6 +99,10 @@ const pages = {
       email: "E-Mail",
       phone: "Telefon",
       address: "Adresse",
+      imprintTitle: "Impressum",
+phoneLabel: "Telefon",
+emailLabel: "E-Mail",
+pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
     },
   },
   disclaimer: {
@@ -146,7 +154,7 @@ const pages = {
       eyebrow: "Terms of Service",
       heading: "GoldSilver.de Terms of Service",
       intro:
-        "Welcome to GoldSilver.de. These Terms of Service govern your access to and use of our website, content, and services.",
+       "GoldSilver.de delivers daily precious metals market insights and investment guidance. These Terms of Service govern your access to and use of our website, content, and services.",
       acceptanceTitle: "Acceptance of Terms",
       acceptanceBody:
         "By visiting or using GoldSilver.de, you agree to these terms. If you do not agree, please do not use the website.",

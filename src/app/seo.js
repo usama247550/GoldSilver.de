@@ -44,10 +44,11 @@ const localizedStaticPages = {
   },
   terms: {
     en: {
-      title: "Terms of Service and Usage Rules for GoldSilver.de",
+      title: "Terms of Service | GoldSilver.de Gold & Silver Market Insights",
       description:
-        "Understand the terms that govern access to GoldSilver.de content, including permitted use, accuracy limits, and liability notices.",
+        "GoldSilver.de provides daily gold and silver market insights and investment guidance. Review our terms of service covering site use, content accuracy, and liability.",
     },
+
     de: {
       title: "Nutzungsbedingungen und Regeln für GoldSilver.de",
       description:
@@ -130,5 +131,23 @@ export function buildFaqSchema(items) {
         text: item.answer,
       },
     })),
+  };
+}
+
+export function buildArticleSchema({ headline, description, path, datePublished, dateModified }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    url: `${siteUrl}${path}`,
+    datePublished: datePublished || new Date().toISOString(),
+    dateModified: dateModified || new Date().toISOString(),
+    publisher: {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+    },
+    image: `${siteUrl}${defaultSocialImage}`,
   };
 }

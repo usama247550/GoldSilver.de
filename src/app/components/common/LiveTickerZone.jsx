@@ -19,12 +19,12 @@ const LiveTickerZone = () => {
     };
 
     fetchPrices();
-    // ✅ 15 min — backend se match
+    //  15 min — backend se match
     const interval = setInterval(fetchPrices, 15 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Helpers — PriceTable aur Header se same pattern
+  //  Helpers — PriceTable aur Header se same pattern
   const formatChange = (change) => {
     if (change === null || change === undefined || change === 0) return null;
     return `${change > 0 ? "+" : ""}${change}%`;

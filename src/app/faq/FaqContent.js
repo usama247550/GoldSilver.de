@@ -27,6 +27,10 @@ export default function FaqContent() {
       question: t("faq.item5.question"),
       answer: t("faq.item5.answer"),
     },
+      {
+      question: t("faq.item6.question"),
+      answer: t("faq.item6.answer"),
+    },
   ];
 
   const faqSchema = buildFaqSchema(faqItems);

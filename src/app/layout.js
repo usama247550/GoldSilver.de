@@ -1,6 +1,7 @@
 import "./globals.css";
 import "./i18n";
 import { cookies } from "next/headers";
+import Script from "next/script";
 import { organizationSchema, siteName, siteUrl, websiteSchema } from "./seo";
 
 export const metadata = {
@@ -15,12 +16,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const locale = cookies().get("gs-lang")?.value === "de" ? "de" : "en";
-
+``
   return (
-    <html
-      lang={locale}
-      className={`h-full antialiased`}
-    >
+    <html lang={locale} className={`h-full antialiased`}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-7732435226942119" />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
@@ -31,7 +32,7 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
-      {children}
+        {children}
       </body>
     </html>
   );

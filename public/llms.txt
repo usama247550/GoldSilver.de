@@ -1,0 +1,34 @@
+# GoldSilver.de
+
+> GoldSilver.de is an independent precious metals intelligence platform covering gold, silver, macroeconomic trends, and wealth preservation strategies for investors in Germany and worldwide.
+
+## About
+GoldSilver.de publishes daily market analysis, investment guides, and educational content on physical gold and silver, including buying guides, storage solutions, estate planning, coin collecting, and industrial demand trends (AI/semiconductors, green energy, recycling).
+
+## Key Topics Covered
+- Physical gold and silver buying guides (coins, bars, Krügerrand, Goldbarren)
+- Precious metals storage and bullion vault solutions
+- Estate planning and generational wealth transfer for precious metals
+- Central bank gold buying trends and macroeconomic analysis
+- Coin collecting and numismatics
+- Metal detecting and treasure recovery
+- Scrap metal and precious metal recycling
+- Industrial demand for silver (AI/semiconductors, green energy/solar)
+- Jewelry resale and goldsmithing craftsmanship
+
+## Main Pages
+- Homepage: https://www.goldsilver.de/
+- Macro & Central Bank Trends: https://www.goldsilver.de/macro
+- Coins & Bars Buying Guide: https://www.goldsilver.de/coinsBars
+- Precious Metals Storage: https://www.goldsilver.de/storage
+- Estate Planning: https://www.goldsilver.de/estate
+- Numismatics & Coin Collecting: https://www.goldsilver.de/numismatics
+- Metal Detecting: https://www.goldsilver.de/MetalDetecting
+- Scrap Metal Recycling: https://www.goldsilver.de/scrapMetal
+- FAQ: https://www.goldsilver.de/faq
+
+## Languages
+Content is available in English (en) and German (de).
+
+## Contact
+support@optimier.it

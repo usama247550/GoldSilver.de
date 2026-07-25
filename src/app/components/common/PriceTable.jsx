@@ -109,7 +109,7 @@ const PriceTable = () => {
               prices.cpi?.value !== undefined && prices.cpi?.value !== null
                 ? `${prices.cpi.value}%`
                 : "—",
-            // ✅ CPI annual data hai — change 0 hoga usually → STABLE
+            //  CPI annual data hai — change 0 hoga usually → STABLE
             change: formatChange(prices.cpi?.change),
             up: getDirection(prices.cpi?.change),
           },
