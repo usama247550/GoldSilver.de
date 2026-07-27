@@ -6,10 +6,11 @@ const HorizontalCard = async () => {
   let marketNews = [];
 
   try {
+    if (!process.env.NEXT_PUBLIC_API_URL) throw new Error("API URL not set");
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp12`, {
-      next: { revalidate: 3600 }, // 1 hour cache — daily-changing news ke liye balanced
+      next: { revalidate: 3600 },
     });
-    marketNews = await res.json();
+    if (res.ok) marketNews = await res.json();
   } catch (err) {
     console.error("News fetch error:", err);
   }
