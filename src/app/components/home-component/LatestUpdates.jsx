@@ -7,7 +7,7 @@ const LatestUpdates = async () => {
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/news/random?limit=10`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/news/latest?limit=12`,
       { next: { revalidate: 3600 } }
     );
     if (res.ok) {
