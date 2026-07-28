@@ -6,9 +6,12 @@ const HorizontalCard = async () => {
   let marketNews = [];
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp10`, {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/news/sp10`,
+      {
+        next: { revalidate: 3600 },
+      },
+    );
     marketNews = await res.json();
   } catch (err) {
     console.error("News fetch error:", err);
@@ -29,12 +32,15 @@ const HorizontalCard = async () => {
                   <span className="text-[#B8860B] text-md tracking-wide">
                     PHYSICAL MARKET
                   </span>
-                  <span className="text-gray-400 text-xs hidden sm:inline">•</span>
+                  <span className="text-gray-400 text-xs hidden sm:inline">
+                    •
+                  </span>
                   <span className="text-[#000000] text-xs">
                     {new Date(item.date).toLocaleDateString("en-US", {
                       month: "long",
                       day: "2-digit",
                       year: "numeric",
+                      timeZone: "Asia/Karachi",
                     })}
                   </span>
                   <span

@@ -6,9 +6,12 @@ const HorizontalCard = async () => {
   let marketNews = [];
 
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sp12`, {
-      next: { revalidate: 3600 }, // 1 hour cache — daily-changing news ke liye balanced
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/news/sp12`,
+      {
+        next: { revalidate: 3600 }, // 1 hour cache — daily-changing news ke liye balanced
+      },
+    );
     marketNews = await res.json();
   } catch (err) {
     console.error("News fetch error:", err);
@@ -40,6 +43,7 @@ const HorizontalCard = async () => {
                       month: "long",
                       day: "2-digit",
                       year: "numeric",
+                      timeZone: "Asia/Karachi",
                     })}
                   </span>
 
