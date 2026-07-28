@@ -325,8 +325,8 @@ const Header = () => {
               </Link>
             ))}
 
-            {/* LANGUAGE */}
-            <div className="pt-4">
+            {/* LANGUAGE (mobile only — below nav links) */}
+            <div className="pt-5 pb-2 flex justify-center">
               <LanguageSwitcher />
             </div>
           </div>

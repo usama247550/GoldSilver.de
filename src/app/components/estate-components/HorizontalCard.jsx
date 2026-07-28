@@ -30,12 +30,15 @@ const HorizontalCard = async () => {
                   <span className="text-[#B8860B] text-md tracking-wide">
                     PHYSICAL MARKET
                   </span>
-                  <span className="text-gray-400 text-xs hidden sm:inline">•</span>
+                  <span className="text-gray-400 text-xs hidden sm:inline">
+                    •
+                  </span>
                   <span className="text-[#000000] text-xs">
                     {new Date(item.date).toLocaleDateString("en-US", {
                       month: "long",
                       day: "2-digit",
                       year: "numeric",
+                      timeZone: "Asia/Karachi",
                     })}
                   </span>
                   <span
