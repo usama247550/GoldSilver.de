@@ -9,7 +9,12 @@ import HorizontalCard from "../components/JewelryResale-Components/HorizontalCar
 import GoldNewsBanner from "../components/JewelryResale-Components/GoldNewsBanner";
 import TrustedPartners from "../components/JewelryResale-Components/TrustedPartners";
 import ArticleSection from "../components/JewelryResale-Components/ArticleSection";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Jewelry Resale", url: "/JewelryResale" },
+]);
 
 export const metadata = buildMetadata({
   title: "Jewelry Resale Insights | GoldSilver.de Precious Metals",
@@ -21,6 +26,10 @@ export const metadata = buildMetadata({
 const JewelryResale = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

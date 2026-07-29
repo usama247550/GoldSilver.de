@@ -8,7 +8,12 @@ import HorizontalCard from "../components/AiTech-components/HorizontalCard";
 import TrustedPartners from "../components/AiTech-components/TrustedPartners";
 import ArticleSection from "../components/AiTech-components/ArticleSection";
 import GoldNewsBanner from "../components/AiTech-components/GoldNewsBanner";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "AI & Tech", url: "/AiTech" },
+]);
 
 export const metadata = buildMetadata({
   title: "AI & Tech Market Insights for Investors | GoldSilver.de",
@@ -20,6 +25,10 @@ export const metadata = buildMetadata({
 const AiTech = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

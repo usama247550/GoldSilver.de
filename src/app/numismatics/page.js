@@ -9,8 +9,13 @@ import TodayUpdates from "../components/numismatics-Components/TodayUpdates";
 import HorizontalCard from "../components/numismatics-Components/HorizontalCard";
 import GoldNewsBanner from "../components/numismatics-Components/GoldNewsBanner";
 import TrustedPartners from "../components/numismatics-Components/TrustedPartners";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/numismatics-Components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Numismatics & Coin Collecting", url: "/numismatics" },
+]);
 
 export const metadata = buildMetadata({
   title: "Coin Collecting Market Insights | Numismatics & Krügerrand | GoldSilver.de",
@@ -22,6 +27,10 @@ export const metadata = buildMetadata({
 const Numismatics = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

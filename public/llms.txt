@@ -1,34 +1,124 @@
 # GoldSilver.de
 
-> GoldSilver.de is an independent precious metals intelligence platform covering gold, silver, macroeconomic trends, and wealth preservation strategies for investors in Germany and worldwide.
+**Last Updated:** 2026-07-29
+
+> GoldSilver.de is an independent precious metals intelligence platform publishing market analysis, investment education, and research content about physical gold, silver, and related economic trends.
 
 ## About
-GoldSilver.de publishes daily market analysis, investment guides, and educational content on physical gold and silver, including buying guides, storage solutions, estate planning, coin collecting, and industrial demand trends (AI/semiconductors, green energy, recycling).
 
-## Key Topics Covered
-- Physical gold and silver buying guides (coins, bars, Krügerrand, Goldbarren)
-- Precious metals storage and bullion vault solutions
-- Estate planning and generational wealth transfer for precious metals
-- Central bank gold buying trends and macroeconomic analysis
-- Coin collecting and numismatics
-- Metal detecting and treasure recovery
-- Scrap metal and precious metal recycling
-- Industrial demand for silver (AI/semiconductors, green energy/solar)
-- Jewelry resale and goldsmithing craftsmanship
+GoldSilver.de is a bilingual German and English precious metals publisher serving investors, wealth managers, and precious metals enthusiasts.
+
+The platform covers:
+- Physical gold and silver markets
+- Precious metals investment education
+- Macro economic trends
+- Central bank gold demand
+- Industrial silver demand
+- Wealth preservation strategies
+- Precious metals storage
+- Related technology and energy trends
+
+GoldSilver.de is an independent editorial platform:
+- Not a precious metals dealer
+- Not an investment fund
+- Does not provide personalised financial advice
+
+## Entity Information
+
+- **Brand:** GoldSilver.de
+- **Entity Type:** Digital media / precious metals market intelligence publisher
+- **Industry:** Precious metals, financial education, market research
+- **Geographic Focus:** Germany (DE), Austria (AT), Switzerland (CH), global audience
+- **Languages:** German (de), English (en)
+- **Publisher Contact:** support@goldsilver.de
+
+## Key Topics
+
+- [Gold & Silver Coins and Bars](https://www.goldsilver.de/coinsBars)
+  - Gold coins, silver coins, bullion bars, purity standards, buying guides, and investment education.
+
+- [Macro & Central Bank Trends](https://www.goldsilver.de/macro)
+  - Central bank gold purchases, inflation, currencies, economic trends, and monetary policy analysis.
+
+- [AI & Technology Demand](https://www.goldsilver.de/AiTech)
+  - AI infrastructure, semiconductors, electronics, and industrial precious metal demand.
+
+- [Green Energy & Silver Demand](https://www.goldsilver.de/GreenEnergy)
+  - Solar panels, electric vehicles, renewable energy, and industrial silver consumption.
+
+- [Precious Metals Storage](https://www.goldsilver.de/storage)
+  - Bullion vaults, home storage, security, and long-term preservation strategies.
+
+- [Estate Planning & Wealth Preservation](https://www.goldsilver.de/estate)
+  - Physical precious metals inheritance, documentation, and generational wealth planning.
+
+- [Numismatics & Coin Collecting](https://www.goldsilver.de/numismatics)
+  - Rare coins, grading, collector premiums, and historical coin markets.
+
+- [Metal Detecting](https://www.goldsilver.de/MetalDetecting)
+  - Treasure hunting, detector guides, and precious metal discoveries.
+
+- [Scrap Metal Recycling](https://www.goldsilver.de/scrapMetal)
+  - Gold and silver recovery from electronics, jewelry, and industrial materials.
+
+- [Off-Grid Security](https://www.goldsilver.de/offgrid)
+  - Fractional bullion, preparedness, and physical wealth security.
+
+- [Jewelry Resale](https://www.goldsilver.de/JewelryResale)
+  - Gold jewelry valuation, resale markets, and precious metal craftsmanship.
+
+- [Goldsmithing](https://www.goldsilver.de/Goldsmithing)
+  - Jewelry making, alloys, casting, and traditional goldsmith techniques.
 
 ## Main Pages
-- Homepage: https://www.goldsilver.de/
-- Macro & Central Bank Trends: https://www.goldsilver.de/macro
-- Coins & Bars Buying Guide: https://www.goldsilver.de/coinsBars
-- Precious Metals Storage: https://www.goldsilver.de/storage
-- Estate Planning: https://www.goldsilver.de/estate
-- Numismatics & Coin Collecting: https://www.goldsilver.de/numismatics
-- Metal Detecting: https://www.goldsilver.de/MetalDetecting
-- Scrap Metal Recycling: https://www.goldsilver.de/scrapMetal
-- FAQ: https://www.goldsilver.de/faq
 
-## Languages
-Content is available in English (en) and German (de).
+- Homepage:
+  https://www.goldsilver.de/
 
-## Contact
-support@optimier.it
+- FAQ:
+  https://www.goldsilver.de/faq
+
+- Contact:
+  https://www.goldsilver.de/contact
+
+- Privacy Policy:
+  https://www.goldsilver.de/privacy
+
+- Terms:
+  https://www.goldsilver.de/terms
+
+- Disclaimer:
+  https://www.goldsilver.de/disclaimer
+
+## Language Handling
+
+GoldSilver.de supports English and German content.
+
+Language behavior:
+- Visitors from Germany (DE) receive German content by default.
+- Visitors from other regions receive English content by default.
+- Users can manually switch language using the language selector.
+- Manual language selection is stored using the `gs-lang` cookie and is not automatically overridden.
+
+## AI Resources
+
+Detailed AI knowledge reference:
+
+https://www.goldsilver.de/llms-full.txt
+
+## Legal & Technical Resources
+
+- Sitemap:
+  https://www.goldsilver.de/sitemap.xml
+
+- Robots:
+  https://www.goldsilver.de/robots.txt
+
+- Contact:
+  support@goldsilver.de
+
+## Content Disclaimer
+
+GoldSilver.de provides informational and educational content only.
+
+Content does not constitute financial, investment, legal, tax, or professional advice. Readers should perform their own research and consult qualified professionals before making financial decisions.

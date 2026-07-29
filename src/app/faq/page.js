@@ -1,7 +1,12 @@
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import FaqContent from "./FaqContent";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "FAQ", url: "/faq" },
+]);
 
 export const metadata = buildMetadata({
   title: "FAQ – Gold & Silber kaufen, Sicherheit & Support | GoldSilver.de",
@@ -12,6 +17,10 @@ export const metadata = buildMetadata({
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <FaqContent />
       <Footer />

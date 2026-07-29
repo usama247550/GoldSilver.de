@@ -7,8 +7,13 @@ import TodayUpdates from "../components/ConinsBar-Components/TodayUpdates";
 import HorizontalCard from "../components/ConinsBar-Components/HorizontalCard";
 import GoldNewsBanner from "../components/ConinsBar-Components/GoldNewsBanner";
 import TrustedPartners from "../components/ConinsBar-Components/TrustedPartners";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/ConinsBar-Components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Coins & Bars Buying Guide", url: "/coinsBars" },
+]);
 
 export const metadata = buildMetadata({
   title: "Buy Gold and Silver Coins and Bars | Goldmünzen & Goldbarren | GoldSilver.de",
@@ -20,6 +25,10 @@ export const metadata = buildMetadata({
 const ConinsBar = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

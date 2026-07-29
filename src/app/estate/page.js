@@ -7,8 +7,13 @@ import TodayUpdates from "../components/estate-components/TodayUpdates";
 import HorizontalCard from "../components/estate-components/HorizontalCard";
 import TrustedPartners from "../components/estate-components/TrustedPartners";
 import GoldNewsBanner from "../components/estate-components/GoldNewsBanner";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/estate-components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Estate Planning", url: "/estate" },
+]);
 
 export const metadata = buildMetadata({
   title: "Vermögen & Estate Planning Insights | GoldSilver.de",
@@ -20,6 +25,10 @@ export const metadata = buildMetadata({
 const Estate = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

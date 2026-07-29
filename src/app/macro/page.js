@@ -10,8 +10,13 @@ import HorizontalCard from "../components/marco-Components/HorizontalCard";
 import LearningResources from "../components/marco-Components/LearningResources";
 import GoldNewsBanner from "../components/marco-Components/GoldNewsBanner";
 import TrustedPartners from "../components/marco-Components/TrustedPartners";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/marco-Components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Macro & Central Bank Trends", url: "/macro" },
+]);
 
 export const metadata = buildMetadata({
   title: "Wealth Management & Alternative Investments | Gold Macro Insights | GoldSilver.de",
@@ -23,6 +28,10 @@ export const metadata = buildMetadata({
 const Macro = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

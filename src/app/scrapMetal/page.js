@@ -8,8 +8,13 @@ import TodayUpdates from "../components/scrap-Components/TodayUpdates";
 import HorizontalCard from "../components/scrap-Components/HorizontalCard";
 import GoldNewsBanner from "../components/scrap-Components/GoldNewsBanner";
 import TrustedPartners from "../components/scrap-Components/TrustedPartners";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/scrap-Components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Scrap Metal Recycling", url: "/scrapMetal" },
+]);
 
 export const metadata = buildMetadata({
   title: "Recycled Metal Market Insights | GoldSilver.de Scrap & Recovery",
@@ -21,6 +26,10 @@ export const metadata = buildMetadata({
 const scrapMetal = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />
