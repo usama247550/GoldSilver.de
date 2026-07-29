@@ -4,36 +4,36 @@ const pages = {
       eyebrow: "Privacy Policy",
       heading: "GoldSilver.de Privacy Policy",
       intro:
-        "At GoldSilver.de, your trust matters. This privacy policy describes how we collect, use, and protect information when you visit our website.",
+        "We process personal data when you visit the website, contact us, subscribe to updates, or interact with affiliate links and embedded services.",
       infoTitle: "Information We Collect",
       infoBody1:
-        "GoldSilver.de is primarily an informational platform focused on precious metals, market intelligence, and wealth preservation topics. We do not require users to register or submit personal information to read our content.",
+        "Purposes may include website operation, security, communication, analytics, marketing, and affiliate tracking.",
       infoBody2:
-        "We may collect limited technical data automatically when you visit our site, such as:",
+        "Legal bases may include consent, legitimate interest, contract duty, or legal obligation.",
       infoItems: [
         "Browser type and version",
         "IP address and device information",
         "Pages visited and time spent on the website",
       ],
-      useTitle: "How We Use Information",
+      useTitle: "Cookies and Tracking",
       useBody1:
-        "We use technical data to improve the website experience, measure performance, and better understand which content resonates with our audience. This helps us maintain a reliable source of market insights and educational resources.",
+        "We use a cookie banner and activate non-essential tracking only after consent.",
       useBody2:
-        "We do not share personal information with third parties for advertising purposes. When we use third-party analytics tools, the data is aggregated and anonymized.",
-      cookiesTitle: "Cookies and Tracking",
+        "We may share data with hosting providers, analytics tools, email services, CMPs, and affiliates.",
+      cookiesTitle: "Your Rights",
       cookiesBody1:
-        "GoldSilver.de may use cookies and similar tracking technologies to improve site performance, remember your preferences, and analyze traffic patterns.",
+        "You have rights to access, rectification, erasure, restriction, portability, objection, withdrawal of consent, and complaint to a supervisory authority.",
       cookiesBody2:
-        "You can disable cookies in your browser settings, but some website features may not work as intended if cookies are blocked.",
+        "If you have questions about your privacy or wish to exercise these rights, please visit our Contact page and get in touch.",
       linksTitle: "Third-Party Links",
       linksBody:
         "Our site may include links to external resources or partnering services. These third-party sites have their own privacy practices and are not governed by this policy.",
       securityTitle: "Data Security",
       securityBody:
         "We take reasonable steps to protect the information collected on GoldSilver.de, but no system is completely secure. We continuously review our technical and organizational safeguards to keep our site safe.",
-      rightsTitle: "Your Rights",
+      rightsTitle: "Legal Bases for Processing",
       rightsBody:
-        "If you have questions about your privacy or wish to request information about the data we collect, please visit our Contact page and get in touch.",
+        "We rely on consent, legitimate interest, performance of a contract, or legal obligation as the legal basis for processing your personal data, depending on the purpose.",
       updatesTitle: "Updates to This Policy",
       updatesBody:
         "We may update this privacy policy as the site evolves. The date of the latest revision will be reflected on this page.",
@@ -42,36 +42,36 @@ const pages = {
       eyebrow: "Datenschutzrichtlinie",
       heading: "Datenschutzrichtlinie von GoldSilver.de",
       intro:
-        "Bei GoldSilver.de ist uns Ihr Vertrauen wichtig. Diese Datenschutzrichtlinie beschreibt, wie wir Informationen erfassen, verwenden und schützen, wenn Sie unsere Website besuchen.",
+        "Wir verarbeiten personenbezogene Daten, wenn Sie die Website besuchen, uns kontaktieren, Updates abonnieren oder mit Affiliate-Links und eingebetteten Diensten interagieren.",
       infoTitle: "Welche Informationen wir erfassen",
       infoBody1:
-        "GoldSilver.de ist in erster Linie eine Informationsplattform mit Fokus auf Edelmetalle, Markteinblicke und Themen zur Vermögenssicherung. Wir verlangen von Nutzern keine Registrierung und keine persönlichen Angaben, um unsere Inhalte zu lesen.",
+        "Zwecke können Website-Betrieb, Sicherheit, Kommunikation, Analyse, Marketing und Affiliate-Tracking sein.",
       infoBody2:
-        "Wir können bei Ihrem Besuch automatisch begrenzte technische Daten erfassen, zum Beispiel:",
+        "Rechtsgrundlagen können Einwilligung, berechtigtes Interesse, Vertragserfüllung oder rechtliche Verpflichtung sein.",
       infoItems: [
         "Browsertyp und Browserversion",
         "IP-Adresse und Geräteinformationen",
         "Besuchte Seiten und Verweildauer auf der Website",
       ],
-      useTitle: "Wie wir Informationen verwenden",
+      useTitle: "Cookies und Tracking",
       useBody1:
-        "Wir verwenden technische Daten, um das Nutzungserlebnis zu verbessern, die Leistung zu messen und besser zu verstehen, welche Inhalte bei unserem Publikum ankommen. So können wir eine verlässliche Quelle für Markteinblicke und Bildungsinhalte bereitstellen.",
+        "Irgendwann nutzen wir Cookie-Banner und nicht notwendiges Tracking nur mit Einwilligung.",
       useBody2:
-        "Wir geben personenbezogene Daten nicht zu Werbezwecken an Dritte weiter. Wenn wir Analyse-Tools von Drittanbietern verwenden, werden die Daten aggregiert und anonymisiert.",
-      cookiesTitle: "Cookies und Tracking",
+        "Wir können Daten an Hoster, Analyse-Tools, E-Mail-Dienste, CMPs und Affiliates geben.",
+      cookiesTitle: "Ihre Rechte",
       cookiesBody1:
-        "GoldSilver.de kann Cookies und ähnliche Tracking-Technologien verwenden, um die Website-Leistung zu verbessern, Ihre Einstellungen zu speichern und Zugriffsmuster zu analysieren.",
+        "Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Übertragbarkeit, Widerspruch, Widerruf der Einwilligung und Beschwerde bei einer Aufsichtsbehörde.",
       cookiesBody2:
-        "Sie können Cookies in Ihren Browsereinstellungen deaktivieren, aber einige Funktionen der Website arbeiten möglicherweise nicht wie vorgesehen, wenn Cookies blockiert werden.",
+        "Wenn Sie Fragen zu Ihrer Privatsphäre haben oder diese Rechte ausüben möchten, besuchen Sie bitte unsere Kontaktseite und schreiben Sie uns.",
       linksTitle: "Links zu Drittanbietern",
       linksBody:
         "Unsere Website kann Links zu externen Ressourcen oder Partnerdiensten enthalten. Diese Websites haben ihre eigenen Datenschutzpraktiken und unterliegen nicht dieser Richtlinie.",
       securityTitle: "Datensicherheit",
       securityBody:
         "Wir ergreifen angemessene Maßnahmen, um die auf GoldSilver.de erhobenen Informationen zu schützen, aber kein System ist vollkommen sicher. Wir überprüfen unsere technischen und organisatorischen Schutzmaßnahmen fortlaufend, um unsere Website sicher zu halten.",
-      rightsTitle: "Ihre Rechte",
+      rightsTitle: "Rechtsgrundlagen der Verarbeitung",
       rightsBody:
-        "Wenn Sie Fragen zu Ihrer Privatsphäre haben oder Informationen zu den von uns erhobenen Daten anfordern möchten, besuchen Sie bitte unsere Kontaktseite und schreiben Sie uns.",
+        "Je nach Zweck stützen wir uns auf Einwilligung, berechtigtes Interesse, Vertragserfüllung oder rechtliche Verpflichtung als Rechtsgrundlage für die Verarbeitung Ihrer personenbezogenen Daten.",
       updatesTitle: "Aktualisierungen dieser Richtlinie",
       updatesBody:
         "Wir können diese Datenschutzrichtlinie aktualisieren, wenn sich die Website weiterentwickelt. Das Datum der letzten Überarbeitung wird auf dieser Seite angezeigt.",
@@ -87,9 +87,9 @@ const pages = {
       phone: "Phone",
       address: "Address",
       imprintTitle: "Legal Notice (Imprint)",
-phoneLabel: "Phone",
-emailLabel: "Email",
-pendingNote: "Commercial Register No. and VAT ID to be added.",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      pendingNote: "Commercial Register No. and VAT ID to be added.",
     },
     de: {
       eyebrow: "Kontakt aufnehmen",
@@ -100,9 +100,9 @@ pendingNote: "Commercial Register No. and VAT ID to be added.",
       phone: "Telefon",
       address: "Adresse",
       imprintTitle: "Impressum",
-phoneLabel: "Telefon",
-emailLabel: "E-Mail",
-pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
+      phoneLabel: "Telefon",
+      emailLabel: "E-Mail",
+      pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
     },
   },
   disclaimer: {
@@ -126,6 +126,11 @@ pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
       responsibilityTitle: "User Responsibility",
       responsibilityBody:
         "Users should conduct their own research and consult qualified professionals before making any financial or legal decisions.",
+      affiliateTitle: "Affiliate Disclosure",
+      affiliateBody:
+        "This website contains possibly affiliate links. If you buy through these links, we may receive a commission at no extra cost to you.",
+      affiliateBody2:
+        "The presence of affiliate links does not change the price you pay.",
     },
     de: {
       eyebrow: "Haftungsausschluss",
@@ -147,6 +152,10 @@ pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
       responsibilityTitle: "Verantwortung der Nutzer",
       responsibilityBody:
         "Nutzer sollten eigene Recherchen durchführen und qualifizierte Fachleute konsultieren, bevor sie finanzielle oder rechtliche Entscheidungen treffen.",
+      affiliateTitle: "Affiliate-Hinweis",
+      affiliateBody:
+        "Diese Website enthält ev. Affiliate-Links. Wenn Sie über diese Links kaufen, erhalten wir möglicherweise eine Provision ohne Mehrkosten für Sie.",
+      affiliateBody2: "Affiliate-Links verändern den Preis für Sie nicht.",
     },
   },
   terms: {
@@ -154,7 +163,7 @@ pendingNote: "Handelsregisternummer und USt-IdNr. werden noch ergänzt.",
       eyebrow: "Terms of Service",
       heading: "GoldSilver.de Terms of Service",
       intro:
-       "GoldSilver.de delivers daily precious metals market insights and investment guidance. These Terms of Service govern your access to and use of our website, content, and services.",
+        "GoldSilver.de delivers daily precious metals market insights and investment guidance. These Terms of Service govern your access to and use of our website, content, and services.",
       acceptanceTitle: "Acceptance of Terms",
       acceptanceBody:
         "By visiting or using GoldSilver.de, you agree to these terms. If you do not agree, please do not use the website.",

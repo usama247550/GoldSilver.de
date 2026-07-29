@@ -48,6 +48,14 @@ const Disclaimer = ({ content }) => {
             {content.responsibilityBody}
           </p>
         </section>
+
+        <section className="space-y-4 rounded-3xl border border-[#2a2a2a] bg-[#111111] p-8">
+          <h2 className="text-2xl font-semibold text-white">
+            {content.affiliateTitle}
+          </h2>
+          <p className="text-base leading-8 text-[#D3C4AF]">{content.affiliateBody}</p>
+          <p className="text-base leading-8 text-[#D3C4AF]">{content.affiliateBody2}</p>
+        </section>
       </div>
     </main>
   );
