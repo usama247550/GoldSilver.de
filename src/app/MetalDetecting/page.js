@@ -9,8 +9,13 @@ import TodayUpdates from "../components/metalDetecting-Components/TodayUpdates";
 import HorizontalCard from "../components/metalDetecting-Components/HorizontalCard";
 import GoldNewsBanner from "../components/metalDetecting-Components/GoldNewsBanner";
 import TrustedPartners from "../components/metalDetecting-Components/TrustedPartners";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/metalDetecting-Components/ArticleSection";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Metal Detecting", url: "/MetalDetecting" },
+]);
 
 export const metadata = buildMetadata({
   title: "Metal Detecting & Treasure Detector Guide | GoldSilver.de",
@@ -22,6 +27,10 @@ export const metadata = buildMetadata({
 const MetalDetecting = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

@@ -10,7 +10,12 @@ import HorizontalCard from "../components/Goldsmithing-Components/HorizontalCard
 import GoldNewsBanner from "../components/Goldsmithing-Components/GoldNewsBanner";
 import TrustedPartners from "../components/Goldsmithing-Components/TrustedPartners";
 import ArticleSection from "../components/Goldsmithing-Components/ArticleSection";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Goldsmithing", url: "/Goldsmithing" },
+]);
 
 export const metadata = buildMetadata({
   title: "Goldsmithing Insights | GoldSilver.de Craft and Value",
@@ -22,6 +27,10 @@ export const metadata = buildMetadata({
 const Goldsmithing = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

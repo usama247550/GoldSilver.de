@@ -8,7 +8,12 @@ import HorizontalCard from "../components/offgrid-Components/HorizontalCard";
 import GoldNewsBanner from "../components/offgrid-Components/GoldNewsBanner";
 import TrustedPartners from "../components/offgrid-Components/TrustedPartners";
 import ArticleSection from "../components/offgrid-Components/ArticleSection";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Off-Grid Security", url: "/offgrid" },
+]);
 
 export const metadata = buildMetadata({
   title: "Off-Grid Security Insights | GoldSilver.de Preparedness",
@@ -20,6 +25,10 @@ export const metadata = buildMetadata({
 const Offgrid = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

@@ -9,9 +9,13 @@ import TodayUpdates from "../components/storage-components/TodayUpdates";
 import HorizontalCard from "../components/storage-components/HorizontalCard";
 import TrustedPartners from "../components/storage-components/TrustedPartners";
 import GoldNewsBanner from "../components/storage-components/GoldNewsBanner";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
 import ArticleSection from "../components/storage-components/ArticleSection";
 
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Precious Metals Storage", url: "/storage" },
+]);
 
 export const metadata = buildMetadata({
   title: "Bullion Vault & Precious Metals Storage for Investors | GoldSilver.de",
@@ -23,6 +27,10 @@ export const metadata = buildMetadata({
 const Storage = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

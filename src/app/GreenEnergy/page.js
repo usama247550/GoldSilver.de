@@ -10,7 +10,12 @@ import HorizontalCard from "../components/GreenEnergy-Components/HorizontalCard"
 import TrustedPartners from "../components/GreenEnergy-Components/TrustedPartners";
 import ArticleSection from "../components/GreenEnergy-Components/ArticleSection";
 import GoldNewsBanner from "../components/GreenEnergy-Components/GoldNewsBanner";
-import { buildMetadata } from "../seo";
+import { buildMetadata, buildBreadcrumbSchema } from "../seo";
+
+const breadcrumb = buildBreadcrumbSchema([
+  { name: "Home", url: "/" },
+  { name: "Green Energy", url: "/GreenEnergy" },
+]);
 
 export const metadata = buildMetadata({
   title: "Green Energy & Silver Demand Insights | GoldSilver.de",
@@ -22,6 +27,10 @@ export const metadata = buildMetadata({
 const GreenEnergy = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <Header />
       <Banner />
       <LiveTickerZone />

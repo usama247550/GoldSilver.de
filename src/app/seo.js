@@ -5,6 +5,9 @@ export const defaultDescription =
   "Daily precious metals intelligence, market analysis, and investor-focused updates across gold, silver, macro trends, and wealth preservation.";
 export const defaultSocialImage = "/grid-images/gridimage1.webp";
 
+// ---------------------------------------------------------------------------
+// Static page metadata (privacy, contact, disclaimer, terms)
+// ---------------------------------------------------------------------------
 const localizedStaticPages = {
   privacy: {
     en: {
@@ -48,7 +51,6 @@ const localizedStaticPages = {
       description:
         "GoldSilver.de provides daily gold and silver market insights and investment guidance. Review our terms of service covering site use, content accuracy, and liability.",
     },
-
     de: {
       title: "Nutzungsbedingungen und Regeln für GoldSilver.de",
       description:
@@ -57,25 +59,38 @@ const localizedStaticPages = {
   },
 };
 
-export function buildMetadata({ title, description, path }) {
+// ---------------------------------------------------------------------------
+// buildMetadata — used by every page
+// Includes hreflang alternates for DE/EN geographic targeting
+// ---------------------------------------------------------------------------
+export function buildMetadata({ title, description, path, image }) {
+  const ogImage = image || defaultSocialImage;
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+  canonical: `${siteUrl}${path}`,
+      // Geographic language targeting — same URL serves both DE and EN
+      languages: {
+        "de-DE": `/de${path}`,
+        en: `/en${path}`,
+        "x-default": `/en${path}`,
+      }
     },
     openGraph: {
       type: "website",
-      url: path,
+       url: `${siteUrl}${path}`,
       siteName,
       title,
       description,
+      locale: "en_US",
+      alternateLocale: ["de_DE"],
       images: [
         {
-          url: defaultSocialImage,
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: siteName,
+          alt: title,
         },
       ],
     },
@@ -83,11 +98,14 @@ export function buildMetadata({ title, description, path }) {
       card: "summary_large_image",
       title,
       description,
-      images: [defaultSocialImage],
+      images: [ogImage],
     },
   };
 }
 
+// ---------------------------------------------------------------------------
+// buildLocalizedStaticPageMetadata — used by privacy/terms/disclaimer/contact
+// ---------------------------------------------------------------------------
 export function buildLocalizedStaticPageMetadata(pageKey, locale = "en") {
   const page = localizedStaticPages[pageKey];
   const lang = locale === "de" ? "de" : "en";
@@ -104,21 +122,108 @@ export function buildLocalizedStaticPageMetadata(pageKey, locale = "en") {
   });
 }
 
+// ---------------------------------------------------------------------------
+// Organization Schema — enriched with geo & multilingual signals
+// ---------------------------------------------------------------------------
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
   name: siteName,
   url: siteUrl,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/favicon.png`,
+    width: 512,
+    height: 512,
+  },
+  // Geographic targeting — primary market is Germany / DACH region
+  areaServed: [
+    { "@type": "Country", name: "Germany" },
+    { "@type": "Country", name: "Austria" },
+    { "@type": "Country", name: "Switzerland" },
+  ],
+  // Fake location signals can hurt local SEO.
+  // address: {
+  //   "@type": "PostalAddress",
+  //   addressCountry: "DE",
+  // },
+  // Bilingual — tells AI engines the site serves both languages
+  availableLanguage: [
+    { "@type": "Language", name: "German", alternateName: "de" },
+    { "@type": "Language", name: "English", alternateName: "en" },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "support@goldsilver.de",
+    contactType: "customer support",
+    availableLanguage: ["German", "English"],
+  },
 };
 
+// ---------------------------------------------------------------------------
+// Website Schema — with SearchAction for AI sitelinks
+// ---------------------------------------------------------------------------
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
   name: siteName,
   url: siteUrl,
   description: defaultDescription,
+  inLanguage: ["de", "en"],
+  publisher: {
+    "@id": `${siteUrl}/#organization`,
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteUrl}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
+// ---------------------------------------------------------------------------
+// SiteNavigationElement Schema — helps AI understand site structure
+// ---------------------------------------------------------------------------
+export const siteNavigationSchema = {
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  name: [
+    "Macro",
+    "AI & Tech",
+    "Storage",
+    "Estate",
+    "Green Energy",
+    "Scrap Metal",
+    "Off Grid",
+    "Numismatics",
+    "Coins & Bars",
+    "Goldsmithing",
+    "Jewelry Resale",
+    "Metal Detecting",
+  ],
+  url: [
+    `${siteUrl}/macro`,
+    `${siteUrl}/AiTech`,
+    `${siteUrl}/storage`,
+    `${siteUrl}/estate`,
+    `${siteUrl}/GreenEnergy`,
+    `${siteUrl}/scrapMetal`,
+    `${siteUrl}/offgrid`,
+    `${siteUrl}/numismatics`,
+    `${siteUrl}/coinsBars`,
+    `${siteUrl}/Goldsmithing`,
+    `${siteUrl}/JewelryResale`,
+    `${siteUrl}/MetalDetecting`,
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// FAQ Schema
+// ---------------------------------------------------------------------------
 export function buildFaqSchema(items) {
   return {
     "@context": "https://schema.org",
@@ -134,20 +239,61 @@ export function buildFaqSchema(items) {
   };
 }
 
-export function buildArticleSchema({ headline, description, path, datePublished, dateModified }) {
+// ---------------------------------------------------------------------------
+// Article Schema — enriched with language, author and entity signals
+// ---------------------------------------------------------------------------
+export function buildArticleSchema({
+  headline,
+  description,
+  path,
+  datePublished,
+  dateModified,
+  inLanguage = "en",
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline,
     description,
     url: `${siteUrl}${path}`,
+    inLanguage,
     datePublished: datePublished || new Date().toISOString(),
     dateModified: dateModified || new Date().toISOString(),
-    publisher: {
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}${path}`,
+    },
+    author: {
       "@type": "Organization",
       name: siteName,
       url: siteUrl,
     },
+    publisher: {
+      "@type": "Organization",
+      name: siteName,
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/favicon.png`,
+      },
+    },
     image: `${siteUrl}${defaultSocialImage}`,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Breadcrumb Schema — used by every page for AI hierarchy signals
+// items: [{ name: "Home", url: "/" }, { name: "Macro", url: "/macro" }]
+// ---------------------------------------------------------------------------
+export function buildBreadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith("http") ? item.url : `${siteUrl}${item.url}`,
+    })),
   };
 }
