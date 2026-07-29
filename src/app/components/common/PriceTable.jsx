@@ -26,7 +26,7 @@ const PriceTable = () => {
     fetchPrices();
 
     // ✅ 15 min — backend schedule se match
-    const interval = setInterval(fetchPrices, 15 * 60 * 1000);
+    const interval = setInterval(fetchPrices, 4 * 60 * 60 * 1000);
 
     return () => {
       isMounted = false;
